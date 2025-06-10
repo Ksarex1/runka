@@ -2,8 +2,11 @@
 
 @theme{
     --color-primary: #003693;
+    --color-primary2: #005DFF;
+    --color-primary3: #5F687A;
     --color-primary-dull: #101B44;
     --color-primary-black: #1B1B1B;
+
 }
 
 .container{
@@ -12,4 +15,20 @@
 section{
     display: flex;
     justify-content: center;
+}
+*{
+    font-family: 'Montserrat', sans-serif;
+    font-optical-sizing: auto;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Rubik', sans-serif;
+    font-optical-sizing: auto;
+}
+button{
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+}
+
+ul{
+    margin: 0;
 }

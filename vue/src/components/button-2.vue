@@ -1,0 +1,29 @@
+<script>
+export default {
+  name: "button-2"
+}
+</script>
+
+<template>
+<button><slot></slot></button>
+</template>
+
+<style scoped>
+button{
+  border: 1px solid #5F687A;
+  background-color: white;
+  color: #5F687A;
+  width: 190px;
+  height: 48px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: .3s;
+}
+
+button:hover{
+  background-color: #005DFF;
+  color: white;
+  transition: .3s;
+}
+</style>

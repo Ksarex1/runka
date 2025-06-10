@@ -126,7 +126,7 @@
 
 </template>
 
-<style scoped>
+<style>
 
 .custom-select::after {
   content: '';

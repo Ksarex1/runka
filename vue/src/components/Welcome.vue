@@ -41,6 +41,6 @@ img{
 section{
   background-image: url('../assets/img/welcome.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover
 }
 </style>

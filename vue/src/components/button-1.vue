@@ -21,9 +21,7 @@ button{
 }
 
 button:hover{
-  border: 1px solid #5F687A;
-  background-color: white;
-  color: #5F687A;
+  background-color: #003693;
   transition: .3s;
 }
 </style>

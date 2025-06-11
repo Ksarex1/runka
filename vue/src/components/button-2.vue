@@ -10,11 +10,10 @@ export default {
 
 <style scoped>
 button{
+  padding: 10px;
   border: 1px solid #5F687A;
   background-color: white;
   color: #5F687A;
-  width: 190px;
-  height: 48px;
   border-radius: 12px;
   cursor: pointer;
   font-weight: bold;
@@ -22,8 +21,7 @@ button{
 }
 
 button:hover{
-  background-color: #005DFF;
-  color: white;
+  background-color: #e5e7eb;
   transition: .3s;
 }
 </style>

@@ -24,7 +24,7 @@ export default {
         <p class="mt-6 mb-8 sm:mt-[30px] sm:mb-[45px] text-base sm:text-[16px] text-[#5F687A]">
           Постоянное повышение квалификации позволяет нам быть всегда в центре событий, происходящих в бюджетной сфере. Наши специалисты разговаривают с бухгалтерами на одном языке.
         </p>
-        <div class="flex flex-row gap-4">
+        <div class=" buttons flex flex-row gap-4">
           <button1 id="button-1">Заказать консультацию</button1>
           <button2 id="button-2" class="ml-6">Подробнее</button2>
         </div>
@@ -45,15 +45,26 @@ export default {
 }
 
 @media (max-width: 640px) {
+  section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 100px;
+  }
+
+  .buttons{
+    flex-direction: column;
+    align-items: center;
+  }
+
   #button-1{
-    width: 175px;
-    height: 35px;
+    width: 200px;
+    height: 40px;
     font-size: 11px;
   }
 
   #button-2{
-    width: 100px;
-    height: 35px;
+    width: 150px;
+    height: 40px;
     font-size: 11px;
     margin-left: 5px;
   }

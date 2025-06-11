@@ -15,7 +15,7 @@ export default {
                  class="w-full h-full object-cover"
                  alt="Сопровождение 1С">
           </div>
-          <div class="w-full h-[155px] px-4 py-5 border border-[#5F687A] rounded-b-[10px] bg-white">
+          <div class="text w-full h-[155px] px-4 py-5 border border-[#5F687A] rounded-b-[10px] bg-white">
             <div class="flex justify-between h-full">
               <div class="w-[65%]">
                 <h4 class="font-bold text-[18px] xl:text-[18px] text-[#030303]">Сопровождение 1С</h4>
@@ -39,7 +39,7 @@ export default {
                  class="w-full h-full object-cover"
                  alt="Обновление 1С">
           </div>
-          <div class="w-full h-[155px] px-4 py-5 border border-[#5F687A] rounded-b-[10px] bg-white">
+          <div class="text w-full h-[155px] px-4 py-5 border border-[#5F687A] rounded-b-[10px] bg-white">
             <div class="flex justify-between h-full">
               <div class="w-[65%]">
                 <h4 class="font-bold text-[18px] xl:text-[18px] text-[#030303]">Сопровождение 1С</h4>
@@ -63,7 +63,7 @@ export default {
                  class="w-full h-full object-cover"
                  alt="Настройка 1С">
           </div>
-          <div class="w-full h-[155px] px-4 py-5 border border-[#5F687A] rounded-b-[10px] bg-white">
+          <div class="text w-full h-[155px] px-4 py-5 border border-[#5F687A] rounded-b-[10px] bg-white">
             <div class="flex justify-between h-full">
               <div class="w-[65%]">
                 <h4 class="font-bold text-[18px] xl:text-[18px] text-[#030303]">Сопровождение 1С</h4>
@@ -87,7 +87,7 @@ export default {
                  class="w-full h-full object-cover"
                  alt="Обучение 1С">
           </div>
-          <div class="w-full h-[155px] px-4 py-5 border border-[#5F687A] rounded-b-[10px] bg-white">
+          <div class="text w-full h-[155px] px-4 py-5 border border-[#5F687A] rounded-b-[10px] bg-white">
             <div class="flex justify-between h-full">
               <div class="w-[65%]">
                 <h4 class="font-bold text-[18px] xl:text-[18px] text-[#030303]">Сопровождение 1С</h4>
@@ -107,3 +107,19 @@ export default {
     </div>
   </section>
 </template>
+
+<style scoped>
+@media (max-width: 640px) {
+  p{
+    font-size: 10px;
+  }
+
+  h4{
+    font-size: 14px;
+  }
+
+  .text{
+    height: 135px;
+  }
+}
+</style>

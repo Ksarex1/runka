@@ -6,9 +6,11 @@ import category from "@/components/category.vue";
 import Welcome from "@/components/Welcome.vue";
 import About from "@/components/About.vue";
 import WhyWe from "@/components/WhyWe.vue";
+import Rating from "@/components/Rating.vue";
+
 export default {
   components: {
-    Header, button1, button2, category, Welcome, About,WhyWe
+    Header, button1, button2, category, Welcome, About, WhyWe, Rating
   }
 }
 </script>
@@ -16,9 +18,10 @@ export default {
 <template>
   <Header></Header>
   <Welcome></Welcome>
+  <WhyWe/>
   <category></category>
   <About></About>
-  <WhyWe/>
+  <Rating/>
 
 </template>
 

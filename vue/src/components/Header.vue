@@ -22,7 +22,7 @@ watch(isOpen, (newVal) => {
 <template>
   <section class="flex flex-col">
     <div v-if="isOpen || isTransitioning"
-         class="max-[1400px]:flex flex-col bg-white p-4 absolute top-0 right-0 z-105 px-15 lg:w-2/6 items-end h-screen
+         class="max-[1400px]:flex flex-col bg-white p-4 absolute top-0 right-0 z-105 px-10 lg:w-2/6 items-end h-screen
             transition-transform duration-300 ease-in-out transform max-lg:w-4/6"
          :class="isOpen ? 'translate-x-0' : 'translate-x-full'">
 

@@ -12,8 +12,6 @@ export default {
 button{
   background-color: #005DFF;
   color: white;
-  width: 190px;
-  height: 48px;
   border-radius: 12px;
   cursor: pointer;
   font-weight: bold;

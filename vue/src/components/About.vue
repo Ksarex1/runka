@@ -10,49 +10,21 @@ export default {
 </script>
 
 <template>
-<section>
-  <div class="container">
-    <div class="left">
-      <h2>Подробнее О Компании</h2>
-      <p class="mt-4 mb-7.5">Компания «Руна С» основана в 2002 году консультантами по бюджетному учету, имеющими опыт внедрения бюджетных проектов с 1997 года.</p>
-      <img src="../assets/img/about-1.png">
-    </div>
-    <div class="right">
-      <img src="../assets/img/about-2.png">
-      <p class="mt-7.5 mb-11">Постоянное повышение квалификации позволяет нам быть всегда в центре событий, происходящих в бюджетной сфере. Наши специалисты разговаривают с бухгалтерами на одном языке.</p>
-      <div class="buttons">
-        <button1 style="width: 258px; height: 49px;">Заказать консультацию</button1>
-        <button2 class="ml-6" style="width: 142px; height: 49px;">Подробнее</button2>
+  <section class="mt-[300px] bg-[#EFF3FA] py-[100px] px-[100px]">
+    <div class="container flex items-center justify-between">
+      <div class="w-[49%]">
+        <h2 class="text-[36px] font-bold">Подробнее О Компании</h2>
+        <p class="mt-[20px] mb-[30px] text-[20px] text-[#5F687A]">Компания «Руна С» основана в 2002 году консультантами по бюджетному учету, имеющими опыт внедрения бюджетных проектов с 1997 года.</p>
+        <img src="../assets/img/about-1.png" alt="О компании 1">
+      </div>
+      <div class="w-[49%]">
+        <img src="../assets/img/about-2.png" alt="О компании 2">
+          <p class="mt-[30px] mb-[45px] text-[20px] text-[#5F687A]">Постоянное повышение квалификации позволяет нам быть всегда в центре событий, происходящих в бюджетной сфере. Наши специалисты разговаривают с бухгалтерами на одном языке.</p>
+          <div class="flex">
+            <button1 style="width: 258px; height: 49px;">Заказать консультацию</button1>
+            <button2 style="width: 142px; height: 49px;" class="ml-6">Подробнее</button2>
+          </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 </template>
-
-<style scoped>
-section{
-  margin-top: 300px;
-  background-color: #EFF3FA;
-  padding: 100px;
-}
-
-h2{
-  font-size: 36px;
-  font-weight: bold;
-}
-
-p{
-  font-size: 20px;
-  color: #5F687A;
-}
-
-.container{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.left, .right{
-  width: 49%;
-}
-</style>

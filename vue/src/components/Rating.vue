@@ -1,5 +1,5 @@
 <template>
-  <section class="">
+  <section class="mt-[100px]">
     <div class="container relative">
 
       <div class="mb-13 flex justify-between items-center flex-wrap gap-4">
@@ -9,7 +9,7 @@
         <div class="flex gap-2">
           <button
               ref="prevEl"
-              class="w-13 h-13 rounded-full border border-black bg-white text-black flex items-center justify-center hover:bg-gray-200 transition"
+              class="w-13 h-13 rounded-full border border-[#030303] bg-white text-[#030303] flex items-center justify-center hover:bg-gray-200 transition"
           >
             <svg class="w-5 h-5" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24">
               <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />

@@ -16,7 +16,7 @@ export default {
                class="w-full h-full object-cover"
                alt="Сопровождение 1С">
         </div>
-        <div class="text w-full h-[165px] px-4 py-5 bg-white">
+        <div class="text w-full h-[170px] px-4 py-5 bg-white">
           <div class="flex justify-between flex-col h-full">
             <div>
               <h4 class="font-medium text-[18px] xl:text-[18px] text-[#030303]">С Праздником Весны!</h4>
@@ -42,7 +42,7 @@ export default {
                class="w-full h-full object-cover"
                alt="Сопровождение 1С">
         </div>
-        <div class="text w-full h-[165px] px-4 py-5 bg-white">
+        <div class="text w-full h-[170px] px-4 py-5 bg-white">
           <div class="flex justify-between flex-col h-full">
             <div>
               <h4 class="font-medium text-[18px] xl:text-[18px] text-[#030303]">Предложение на 2025 год от Клуба Уникальных Бухгалтеров и Консультантов «Будь в курсе»</h4>
@@ -65,7 +65,7 @@ export default {
                class="w-full h-full object-cover"
                alt="Сопровождение 1С">
         </div>
-        <div class="text w-full h-[165px] px-4 py-5 bg-white">
+        <div class="text w-full h-[170px] px-4 py-5 bg-white">
           <div class="flex justify-between flex-col h-full">
             <div>
               <h4 class="font-medium text-[18px] xl:text-[18px] text-[#030303]">С Новым 2025 годом и Рождеством!</h4>
@@ -91,7 +91,7 @@ export default {
                class="w-full h-full object-cover"
                alt="Сопровождение 1С">
         </div>
-        <div class="text w-full h-[165px] px-4 py-5 bg-white">
+        <div class="text w-full h-[170px] px-4 py-5 bg-white">
           <div class="flex justify-between flex-col h-full">
             <div>
               <h4 class="font-medium text-[18px] xl:text-[18px] text-[#030303]">Проверка информационной базы</h4>

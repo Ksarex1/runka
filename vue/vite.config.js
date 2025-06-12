@@ -12,7 +12,7 @@ export default defineConfig({
     vueDevTools(),
     tailwindcss(),
   ],
-  base: '/my-vue-app/',
+  base: '/runka/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

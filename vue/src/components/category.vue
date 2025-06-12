@@ -7,6 +7,7 @@ export default {
 <template>
   <section class="mt-[100px] px-4 sm:px-6 lg:px-8 xl:px-0">
     <div class="container mx-auto">
+      <h2 class="text-[36px] font-medium mb-10  text-[#030303]">Популярные категории</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
         <!-- Карточка 1 -->
         <div class="relative w-full sm:w-[320px] lg:w-[330px] xl:w-[320px] h-[365px]">
@@ -110,6 +111,9 @@ export default {
 
 <style scoped>
 @media (max-width: 640px) {
+  h2{
+    font-size: 30px;
+  }
   p{
     font-size: 10px;
   }

@@ -13,7 +13,7 @@ export default {
   <section class="mt-[300px] bg-[#EFF3FA] py-[100px] px-4 sm:px-8 md:px-20 lg:px-[100px]">
     <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
       <div class="w-full lg:w-[49%]">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Подробнее О Компании</h2>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold  text-[#030303]">Подробнее О Компании</h2>
         <p class="mt-5 mb-6 sm:mt-[20px] sm:mb-[30px] text-base sm:text-[16px] text-[#5F687A]">
           Компания «Руна С» основана в 2002 году консультантами по бюджетному учету, имеющими опыт внедрения бюджетных проектов с 1997 года.
         </p>

@@ -8,7 +8,7 @@
       <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 md:gap-6 md:items-center">
 
         <div class="md:col-span-5 flex flex-col items-center text-center md:items-start md:text-left mt-8 md:mt-0">
-          <h1 class="mb-4 text-[32px] sm:text-[40px] md:text-[50px] leading-tight max-md:leading-10">
+          <h1 class="mb-4 text-[32px] sm:text-[40px] md:text-[50px] leading-tight max-md:leading-10 text-[#030303]">
             Точные решения<br> для эффективной бухгалтерии
           </h1>
           <p class="text-[16px] md:text-[18px] text-primary3 mb-6 md:mb-15">

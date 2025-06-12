@@ -38,11 +38,11 @@ watch(isOpen, (newVal) => {
       </svg>
 
       <ul class="flex flex-col gap-4 text-end border-t border-gray-400 w-full pt-5">
-        <li>О нас</li>
-        <li>События</li>
-        <li>Продукты</li>
-        <li>Услуги</li>
-        <li>Контакты</li>
+        <li class="text-[#030303]">О нас</li>
+        <li class="text-[#030303]">События</li>
+        <li class="text-[#030303]">Продукты</li>
+        <li class="text-[#030303]">Услуги</li>
+        <li class="text-[#030303]">Контакты</li>
       </ul>
     </div>
     <div class="bg-primary w-full flex justify-center">
@@ -155,7 +155,7 @@ watch(isOpen, (newVal) => {
             </li>
             <li class="group relative">
               <p>Контакты</p>
-              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50">
+              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-[#030303] p-2 rounded shadow-lg mt-2 w-48 z-50">
                 <p>Телефон</p>
                 <p>Email</p>
                 <p>Адрес</p>
@@ -180,7 +180,7 @@ watch(isOpen, (newVal) => {
 
     </div>
     <div v-if="isOpen"
-         class="fixed inset-0 z-100 bg-black/55 backdrop-blur-[2px]"
+         class="fixed inset-0 z-100 bg-[#030303]/55 backdrop-blur-[2px]"
          @click="isOpen = false">
     </div>
   </section>

@@ -6,9 +6,10 @@ import category from "@/components/category.vue";
 import Welcome from "@/components/Welcome.vue";
 import About from "@/components/About.vue";
 import WhyWe from "@/components/WhyWe.vue";
+import News from "@/components/News.vue";
 export default {
   components: {
-    Header, button1, button2, category, Welcome, About,WhyWe
+    Header, button1, button2, category, Welcome, About, WhyWe, News
   }
 }
 </script>
@@ -19,6 +20,7 @@ export default {
   <category></category>
   <About></About>
   <WhyWe/>
+  <News/>
 
 </template>
 

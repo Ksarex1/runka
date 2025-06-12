@@ -3,7 +3,7 @@
     <div class="container">
 
       <div class="text-center">
-        <h2 class="text-4xl font-bold mb-2.5  text-[#030303]">Почему выбирают Руна С</h2>
+        <h2 class="text-4xl font-bold mb-2.5">Почему выбирают Руна С</h2>
         <p class="mb-10 text-gray-500">Мы помогаем расти бизнесу с 2002 года</p>
       </div>
 

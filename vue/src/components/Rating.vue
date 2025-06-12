@@ -3,16 +3,16 @@
     <div class="container relative">
 
       <div class="mb-13 flex justify-between items-center flex-wrap gap-4">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-left">
+        <h2 class="text-3xl md:text-4xl font-bold text-left">
           Что о нас говорят наши клиенты
         </h2>
-        <div class="flex gap-2">
+        <div class="md:flex gap-2 hidden ">
           <button
               ref="prevEl"
               class="w-13 h-13 rounded-full border border-[#030303] bg-white text-[#030303] flex items-center justify-center hover:bg-gray-200 transition"
           >
             <svg class="w-5 h-5" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
 
@@ -21,7 +21,7 @@
               class="w-13 h-13 rounded-full border border-blue-600 bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition"
           >
             <svg class="w-5 h-5" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
 
@@ -36,16 +36,21 @@
           :autoplay="{ delay: 3000, disableOnInteraction: false }"
           :navigation="{ prevEl: prevEl, nextEl: nextEl }"
           class="mySwiper"
+          :breakpoints="breakpoints"
       >
         <SwiperSlide v-for="(item, index) in slides" :key="index">
           <div
-              class="slide-item pt-15 px-13 border border-primary3 h-100"
+              class="slide-item pt-15 px-13 border border-primary3 h-100 max-sm:px-5 "
               :class="index % 2 === 0 ? 'bg-gray-100' : 'bg-primary-dull'"
           >
-            <div class="flex justify-between mb-8.5">
-              <div class="flex items-center gap-5">
-                <img class="rounded-full w-25 h-25" :src="item.avatar" alt="people" />
-                <div>
+            <div class="flex justify-between mb-8.5 max-md:items-center max-sm:items-start">
+              <div class="flex gap-5 max-sm:flex-col max-sm:items-start">
+                <img
+                    class="rounded-full w-25 h-25 max-sm:w-15 max-sm:h-15"
+                    :src="item.avatar"
+                    alt="people"
+                />
+                <div class="max-sm:text-left">
                   <p
                       class="text-[20px] author"
                       :class="index % 2 === 0 ? 'text-primary-black' : 'text-white'"
@@ -60,7 +65,8 @@
                   </p>
                 </div>
               </div>
-              <img :src="item.image" alt="comment" class="w-20 h-20"/>
+
+              <img :src="item.image" alt="comment" class="w-20 h-20 max-md:w-10 max-md:h-10 "/>
             </div>
             <div>
               <p
@@ -87,9 +93,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Autoplay, Navigation } from 'swiper/modules';
+import {ref, onMounted} from 'vue';
+import {Swiper, SwiperSlide} from 'swiper/vue';
+import {Autoplay, Navigation} from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -148,6 +154,15 @@ const slides = [
     rating: 5,
   },
 ];
+
+const breakpoints = {
+  0: {
+    slidesPerView: 1,
+  },
+  900: {
+    slidesPerView: 2
+  }
+};
 </script>
 
 <style>

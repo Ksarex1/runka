@@ -10,7 +10,7 @@
       <div class="slider-container">
         <Swiper
             :slides-per-view="1"
-            :space-between="30"
+            :space-between="20"
             :loop="false"
             :autoplay="{ delay: 3000, disableOnInteraction: false }"
             :pagination="{ clickable: true }"
@@ -19,7 +19,7 @@
           <SwiperSlide v-for="(group, index) in slideGroups" :key="index">
             <div class="slide-group">
               <div v-for="(item, idx) in group" :key="idx" class="slide-item">
-                <img :src="item.image" alt="Slide" class="slide-image"/>
+                <img :src="item.image" alt="Slide" class="slide-image max-sm:scale-75" />
                 <p class="slide-title text-primary3">{{ item.title }}</p>
               </div>
             </div>
@@ -27,6 +27,7 @@
 
           <div class="swiper-pagination" slot="pagination"></div>
         </Swiper>
+
       </div>
 
     </div>
@@ -35,9 +36,10 @@
 </template>
 
 <script setup>
-import {Swiper, SwiperSlide} from 'swiper/vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
-import {Autoplay, Pagination} from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -49,22 +51,46 @@ import slide2 from '../assets/img/slide2.png';
 import slide3 from '../assets/img/slide3.png';
 
 const slides = [
-  {image: slide1, title: 'Опыт 10+ лет'},
-  {image: slide2, title: 'Индивидуальный подход'},
-  {image: slide3, title: 'Быстрое внедрение'},
-  {image: slide1, title: 'Повтор 1'},
-  {image: slide2, title: 'Повтор 2'},
-  {image: slide3, title: 'Повтор 3'},
-  {image: slide1, title: 'Повтор 1'},
-  {image: slide2, title: 'Повтор 2'},
-  {image: slide3, title: 'Повтор 3'},
+  { image: slide1, title: 'Опыт 10+ лет' },
+  { image: slide2, title: 'Индивидуальный подход' },
+  { image: slide3, title: 'Быстрое внедрение' },
+  { image: slide1, title: 'Повтор 1' },
+  { image: slide2, title: 'Повтор 2' },
+  { image: slide3, title: 'Повтор 3' },
+  { image: slide1, title: 'Повтор 1' },
+  { image: slide2, title: 'Повтор 2' },
+  { image: slide3, title: 'Повтор 3' },
 ];
 
-const slideGroups = [];
-for (let i = 0; i < slides.length; i += 3) {
-  slideGroups.push(slides.slice(i, i + 3));
+const slideGroups = ref([]);
+
+function groupSlides(chunkSize) {
+  const groups = [];
+  for (let i = 0; i < slides.length; i += chunkSize) {
+    groups.push(slides.slice(i, i + chunkSize));
+  }
+  slideGroups.value = groups;
 }
+
+function updateGroupsBasedOnWidth() {
+  const width = window.innerWidth;
+  if (width <= 400) {
+    groupSlides(2); // по 2 элемента
+  } else {
+    groupSlides(3); // по 3 элемента
+  }
+}
+
+onMounted(() => {
+  updateGroupsBasedOnWidth();
+  window.addEventListener('resize', updateGroupsBasedOnWidth);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateGroupsBasedOnWidth);
+});
 </script>
+
 
 <style scoped>
 .slider-container {

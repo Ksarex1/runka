@@ -11,7 +11,7 @@ watch(isOpen, (newVal) => {
   } else {
     setTimeout(() => {
       isTransitioning.value = false
-    }, 300) // Длительность transition
+    }, 300)
     document.body.style.overflow = ''
   }
 })
@@ -73,7 +73,7 @@ watch(isOpen, (newVal) => {
             </div>
 
             <div class="custom-select relative sm:flex items-center hidden">
-              <select class="bg-white text-primary-black w-30 appearance-none pl-7 text-sm">
+              <select class="bg-white text-primary-black w-30 appearance-none pl-7 text-sm cursor-pointer">
                 <option value="">русский</option>
                 <option value="">english</option>
               </select>
@@ -81,14 +81,18 @@ watch(isOpen, (newVal) => {
           </div>
 
           <div class="gap-8 flex text-sm ">
-            <button
-                class="shadow-lg bg-white text-primary-black font-semibold px-6.25 py-1 rounded-md cursor-pointer hover:bg-gray-300 transition">
-              Войти
-            </button>
-            <button
-                class="shadow-lg hidden lg:block text-white px-6.25 py-1 font-semibold rounded-md border-white border cursor-pointer hover:text-primary-black hover:bg-white transition">
-              Регистрация
-            </button>
+            <router-link to="/login">
+              <button
+                  class="shadow-lg bg-white text-primary-black font-semibold px-6.25 py-1 rounded-md cursor-pointer hover:bg-gray-300 transition">
+                Войти
+              </button>
+            </router-link>
+            <router-link to="/register">
+              <button
+                  class="shadow-lg hidden lg:block text-white px-6.25 py-1 font-semibold rounded-md border-white border cursor-pointer hover:text-primary-black hover:bg-white transition">
+                Регистрация
+              </button>
+            </router-link>
           </div>
 
         </div>

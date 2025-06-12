@@ -15,7 +15,7 @@
             class="acc shadow-xl w-[1196px] lg:w-[1000px] md:w-[700px] sm:w-[600px] border border-[#5F687A] rounded-[15px] overflow-hidden mb-4"
         >
           <button
-              class="accordion-header w-full xl:h-[100px] sm:h-[75px] px-6 py-4 flex justify-between items-center text-left"
+              class="accordion-header w-full xl:h-[100px] sm:h-[75px] px-6 py-4 pb-3 flex justify-between items-center text-left"
               @click="toggleAccordion(index)"
               :aria-expanded="accordion.isOpen"
           >

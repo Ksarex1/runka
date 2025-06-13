@@ -10,7 +10,7 @@ export default {
     <h2 class="text-[36px] font-medium mb-10  text-[#030303]">Последние новости</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
       <!-- Карточка 1 -->
-      <div class="relative w-full sm:w-[320px] lg:w-[330px] xl:w-[342px] h-[365px]">
+      <div class="drop-shadow-xl relative w-full sm:w-[320px] lg:w-[330px] xl:w-[342px] h-[365px]">
         <div class="w-full h-[210px] overflow-hidden">
           <img src="../assets/img/news-1.png"
                class="w-full h-full object-cover"
@@ -36,7 +36,7 @@ export default {
       </div>
 
       <!-- Карточка 2 -->
-      <div class="relative w-full sm:w-[320px] lg:w-[330px] xl:w-[342px] h-[365px]">
+      <div class="drop-shadow-xl relative w-full sm:w-[320px] lg:w-[330px] xl:w-[342px] h-[365px]">
         <div class="w-full h-[210px] overflow-hidden">
           <img src="../assets/img/news-2.png"
                class="w-full h-full object-cover"
@@ -59,7 +59,7 @@ export default {
       </div>
 
       <!-- Карточка 3 -->
-      <div class="relative w-full sm:w-[320px] lg:w-[330px] xl:w-[342px] h-[365px]">
+      <div class="drop-shadow-xl relative w-full sm:w-[320px] lg:w-[330px] xl:w-[342px] h-[365px]">
         <div class="w-full h-[210px] overflow-hidden">
           <img src="../assets/img/news-3.png"
                class="w-full h-full object-cover"
@@ -85,7 +85,7 @@ export default {
       </div>
 
       <!-- Карточка 4 -->
-      <div class="relative w-full sm:w-[320px] lg:w-[330px] xl:w-[342px] h-[365px]">
+      <div class="drop-shadow-xl relative w-full sm:w-[320px] lg:w-[330px] xl:w-[342px] h-[365px]">
         <div class="w-full h-[210px] overflow-hidden">
           <img src="../assets/img/news-4.png"
                class="w-full h-full object-cover"

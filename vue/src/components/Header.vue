@@ -106,7 +106,9 @@ watch(isOpen, (newVal) => {
 
 
         <div>
-          <img src="../assets/img/logo.png" alt="logo">
+          <router-link to="/">
+            <img src="../assets/img/logo.png" alt="logo">
+          </router-link>
         </div>
 
         <div class="flex items-center">

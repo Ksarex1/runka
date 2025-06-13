@@ -1,10 +1,10 @@
 <template>
-  <section class="mt-[100px] p-[50px]">
+  <section class="mt-[100px] p-[50px] bg-[#EFF3FA] mb-[100px]">
     <div class="container flex flex-col justify-center items-center">
       <div class="text w-full md:w-[60%] text-center">
-        <h2 class="text-[#030303] text-3xl md:text-[36px]">Часто Задаваемые Вопросы</h2>
+        <h2 class="font-bold text-[#030303] text-3xl md:text-[36px]">Часто Задаваемые Вопросы</h2>
         <p class="text-[#5F687A] text-base md:text-[18px] mt-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
         </p>
       </div>
 
@@ -38,7 +38,7 @@
           >
             <div
                 v-show="accordion.isOpen"
-                class="accordion-content bg-white px-6 pb-4 text-[18px] sm:text-[14px] text-[#5F687A] whitespace-normal break-words"
+                class="accordion-content bg-[#EFF3FA] px-6 pb-4 text-[18px] sm:text-[14px] text-[#5F687A] whitespace-normal break-words"
             >
               {{ accordion.content }}
             </div>

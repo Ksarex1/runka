@@ -8,10 +8,10 @@ import FAQ from "@/components/FAQ.vue";
 import News from "@/components/News.vue";
 import Rating from "@/components/Rating.vue";
 import Header from "@/components/Header.vue";
-
+import Contacts from "@/components/Contacts.vue";
 export default {
   name: "Home",
-  components: {Header, Rating, News, FAQ, Footer, category, About, WhyWe, Welcome}
+  components: {Header, Rating, News, FAQ, Footer, category, About, WhyWe, Welcome, Contacts}
 }
 </script>
 
@@ -23,6 +23,7 @@ export default {
   <WhyWe/>
   <News/>
   <Rating/>
+  <Contacts/>
   <FAQ/>
   <Footer/>
 </template>

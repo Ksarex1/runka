@@ -1,11 +1,38 @@
-<script>
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import axios from 'axios'
 import Header from '../components/Header.vue'
+import { setUser } from '../auth.js' // 👈 если используешь глобального пользователя
 
-export default {
-  name: 'Login',
-  components: { Header },
+const router = useRouter()
+
+const email = ref('')
+const password = ref('')
+const errorMessage = ref('')
+
+const onSubmit = async () => {
+  try {
+    errorMessage.value = ''
+    const { data } = await axios.post('http://localhost:4444/auth/login', {
+      email: email.value,
+      password: password.value,
+    })
+
+    localStorage.setItem('token', data.token)
+    axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`
+
+    // ⚠️ получаем текущего пользователя
+    const me = await axios.get('http://localhost:4444/auth/me')
+    setUser(me.data)
+
+    router.push('/')
+  } catch (err) {
+    errorMessage.value = err.response?.data?.message || err.message
+  }
 }
 </script>
+
 
 <template>
   <Header />
@@ -20,12 +47,13 @@ export default {
           <router-link to="/register" class="text-blue-600 hover:underline">Зарегистрироваться</router-link>
         </p>
 
-        <form class="space-y-5 mt-10 w-[550px] max-lg:w-full">
+        <form @submit.prevent="onSubmit" class="space-y-5 mt-10 w-[550px] max-lg:w-full">
           <div>
             <label for="email" class="block text-[16px] font-medium mb-2 ">Почта</label>
             <input
                 type="email"
                 id="email"
+                v-model="email"
                 placeholder="roma@gmail.com"
                 class="w-full border rounded px-3 py-2 border-primary3"
                 required
@@ -37,13 +65,14 @@ export default {
             <input
                 type="password"
                 id="password"
+                v-model="password"
                 placeholder="********"
                 class="w-full border rounded px-3 py-2 border-primary3"
                 required
 
             />
           </div>
-
+          <p v-if="errorMessage" class="text-red-600 mb-4">{{ errorMessage }}</p>
           <button
               type="submit"
               class="bg-primary2 text-white py-4 rounded hover:bg-blue-700 transition w-full cursor-pointer"

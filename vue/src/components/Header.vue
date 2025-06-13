@@ -1,5 +1,6 @@
 <script setup>
 import {ref, watch} from 'vue'
+import { user, isAuthenticated, logout } from '../auth.js'
 
 const isOpen = ref(false)
 const isTransitioning = ref(false)
@@ -15,6 +16,10 @@ watch(isOpen, (newVal) => {
     document.body.style.overflow = ''
   }
 })
+
+const handleLogout = () => {
+  logout()
+}
 
 
 </script>
@@ -80,19 +85,20 @@ watch(isOpen, (newVal) => {
             </div>
           </div>
 
-          <div class="gap-8 flex text-sm ">
-            <router-link to="/login">
-              <button
-                  class="shadow-lg bg-white text-primary-black font-semibold px-6.25 py-1 rounded-md cursor-pointer hover:bg-gray-300 transition">
-                Войти
-              </button>
-            </router-link>
-            <router-link to="/register">
-              <button
-                  class="shadow-lg hidden lg:block text-white px-6.25 py-1 font-semibold rounded-md border-white border cursor-pointer hover:text-primary-black hover:bg-white transition">
-                Регистрация
-              </button>
-            </router-link>
+          <div class="flex items-center gap-4">
+            <template v-if="isAuthenticated">
+              <router-link to="/me">
+                <img src="@/assets/img/profileImg.jpg" class="w-8 h-8 rounded-full" alt="avatar" />
+              </router-link>
+              <router-link to="/cart">
+                <img src="@/assets/img/Cart.svg" class="w-6 h-6" alt="cart" />
+              </router-link>
+              <button @click="logout" class="cursor-pointer text-sm text-white bg-red-500 py-1.25 px-4 rounded-lg hover:bg-red-900 ml-3">Выйти</button>
+            </template>
+            <template v-else>
+              <router-link to="/login" class="text-sm bg-white text-black font-medium px-5 py-1 rounded-lg shadow-2xl hover:bg-gray-300 transition">Войти</router-link>
+              <router-link to="/register" class="text-sm  text-white border border-white font-medium px-5 py-1 rounded-lg shadow-2xl hover:bg-blue-900 hover:text-white transition">Регистрация</router-link>
+            </template>
           </div>
 
         </div>

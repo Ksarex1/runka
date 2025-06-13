@@ -14,14 +14,39 @@ export default {
       consent1: false,
       consent2: false,
       checkboxActive,
-      checkboxInactive
+      checkboxInactive,
+      fullName: '',
+      email: '',
+      phone: '',
+      company: '',
+      message: ''
     }
   },
   methods: {
     toggleConsent(which) {
       this[which] = !this[which]
+    },
+    checkConsents(e) {
+      if (!this.consent1 || !this.consent2) {
+        e.preventDefault()
+        alert("Пожалуйста, подтвердите согласия перед отправкой.")
+      }
+    }
+  },
+  computed: {
+    isFormValid() {
+      return (
+          this.consent1 &&
+          this.consent2 &&
+          this.fullName.trim() &&
+          this.email.trim() &&
+          this.phone.trim() &&
+          this.message.trim()
+      );
     }
   }
+
+
 }
 </script>
 
@@ -61,27 +86,30 @@ export default {
     </div>
 
     <div class="formaa bg-white 2xl:mt-[0px] sm:mt-[50px] 2xl:w-[830px] h-[701px] rounded-[35px] 2xl:px-[96px] md:pt-[70px] sm:pt-[40px] xl:w-[600px] lg:w-[800px] xl:px-[40px] lg:px-[40px] md:px-[30px] sm:px-[20px]">
-      <form class="flex flex-wrap justify-between">
+      <form @submit="checkConsents" class="flex flex-wrap justify-between"   action="https://api.web3forms.com/submit"   method="POST">
+        <input type="hidden" name="access_key" value="9cb6669d-5c6c-4291-a244-d0f400aa8063" />
+        <input type="hidden" name="subject" value="Новая заявка с сайта" />
+        <input type="hidden" name="from_name" value="Runa Contact Form" />
         <div class="inp sm:w-[45%]">
           <p class="2xl:text-[20px] xl:text-[18px] sm:text-[16px] font-bold">Полное имя</p>
-          <input class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[12px]" placeholder="Дмитрий Кучеров...">
+          <input v-model="fullName" name="name" class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[14px]" placeholder="Дмитрий Кучеров...">
         </div>
         <div class="inp sm:w-[45%]">
           <p class="2xl:text-[20px] xl:text-[18px] sm:text-[16px] font-bold">Адрес эл. почты</p>
-          <input class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[12px]" placeholder="example@mail.ru">
+          <input v-model="email" name="email" class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[14px]" placeholder="example@mail.ru">
         </div>
         <div class="inp mt-[40px] sm:w-[45%]">
           <p class="2xl:text-[20px] xl:text-[18px] sm:text-[16px] font-bold">Номер телефона</p>
-          <input class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[12px]" placeholder="(123) 456 78-90">
+          <input v-model="phone" name="phone" class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[14px]" placeholder="(123) 456 78-90">
         </div>
         <div class="inp mt-[40px] sm:w-[45%]">
           <p class="2xl:text-[20px] xl:text-[18px] sm:text-[16px] font-bold">Название компании</p>
-          <input class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[12px]" placeholder="Руна С">
+          <input v-model="company" name="company" class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[14px]" placeholder="Руна С">
         </div>
 
         <div class="inp mt-[40px] w-[100%]">
           <p class="2xl:text-[20px] xl:text-[18px] font-bold">Сообщение</p>
-          <textarea class="inp-sms 2xl:w-[634px] xl:w-[100%] sm:w-[100%] md:h-[190px] sm:h-[150px] rounded-[13px] border border-[#5F687A] pl-[20px] pr-[20px] pt-[10px] mt-[15px] text-[#5F687A] text-[12px]" placeholder="Введите ваше сообщение здесь..."></textarea>
+          <textarea v-model="message" name="message" class="inp-sms 2xl:w-[634px] xl:w-[100%] sm:w-[100%] md:h-[190px] sm:h-[150px] rounded-[13px] border border-[#5F687A] pl-[20px] pr-[20px] pt-[10px] mt-[15px] text-[#5F687A] text-[14px]" placeholder="Введите ваше сообщение здесь..."></textarea>
         </div>
 
         <div class="checkboxes">
@@ -112,7 +140,7 @@ export default {
           </div>
         </div>
 
-        <Button1 class="btn-form md:w-[201px] md:h-[56px] mt-[27px] md:text-[20px] sm:w-[180px] sm:h-[40px] sm:text-[16px] font-bold" type="button">Отправить</Button1>
+        <Button1 :disabled="!isFormValid" class="btn-form md:w-[201px] md:h-[56px] mt-[27px] md:text-[20px] sm:w-[180px] sm:h-[40px] sm:text-[16px] font-bold" type="submit">Отправить</Button1>
 
       </form>
     </div>
@@ -126,6 +154,10 @@ export default {
   white-space: pre-wrap;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 @media (min-width: 640px) {

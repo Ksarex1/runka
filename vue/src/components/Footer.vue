@@ -26,7 +26,7 @@ const pages = [
 <template>
   <footer class="bg-primary-dull text-white">
     <!-- Верхняя часть футера -->
-    <div class="container max-w-[1440px] mx-auto px-5 py-16">
+    <div class="container max-w-[1440px] mx-auto px-5 py-5">
       <div class="flex flex-col lg:flex-row justify-between gap-10  py-10 items-center">
         <!-- Логотип и кнопки -->
         <div class="w-full lg:w-[235px] max-lg:flex max-lg:flex-col max-lg:items-center max-lg:text-center">

@@ -46,7 +46,7 @@ export default {
 
           <button
               type="submit"
-              class="bg-blue-600 text-white py-4 rounded hover:bg-blue-700 transition w-full cursor-pointer"
+              class="bg-primary2 text-white py-4 rounded hover:bg-blue-700 transition w-full cursor-pointer"
           >
             Войти в аккаунт
           </button>

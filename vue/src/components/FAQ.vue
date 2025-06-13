@@ -1,5 +1,5 @@
 <template>
-  <section class="mt-[100px] p-[50px] bg-[#EFF3FA] mb-[100px]">
+  <section class="2xl:mt-[200px] xl:mt-[250px] lg:mt-[650px] md:mt-[700px] sm:mt-[600px] p-[50px] bg-[#EFF3FA] mb-[100px]">
     <div class="container flex flex-col justify-center items-center">
       <div class="text w-full md:w-[60%] text-center">
         <h2 class="font-bold text-[#030303] text-3xl md:text-[36px]">Часто Задаваемые Вопросы</h2>

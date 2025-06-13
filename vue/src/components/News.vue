@@ -8,7 +8,7 @@ export default {
 <section class="mt-[100px]">
   <div class="container">
     <h2 class="text-[36px] font-medium mb-10  text-[#030303]">Последние новости</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-10">
       <!-- Карточка 1 -->
       <div class="drop-shadow-xl relative w-full sm:w-[320px] lg:w-[330px] xl:w-[342px] h-[365px]">
         <div class="w-full h-[210px] overflow-hidden">

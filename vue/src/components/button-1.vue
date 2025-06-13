@@ -12,6 +12,7 @@ export default {
 button{
   background-color: #005DFF;
   color: white;
+  padding: 10px;
   border-radius: 12px;
   cursor: pointer;
   font-weight: bold;

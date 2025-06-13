@@ -38,7 +38,7 @@ watch(isOpen, (newVal) => {
       </svg>
 
       <ul class="flex flex-col gap-4 text-end border-t border-gray-400 w-full pt-5">
-        <li class="text-[#030303]">О нас</li>
+        <router-link to="/about"><li class="text-[#030303]">О нас</li></router-link>
         <li class="text-[#030303]">События</li>
         <li class="text-[#030303]">Продукты</li>
         <li class="text-[#030303]">Услуги</li>
@@ -115,7 +115,7 @@ watch(isOpen, (newVal) => {
 
           <ul class="main flex gap-9 max-[1400px]:hidden">
             <li class="group relative">
-              <p>О нас</p>
+              <router-link to="/about"><p>О нас</p></router-link>
               <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-35 z-50">
                 <p class="mt-2">О компании</p>
                 <p>Наша миссия</p>

@@ -122,10 +122,12 @@ const handleLogout = () => {
           <ul class="main flex gap-9 max-[1400px]:hidden">
             <li class="group relative">
               <router-link to="/about"><p>О нас</p></router-link>
-              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-35 z-50">
-                <p class="mt-2">О компании</p>
-                <p>Наша миссия</p>
-                <p>Команда</p>
+              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-50 z-50">
+                <router-link to="/statys"><p class="mt-2">Статусы и сертификаты компании</p></router-link>
+                <router-link to="/blagodar_letter"><p>Благодарственные письма</p></router-link>
+                <router-link to="/rabota_runa"><p>Работа в Руна С</p></router-link>
+                <router-link to="/politika"><p>Политика в отношении обработки ПДн</p></router-link>
+                <router-link to="/soglasie"><p>Согласие на обработку ПДн</p></router-link>
               </ul>
             </li>
             <li class="group relative">

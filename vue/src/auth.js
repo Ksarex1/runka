@@ -16,7 +16,6 @@ export const logout = () => {
     delete axios.defaults.headers.common['Authorization']
 }
 
-// 🆕 Проверка при загрузке страницы:
 const token = localStorage.getItem('token')
 
 if (token) {

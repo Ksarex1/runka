@@ -93,4 +93,7 @@ export const UserController = {
             res.status(500).json({ message: "Нет доступа" });
         }
     },
+
 };
+
+

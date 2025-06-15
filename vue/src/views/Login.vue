@@ -37,7 +37,7 @@ const onSubmit = async () => {
 <template>
   <Header />
 
-  <section class=" min-h-[calc(100vh-115px)] flex justify-center items-center">
+  <section class="min-h-[calc(100vh-115px)] flex justify-center items-center">
     <div class="container mx-auto flex flex-col lg:flex-row items-center gap-20 justify-between">
 
       <div class="w-full md:w-3/6 max-lg:w-full">

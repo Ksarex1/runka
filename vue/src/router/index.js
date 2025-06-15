@@ -11,6 +11,7 @@ import Rabota_runa from "@/views/Rabota_runa.vue";
 import Vakansii from "@/views/Vakansii.vue";
 import Politika from "@/views/Politika.vue";
 import Soglasie from "@/views/Soglasie.vue";
+import Cart from "@/views/Cart.vue";
 
 import { isAuthenticated } from '../auth.js';
 
@@ -27,6 +28,7 @@ const routes = [
     { path: '/vakansii', component: Vakansii },
     { path: '/politika', component: Politika },
     { path: '/soglasie', component: Soglasie },
+    { path: '/cart', component: Cart },
 ];
 
 const router = createRouter({

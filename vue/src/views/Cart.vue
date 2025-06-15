@@ -47,6 +47,7 @@ const totalPrice = computed(() =>
 
 <template>
   <Header/>
+  <div data-aos="fade-up">
   <section class="bg-[#f0f6ff] flex mt-17 py-10">
     <div class="container">
       <h2 class="text-[32px] md:text-[45px] font-bold mb-10">Корзина</h2>
@@ -85,6 +86,7 @@ const totalPrice = computed(() =>
       </div>
     </div>
   </section>
+  </div>
 </template>
 
 <style scoped>

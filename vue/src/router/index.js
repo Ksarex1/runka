@@ -28,6 +28,7 @@ const routes = [
     { path: '/vakansii', component: Vakansii },
     { path: '/politika', component: Politika },
     { path: '/soglasie', component: Soglasie },
+    { path: '/1c-gos', component: Soglasie },
     { path: '/cart', component: Cart },
 ];
 

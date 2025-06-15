@@ -22,7 +22,6 @@ const onSubmit = async () => {
     localStorage.setItem('token', data.token)
     axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`
 
-    // ⚠️ получаем текущего пользователя
     const me = await axios.get('http://localhost:4444/auth/me')
     setUser(me.data)
 
@@ -36,7 +35,7 @@ const onSubmit = async () => {
 
 <template>
   <Header />
-
+  <div data-aos="fade-up">
   <section class="min-h-[calc(100vh-115px)] flex justify-center items-center">
     <div class="container mx-auto flex flex-col lg:flex-row items-center gap-20 justify-between">
 
@@ -87,6 +86,7 @@ const onSubmit = async () => {
       </div>
     </div>
   </section>
+  </div>
 </template>
 
 <script setup>

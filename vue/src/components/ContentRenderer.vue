@@ -1,10 +1,10 @@
 <template>
   <Header/>
+  <div data-aos="fade-up">
   <section class="mt-[70px] mb-[70px]">
     <div class="container flex flex-col">
       <div class="head">
         <h2 class="text-[45px] font-bold border-b border-b-[#324962] border-b-[1px]">О нас</h2>
-        <!-- Мобильное меню -->
         <div class="lg:hidden mt-[21px] relative z-50">
           <button @click="menuOpen = !menuOpen" class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded shadow transition">
             <svg
@@ -112,6 +112,7 @@
     </div>
     </div>
   </section>
+  </div>
 
   <Footer/>
 </template>

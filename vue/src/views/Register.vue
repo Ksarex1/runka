@@ -37,7 +37,7 @@ const onSubmit = async () => {
 
 <template>
   <Header />
-
+  <div data-aos="fade-up">
   <section class="min-h-[calc(100vh-115px)] flex justify-center items-center">
     <div class="container mx-auto flex flex-col lg:flex-row items-center gap-20 justify-between">
 
@@ -101,6 +101,7 @@ const onSubmit = async () => {
       </div>
     </div>
   </section>
+  </div>
 </template>
 
 <style scoped>

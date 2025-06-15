@@ -1,5 +1,5 @@
 <script setup>
-import {ref, watch} from 'vue'
+import {ref, watch,computed} from 'vue'
 import { user, isAuthenticated, logout } from '../auth.js'
 
 const isOpen = ref(false)
@@ -19,6 +19,30 @@ watch(isOpen, (newVal) => {
 
 const handleLogout = () => {
   logout()
+}
+
+const searchTerm = ref('')
+
+const sections = [
+  { name: 'О нас', link: '/about' },
+  { name: 'События', link: '/contacts' },
+  { name: 'Программные продукты', link: '/contacts' },
+  { name: 'Услуги', link: '/contacts' },
+  { name: 'Контакты', link: '/contacts' },
+  { name: 'Статусы и сертификаты компании', link: '/contacts' },
+  { name: 'Благодарственные письма', link: '/contacts' },
+  { name: 'Благодарности', link: '/contacts' },
+  { name: 'Работа в Руна С', link: '/contacts' },
+  { name: 'Вакансии', link: '/contacts' },
+  { name: 'Политика в отношении обработки ПДн', link: '/contacts' },
+  { name: 'Согласие на обработку ПДн', link: '/contacts' },
+]
+
+const filteredSections = () => {
+  if (!searchTerm.value.trim()) return []
+  return sections.filter(s =>
+      s.name.toLowerCase().includes(searchTerm.value.toLowerCase())
+  )
 }
 
 
@@ -122,7 +146,7 @@ const handleLogout = () => {
           <ul class="main flex gap-9 max-[1400px]:hidden">
             <li class="group relative">
               <router-link to="/about"><p>О нас</p></router-link>
-              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-50 z-50">
+              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-50 z-50 list">
                 <router-link to="/statys"><p class="mt-2">Статусы и сертификаты компании</p></router-link>
                 <router-link to="/blagodar_letter"><p>Благодарственные письма</p></router-link>
                 <router-link to="/rabota_runa"><p>Работа в Руна С</p></router-link>
@@ -132,55 +156,72 @@ const handleLogout = () => {
             </li>
             <li class="group relative">
               <p>События</p>
-              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50">
-                <p>Актуальные события</p>
-                <p>Архив</p>
+              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
+                <p>Новости</p>
+                <p>Календарь мероприятий</p>
               </ul>
             </li>
             <li class="group relative">
               <p>Программные продукты</p>
-              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50">
-                <p>1C</p>
-                <p>CRM</p>
-                <p>ERP</p>
+              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
+                <router-link to="/1c-gos"><p>Решения 1С для государственных учреждений</p></router-link>
+                <p>Решения 1С для здравоохранения</p>
+                <p>Сервисы 1С</p>
+                <p>Клиентские лицензии 1С</p>
+                <p>Лицензии на сервер 1С</p>
               </ul>
             </li>
             <li class="group relative">
               <p>Услуги</p>
-              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50">
-                <p>Консультации</p>
-                <p>Внедрение</p>
-                <p>Поддержка</p>
+              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
+                <p>Сопровождение 1С</p>
+                <p>Центр сертифицированного обучения 1С (ЦСО)</p>
               </ul>
             </li>
             <li class="group relative">
               <p>Полезная информация</p>
-              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50">
-                <p>Статьи</p>
-                <p>Гайды</p>
+              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
+                <p>Ответы 1С  на вопросы о переходе на работу через Интернет</p>
+                <p>Тонкости учета</p>
+                <p>Актуальные релизы</p>
+                <p>Как узнать, работаете вы в типовой или измененной конфигурации</p>
               </ul>
             </li>
             <li class="group relative">
               <p>Учебный центр КУБиК</p>
-              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50">
-                <p>Курсы</p>
-                <p>Расписание</p>
+              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
+                <p>Вебинары</p>
+                <p>Курсы и практические занятия</p>
+                <p>Отзывы клиентов</p>
               </ul>
             </li>
             <li class="group relative">
               <p>Контакты</p>
-              <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-[#030303] p-2 rounded shadow-lg mt-2 w-48 z-50">
-                <p>Телефон</p>
-                <p>Email</p>
-                <p>Адрес</p>
-              </ul>
             </li>
           </ul>
         </div>
 
         <div class="flex gap-10">
-          <div class="search rounded-xl border max-sm:hidden block" style="position: relative">
-            <input type="text" placeholder="Поиск..." class="rounded-xl py-0"/>
+          <div class="relative w-64">
+            <input
+                v-model="searchTerm"
+                type="text"
+                placeholder="Поиск..."
+                class="w-full py-2 px-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+
+            />
+            <ul
+                v-if="filteredSections().length > 0"
+                class="absolute z-50 bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-y-auto w-full shadow-lg"
+            >
+              <li
+                  v-for="section in filteredSections()"
+                  :key="section.link"
+                  class="px-4 py-2 hover:bg-blue-100 cursor-pointer"
+              >
+                <router-link :to="section.link">{{ section.name }}</router-link>
+              </li>
+            </ul>
           </div>
           <button class="max-[1400px]:block hidden" @click="isOpen=!isOpen">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -203,6 +244,12 @@ const handleLogout = () => {
 </template>
 
 <style>
+.list p{
+  color: #717171;
+}
+.list p:hover{
+  color: #333333;
+}
 body{
   position: relative;
 }
@@ -287,20 +334,22 @@ li {
 }
 
 .main li::after {
-  content: ''; /* Пустое содержимое */
+  content: '';
   position: absolute;
   right: -1.1rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 1rem; /* Ширина иконки */
-  height: 1rem; /* Высота иконки */
-  background-image: url('../assets/img/Sort.svg'); /* Путь к иконке */
+  width: 1rem;
+  height: 1rem;
+  background-image: url('../assets/img/Sort.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   pointer-events: none;
 }
-
+.main li:last-child::after {
+  content: none;
+}
 ul p {
   cursor: pointer;
 }

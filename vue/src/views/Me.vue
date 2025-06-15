@@ -19,6 +19,7 @@ export default {
 
 <template>
   <Header />
+  <div data-aos="fade-up">
   <section class="mt-17 relative max-md:mb-30">
     <div class="container">
       <h1 class="text-[45px] font-bold mb-10">Личный кабинет</h1>
@@ -26,7 +27,6 @@ export default {
       <div class="border border-gray-300 rounded-2xl p-[60px] bg-[#f9fbff]">
         <div class="flex flex-col md:flex-row gap-10">
 
-          <!-- Левая колонка -->
           <div class="flex flex-col items-center w-full md:w-1/3">
             <div class="w-52 h-52 mb-6">
               <img class="rounded-full w-full h-full object-cover" src="@/assets/img/profileImg.jpg" alt="profileImg" />
@@ -36,7 +36,6 @@ export default {
             </button>
           </div>
 
-          <!-- Правая колонка -->
           <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
             <div>
               <label class="font-bold text-[20px]">Фамилия</label>
@@ -73,7 +72,6 @@ export default {
           </div>
         </div>
 
-        <!-- Кнопка изменения -->
         <div class="mt-10 text-center absolute left-1/2 transform -translate-x-1/2">
           <button
               @click="toggleEdit"
@@ -85,6 +83,7 @@ export default {
       </div>
     </div>
   </section>
+  </div>
 </template>
 
 <style scoped>

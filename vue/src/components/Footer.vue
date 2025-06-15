@@ -21,14 +21,38 @@ const pages = [
     ]
   }
 ];
+
+const pageRoutesMap = {
+  "О нас": "/about",
+  "События": "/events",
+  "Программные продукты": "/products",
+  "Услуги": "/services",
+  "Полезная информация": "/info",
+  "Учебный центр КУБиК": "/training-center",
+  "Контакты": "/contacts",
+
+  "1С:Бухгалтерия": "/1c-buhgalteria",
+  "1С:Зарплата": "/1c-zarplata",
+  "1С:Документооборот": "/1c-dokumentoborot",
+  "КУБиК:Управление": "/kubik-upravlenie",
+  "Отчетность": "/otchetnost",
+  "Поддержка": "/podderzhka",
+
+  "Филиалы": "/filials",
+  "Телефоны": "/phones",
+  "Email": "/email",
+  "Связаться с нами": "/contact-us",
+};
+
+const getRoute = (pageName) => {
+  return pageRoutesMap[pageName] || '/';
+};
 </script>
 
 <template>
   <footer class="bg-primary-dull text-white">
-    <!-- Верхняя часть футера -->
     <div class="container max-w-[1440px] mx-auto px-5 py-5">
       <div class="flex flex-col lg:flex-row justify-between gap-10  py-10 items-center">
-        <!-- Логотип и кнопки -->
         <div class="w-full lg:w-[235px] max-lg:flex max-lg:flex-col max-lg:items-center max-lg:text-center">
           <div>
             <img src="../assets/img/logo.png" alt="logo" class="mb-2" />
@@ -49,7 +73,9 @@ const pages = [
             <h5 class="mb-5 font-semibold text-base">{{ page.title }}</h5>
             <ul class="space-y-2 text-[13px]">
               <li v-for="(p, i) in page.pages" :key="i">
-                <a href="#" class="hover:underline">{{ p }}</a>
+                <router-link :to="getRoute(p)" class="hover:underline">
+                  {{ p }}
+                </router-link>
               </li>
             </ul>
           </div>

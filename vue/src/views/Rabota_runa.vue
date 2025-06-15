@@ -1,15 +1,17 @@
 <script>
 import ContentRenderer from "@/components/ContentRenderer.vue";
-
 export default {
-  components: {
+  components:{
     ContentRenderer
   },
-  name: "Statys_sertificate",
+  name: "Rabota_runa"
 }
 </script>
 
 <template>
-<ContentRenderer pageKey="statys" />
+  <ContentRenderer pageKey="rabota_runa" />
 </template>
 
+<style scoped>
+
+</style>

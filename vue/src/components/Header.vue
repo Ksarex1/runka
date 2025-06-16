@@ -26,17 +26,17 @@ const searchTerm = ref('')
 const sections = [
   { name: 'О нас', link: '/about' },
   { name: 'События', link: '/contacts' },
-  { name: 'Статусы и сертификаты компании', link: '/contacts' },
-  { name: 'Благодарственные письма', link: '/contacts' },
-  { name: 'Благодарности', link: '/contacts' },
-  { name: 'Работа в Руна С', link: '/contacts' },
-  { name: 'Вакансии', link: '/contacts' },
-  { name: 'Политика в отношении обработки ПДн', link: '/contacts' },
-  { name: 'Согласие на обработку ПДн', link: '/contacts' },
+  { name: 'Статусы и сертификаты компании', link: '/about/statys' },
+  { name: 'Благодарственные письма', link: '/about/blagodar_letter' },
+  { name: 'Благодарности', link: '/about/blagodar_letter/blagodar' },
+  { name: 'Работа в Руна С', link: '/about/rabota_runa' },
+  { name: 'Вакансии', link: '/about/rabota_runa/vakansii' },
+  { name: 'Политика в отношении обработки ПДн', link: '/about/politika' },
+  { name: 'Согласие на обработку ПДн', link: '/about/soglasie' },
   { name: 'Новости', link: '/contacts' },
   { name: 'Календарь мероприятий', link: '/contacts' },
   { name: 'Программные продукты', link: '/contacts' },
-  { name: 'Решения 1С для государственных учреждений', link: '/contacts' },
+  { name: 'Решения 1С для государственных учреждений', link: '/1c-gos' },
   { name: 'Решения 1С для здравоохранения', link: '/contacts' },
   { name: 'Сервисы 1С', link: '/contacts' },
   { name: 'Клиентские лицензии 1С', link: '/contacts' },
@@ -177,11 +177,11 @@ const filteredSections = () => {
             <li class="group relative">
               <router-link to="/about"><p>О нас</p></router-link>
               <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-50 z-50 list">
-                <router-link to="/statys"><p class="mt-2">Статусы и сертификаты компании</p></router-link>
-                <router-link to="/blagodar_letter"><p>Благодарственные письма</p></router-link>
-                <router-link to="/rabota_runa"><p>Работа в Руна С</p></router-link>
-                <router-link to="/politika"><p>Политика в отношении обработки ПДн</p></router-link>
-                <router-link to="/soglasie"><p>Согласие на обработку ПДн</p></router-link>
+                <router-link to="/about/statys"><p class="mt-2">Статусы и сертификаты компании</p></router-link>
+                <router-link to="/about/blagodar_letter"><p>Благодарственные письма</p></router-link>
+                <router-link to="/about/rabota_runa"><p>Работа в Руна С</p></router-link>
+                <router-link to="/about/politika"><p>Политика в отношении обработки ПДн</p></router-link>
+                <router-link to="/about/soglasie"><p>Согласие на обработку ПДн</p></router-link>
               </ul>
             </li>
             <li class="group relative">

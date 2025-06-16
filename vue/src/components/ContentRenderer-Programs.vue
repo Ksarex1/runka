@@ -24,8 +24,8 @@
                 v-if="menuOpen"
                 class="absolute left-0 right-0 mt-2 bg-white shadow-lg rounded-lg p-4 flex flex-col gap-3 text-black"
             >
-              <router-link to="/statys"><Button1 id="butt" v-if="route.path === '/gos_ychr'">Решения 1С для гос. учреждений</Button1></router-link>
-              <router-link to="/statys"><Button2 id="butt" v-if="route.path !== '/gos_ychr'">Решения 1С для гос. учреждений</Button2></router-link>
+              <router-link to="/statys"><Button1 id="butt" v-if="route.path === '/1c-gos'">Решения 1С для гос. учреждений</Button1></router-link>
+              <router-link to="/statys"><Button2 id="butt" v-if="route.path !== '/1c-gos'">Решения 1С для гос. учреждений</Button2></router-link>
 
               <router-link to="/blagodar_letter"><Button1 id="butt">Решения 1С для здравоохранения</Button1></router-link>
               <router-link to="/blagodar_letter"><Button2 id="butt">Решения 1С для здравоохранения</Button2></router-link>
@@ -36,9 +36,6 @@
               <router-link to="/rabota_runa"><Button1 id="butt">Клиентские лицензии 1С</Button1></router-link>
               <router-link to="/rabota_runa"><Button2 id="butt">Клиентские лицензии 1С</Button2></router-link>
 
-              <router-link to="/vakansii"><Button1 id="butt">Вакансии</Button1></router-link>
-              <router-link to="/vakansii"><Button2 id="butt">Вакансии</Button2></router-link>
-
               <router-link to="/politika"><Button1 id="butt">Лицензии на сервер 1С</Button1></router-link>
               <router-link to="/politika"><Button2 id="butt">Лицензии на сервер 1С</Button2></router-link>
 
@@ -48,22 +45,20 @@
 
         <!-- Десктопное меню -->
         <div class="buttons hidden lg:flex justify-between mt-[21px] md:w-[100%]">
-          <router-link to="/gos_ychr"><Button1 id="butt" v-if="route.path === '/gos_ychr'">Решения 1С для гос. учреждений</Button1></router-link>
-          <router-link to="/gos_ychr"><Button2 id="butt" v-if="route.path !== '/gos_ychr'">Решения 1С для гос. учреждений</Button2></router-link>
+          <router-link to="/gos_ychr"><Button1 id="butt" v-if="route.path === '/1c-gos'">Решения 1С для гос. учреждений</Button1></router-link>
+          <router-link to="/gos_ychr"><Button2 id="butt" v-if="route.path !== '/1c-gos'">Решения 1С для гос. учреждений</Button2></router-link>
 
-          <router-link to="/blagodar_letter"><Button1 id="butt" v-if="route.path !== '/gos_ychr'">Решения 1С для здравоохранения</Button1></router-link>
+          <router-link to="/blagodar_letter"><Button1 id="butt" v-if="route.path !== '/1c-gos'">Решения 1С для здравоохранения</Button1></router-link>
           <router-link to="/blagodar_letter"><Button2 id="butt">Решения 1С для здравоохранения</Button2></router-link>
 
-          <router-link to="/blagodar"><Button1 id="butt" v-if="route.path !== '/gos_ychr'">Сервисы 1С</Button1></router-link>
+          <router-link to="/blagodar"><Button1 id="butt" v-if="route.path !== '/1c-gos'">Сервисы 1С</Button1></router-link>
           <router-link to="/blagodar"><Button2 id="butt">Сервисы 1С</Button2></router-link>
 
-          <router-link to="/rabota_runa"><Button1 id="butt" v-if="route.path !== '/gos_ychr'">Клиентские лицензии 1С</Button1></router-link>
+          <router-link to="/rabota_runa"><Button1 id="butt" v-if="route.path !== '/1c-gos'">Клиентские лицензии 1С</Button1></router-link>
           <router-link to="/rabota_runa"><Button2 id="butt">Клиентские лицензии 1С</Button2></router-link>
 
-          <router-link to="/vakansii"><Button1 id="butt" v-if="route.path !== '/gos_ychr'">Вакансии</Button1></router-link>
-          <router-link to="/vakansii"><Button2 id="butt">Вакансии</Button2></router-link>
 
-          <router-link to="/politika"><Button1 id="butt" v-if="route.path !== '/gos_ychr'">Лицензии на сервер 1С</Button1></router-link>
+          <router-link to="/politika"><Button1 id="butt" v-if="route.path !== '/1c-gos'">Лицензии на сервер 1С</Button1></router-link>
           <router-link to="/politika"><Button2 id="butt">Лицензии на сервер 1С</Button2></router-link>
         </div>
       </div>

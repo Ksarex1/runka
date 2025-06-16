@@ -23,19 +23,24 @@ const routes = [
     { path: '/login', component: LoginPage },
     { path: '/register', component: RegisterPage },
     { path: '/me', component: MePage, meta: { requiresAuth: true } },
-    { path: '/statys', component: StatysSertificate },
+    { path: '/about/statys', component: StatysSertificate },
     { path: '/about', component: About },
-    { path: '/blagodar_letter', component: Blagodar_letter },
-    { path: '/blagodar', component: Blagodar },
-    { path: '/rabota_runa', component: Rabota_runa },
-    { path: '/vakansii', component: Vakansii },
-    { path: '/politika', component: Politika },
-    { path: '/soglasie', component: Soglasie },
-    { path: '/1c-gos', component: Soglasie },
+    { path: '/about/blagodar_letter', component: Blagodar_letter },
+    { path: '/about/blagodar_letter/blagodar', component: Blagodar },
+    { path: '/about/rabota_runa', component: Rabota_runa },
+    { path: '/about/rabota_runa/vakansii', component: Vakansii },
+    { path: '/about/politika', component: Politika },
+    { path: '/about/soglasie', component: Soglasie },
     { path: '/cart', component: Cart },
     { path: '/news', component: News },
     { path: '/calendar', component: Calendar },
-    { path: '/gos_ychr', component: Gos_ychr },
+    { path: '/1c-gos', component: Gos_ychr },
+    {
+        path: '/gos_ychr/:id',
+        name: 'ProductDetail',
+        component: () => import('@/views/ProductDetail.vue')
+    }
+
 ];
 
 const router = createRouter({

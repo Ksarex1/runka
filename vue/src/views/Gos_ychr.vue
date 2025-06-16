@@ -8,54 +8,14 @@ import cardImg6 from '../assets/img/card-img-gos-6.png';
 import cardImg7 from '../assets/img/card-img-gos-7.png';
 import cardImg8 from '../assets/img/card-img-gos-8.png';
 import ContentRendererPrograms from "@/components/ContentRenderer-Programs.vue";
-import Footer from "@/components/Footer.vue";
+import cards from "@/assets/data/product-gos.js";
+
 export default {
   name: "Gos_ychr",
-  components:{ContentRendererPrograms, Footer},
-  data(){
+  components: {ContentRendererPrograms},
+  data() {
     return {
-      cards: [
-        {
-          img: cardImg1,
-          title: '«1С:Бухгалтерия государственного учреждения 8»',
-          price: '22900',
-        },
-        {
-          img: cardImg2,
-          title: '«1С:Зарплата и кадры государственного учреждения 8»',
-          price: '29900',
-        },
-        {
-          img: cardImg3,
-          title: '«1С-Рарус:Комплексный учет питания, ГСМ и автотранспорта»',
-          price: '14900',
-        },
-        {
-          img: cardImg4,
-          title: '«Закупки. Дополнение к «1С:Бухгалтерия гос.учреждения 8»',
-          price: '12900',
-        },
-        {
-          img: cardImg5,
-          title: 'Закупки. Дополнение к «1С:Бухгалтерия гос.учреждения 8»',
-          price: '9900',
-        },
-        {
-          img: cardImg6,
-          title: 'Финансовое планирование. Дополнение к «1С:Бухгалтерия гос.учреждения 8» редакции 2.0',
-          price: '35900',
-        },
-        {
-          img: cardImg7,
-          title: '"1С:Предприятие 8. Управление целевыми программами"',
-          price: '44900',
-        },
-        {
-          img: cardImg8,
-          title: '«Закупки. Дополнение к «1С:Бухгалтерия гос.учреждения 8»',
-          price: '19900',
-        },
-      ],
+      cards,
       selectSort: [
         {value: 'price', name: 'По цене (по возрастанию)'},
         {value: 'price1', name: 'По цене (по убыванию)'}
@@ -117,7 +77,8 @@ export default {
           <div class="params flex justify-between">
             <div class="relative input">
               <span class="absolute left-3 top-1/2 -translate-y-1/2"><img src="@/assets/img/Search.svg"></span>
-              <input v-model="currentSearch" type="text" placeholder="Поиск по товарам..." class="pl-10 pr-4 py-2 border w-[247px] h-[29px] rounded-[12px]">
+              <input v-model="currentSearch" type="text" placeholder="Поиск по товарам..."
+                     class="pl-10 pr-4 py-2 border w-[247px] h-[29px] rounded-[12px]">
             </div>
 
             <select class="sort w-[204px] h-[29px] border rounded-[12px] ml-[20px]" v-model="selectedSort">
@@ -126,16 +87,16 @@ export default {
                   v-for="option in selectSort"
                   :key="option.value"
                   :value="option.value">
-                {{option.name}}
+                {{ option.name }}
               </option>
             </select>
 
-            <div class="filter-wrapper flex items-center flex-wrap">
-              <img src="@/assets/img/filter.svg" class="mr-2">
+            <div class="filter-wrapper flex items-center flex-wrap relative">
+              <img src="@/assets/img/filter.svg" class="w-4 h-4 absolute -left-4 ml-0 pointer-events-none"/>
 
               <select
-                  class="w-[114px] h-[27px] ml-[20px] pl-8"
                   v-model="selectedFilter"
+                  class="w-[140px] h-[32px] pl-8 pr-2 text-sm border border-gray-300 rounded appearance-none bg-white"
               >
                 <option value="">Фильтры</option>
                 <option
@@ -147,6 +108,7 @@ export default {
                 </option>
               </select>
             </div>
+
           </div>
         </div>
 
@@ -172,9 +134,7 @@ export default {
         </div>
       </div>
     </section>
-
   </ContentRendererPrograms>
-
 </template>
 
 <style scoped>
@@ -182,7 +142,7 @@ export default {
   position: relative;
 }
 
-select{
+select {
   font-size: 14px;
   color: #5F687A;
 }
@@ -203,16 +163,16 @@ select{
   border: none;
 }
 
-.filter-wrapper select option{
+.filter-wrapper select option {
   font-size: 14px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 2; /* Количество строк */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.sort{
+.sort {
   padding-left: 5px;
 }
 

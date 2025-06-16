@@ -62,29 +62,30 @@ export default {
       accordions: [
         {
           id: 1,
-          title: "Lorem ipsum dolor sit amet, consecte?",
-          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+          title: "Как сделать заказ на сайте?",
+          content: "Для оформления заказа выберите интересующий товар, добавьте его в корзину и перейдите к оформлению заказа, указав свои контактные данные и способ оплаты.",
           isOpen: false
         },
         {
           id: 2,
-          title: "Lorem ipsum dolor sit amet, consecte?",
-          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+          title: "Какие способы оплаты вы принимаете?",
+          content: "Мы принимаем оплату банковскими картами, через электронные кошельки и при получении наличными в пункте выдачи.",
           isOpen: false
         },
         {
           id: 3,
-          title: "Lorem ipsum dolor sit amet, consecte?",
-          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+          title: "Сколько длится доставка заказа?",
+          content: "Сроки доставки зависят от региона и выбранного способа. Обычно доставка занимает от 2 до 7 рабочих дней.",
           isOpen: false
         },
         {
           id: 4,
-          title: "Lorem ipsum dolor sit amet, consecte?",
-          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+          title: "Можно ли вернуть товар?",
+          content: "Да, вы можете вернуть товар в течение 14 дней при сохранении товарного вида и упаковки. Для возврата свяжитесь с нашей службой поддержки.",
           isOpen: false
         },
       ]
+
     };
   },
   methods: {

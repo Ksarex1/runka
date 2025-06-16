@@ -25,7 +25,7 @@ const searchTerm = ref('')
 
 const sections = [
   { name: 'О нас', link: '/about' },
-  { name: 'События', link: '/news' },
+  { name: 'События', link: '/contacts' },
   { name: 'Программные продукты', link: '/contacts' },
   { name: 'Услуги', link: '/contacts' },
   { name: 'Контакты', link: '/contacts' },
@@ -155,10 +155,10 @@ const filteredSections = () => {
               </ul>
             </li>
             <li class="group relative">
-              <router-link to="/news"><p>События</p></router-link>
+              <p>События</p>
               <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
-                <router-link to="/news"><p>Новости</p></router-link>
-                  <router-link to="/calendar"><p>Календарь мероприятий</p></router-link>
+                <p>Новости</p>
+                <p>Календарь мероприятий</p>
               </ul>
             </li>
             <li class="group relative">

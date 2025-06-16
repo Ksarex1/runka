@@ -9,7 +9,6 @@ export default {
     <div class="container mx-auto">
       <h2 class="text-[36px] font-medium mb-10  text-[#030303]">Популярные категории</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-        <!-- Карточка 1 -->
         <div class="relative w-full sm:w-[320px] lg:w-[330px] xl:w-[320px] h-[365px]">
           <div class="w-full h-[210px] overflow-hidden">
             <img src="../assets/img/card-img-1.png"
@@ -33,7 +32,6 @@ export default {
           </div>
         </div>
 
-        <!-- Карточка 2 -->
         <div class="relative w-full sm:w-[320px] lg:w-[330px] xl:w-[320px] h-[365px]">
           <div class="w-full h-[210px] overflow-hidden">
             <img src="../assets/img/card-img-2.png"
@@ -57,7 +55,6 @@ export default {
           </div>
         </div>
 
-        <!-- Карточка 3 -->
         <div class="relative w-full sm:w-[320px] lg:w-[330px] xl:w-[320px] h-[365px]">
           <div class="w-full h-[210px] overflow-hidden">
             <img src="../assets/img/card-img-3.png"
@@ -81,7 +78,6 @@ export default {
           </div>
         </div>
 
-        <!-- Карточка 4 -->
         <div class="relative w-full sm:w-[320px] lg:w-[330px] xl:w-[320px] h-[365px]">
           <div class="w-full h-[210px] overflow-hidden">
             <img src="../assets/img/card-img-4.png"

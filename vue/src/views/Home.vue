@@ -18,41 +18,46 @@ export default {
 
 <template>
   <Header></Header>
-  <div data-aos="fade-up">
-    <Welcome/>
-  </div>
+  <main>
+    <div data-aos="fade-up">
+      <Welcome/>
+    </div>
 
-  <div data-aos="fade-up">
-    <category></category>
-  </div>
+    <div data-aos="fade-up">
+      <category></category>
+    </div>
 
-  <div data-aos="fade-up">
-    <About></About>
-  </div>
+    <div data-aos="fade-up">
+      <About></About>
+    </div>
 
-  <div data-aos="fade-up">
-    <WhyWe/>
-  </div>
+    <div data-aos="fade-up">
+      <WhyWe/>
+    </div>
 
-  <div data-aos="fade-up">
-    <News/>
-  </div>
+    <div data-aos="fade-up">
+      <News/>
+    </div>
 
-  <div data-aos="fade-up">
-    <Rating/>
-  </div>
+    <div data-aos="fade-up">
+      <Rating/>
+    </div>
 
-  <div data-aos="fade-up">
-    <Contacts/>
-  </div>
+    <div data-aos="fade-up">
+      <Contacts/>
+    </div>
 
-  <div data-aos="fade-up">
-    <FAQ/>
-  </div>
+    <div data-aos="fade-up">
+      <FAQ/>
+    </div>
+  </main>
+
 
     <Footer/>
 </template>
 
-<style scoped>
-
+<style>
+  main{
+    margin-top: 100px;
+  }
 </style>

@@ -1,0 +1,228 @@
+{
+  "ru": {
+    "about": {
+      "title": "Подробнее О Компании",
+      "paragraph1": "Компания «Руна С» основана в 2002 году консультантами по бюджетному учету, имеющими опыт внедрения бюджетных проектов с 1997 года.",
+      "paragraph2": "Постоянное повышение квалификации позволяет нам быть всегда в центре событий бюджетной сферы. Наши специалисты понимают бухгалтеров и их задачи.",
+      "button_consult": "Заказать консультацию",
+      "button_more": "Подробнее"
+    },
+    "category": {
+      "title": "Популярные категории",
+      "cards": [
+        {
+          "title": "Сопровождение 1С",
+          "description": "Надёжная поддержка для бесперебойной работы вашей системы 1С.",
+          "alt_img": "Сопровождение 1С",
+          "alt_button": "Подробнее"
+        },
+        {
+          "title": "Обновление 1С",
+          "description": "Обеспечиваем актуальность и безопасность вашего программного обеспечения 1С.",
+          "alt_img": "Обновление 1С",
+          "alt_button": "Подробнее"
+        },
+        {
+          "title": "Настройка 1С",
+          "description": "Профессиональная настройка 1С с учётом особенностей вашего бизнеса.",
+          "alt_img": "Настройка 1С",
+          "alt_button": "Подробнее"
+        },
+        {
+          "title": "Обучение 1С",
+          "description": "Комплексные программы обучения, позволяющие освоить работу с 1С на высоком уровне.",
+          "alt_img": "Обучение 1С",
+          "alt_button": "Подробнее"
+        }
+      ]
+    },
+    "contacts": {
+      "title": "Связаться с нами",
+      "subtitle": "Оставьте заявку, и мы свяжемся с вами в ближайшее время",
+      "social_alt": {
+        "vk": "ВКонтакте",
+        "tg": "Телеграм",
+        "ok": "Одноклассники"
+      },
+      "contact_email": {
+        "label": "Напишите нам на почту",
+        "email": "runa_post@mail.ru"
+      },
+      "contact_phone": {
+        "label": "Позвоните нам",
+        "phones": [
+          "+7 963-232-82-23",
+          "+7 920-253-21-36"
+        ]
+      },
+      "form": {
+        "fields": {
+          "fullName": {
+            "label": "Полное имя",
+            "placeholder": "Дмитрий Кучеров..."
+          },
+          "email": {
+            "label": "Адрес эл. почты",
+            "placeholder": "example@mail.ru"
+          },
+          "phone": {
+            "label": "Номер телефона",
+            "placeholder": "(123) 456 78-90"
+          },
+          "company": {
+            "label": "Название компании",
+            "placeholder": "Руна С"
+          },
+          "message": {
+            "label": "Сообщение",
+            "placeholder": "Введите ваше сообщение здесь..."
+          }
+        },
+        "consents": {
+          "consent1": "Нажимая кнопку «Отправить», я даю свое согласие на обработку персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Политике конфиденциальности.",
+          "consent2": "Нажимая кнопку «Отправить», я даю свое согласие на обработку персональных данных."
+        },
+        "submit_button": "Отправить",
+        "validation_message": "Пожалуйста, подтвердите согласия перед отправкой."
+      }
+    },
+    "faq": {
+      "title": "Часто Задаваемые Вопросы",
+      "items": [
+        {
+          "id": 1,
+          "title": "Как сделать заказ на сайте?",
+          "content": "Для оформления заказа выберите интересующий товар, добавьте его в корзину и перейдите к оформлению заказа, указав свои контактные данные и способ оплаты."
+        },
+        {
+          "id": 2,
+          "title": "Какие способы оплаты вы принимаете?",
+          "content": "Мы принимаем оплату банковскими картами, через электронные кошельки и при получении наличными в пункте выдачи."
+        },
+        {
+          "id": 3,
+          "title": "Сколько длится доставка заказа?",
+          "content": "Сроки доставки зависят от региона и выбранного способа. Обычно доставка занимает от 2 до 7 рабочих дней."
+        },
+        {
+          "id": 4,
+          "title": "Можно ли вернуть товар?",
+          "content": "Да, вы можете вернуть товар в течение 14 дней при сохранении товарного вида и упаковки. Для возврата свяжитесь с нашей службой поддержки."
+        }
+      ]
+    }
+  },
+  "en": {
+    "about": {
+      "title": "More About the Company",
+      "paragraph1": "The company \"Runa S\" was founded in 2002 by consultants in budget accounting with experience in implementing budget projects since 1997.",
+      "paragraph2": "Continuous professional development allows us to always be at the forefront of the budget sphere. Our specialists understand accountants and their tasks.",
+      "button_consult": "Order a Consultation",
+      "button_more": "More Details"
+    },
+    "category": {
+      "title": "Popular Categories",
+      "cards": [
+        {
+          "title": "1C Support",
+          "description": "Reliable support for the uninterrupted operation of your 1C system.",
+          "alt_img": "1C Support",
+          "alt_button": "More Details"
+        },
+        {
+          "title": "1C Update",
+          "description": "We ensure the relevance and security of your 1C software.",
+          "alt_img": "1C Update",
+          "alt_button": "More Details"
+        },
+        {
+          "title": "1C Configuration",
+          "description": "Professional 1C configuration tailored to your business specifics.",
+          "alt_img": "1C Configuration",
+          "alt_button": "More Details"
+        },
+        {
+          "title": "1C Training",
+          "description": "Comprehensive training programs enabling you to master working with 1C at a high level.",
+          "alt_img": "1C Training",
+          "alt_button": "More Details"
+        }
+      ]
+    },
+    "contacts": {
+      "title": "Contact Us",
+      "subtitle": "Leave a request, and we will get in touch with you shortly",
+      "social_alt": {
+        "vk": "VKontakte",
+        "tg": "Telegram",
+        "ok": "Odnoklassniki"
+      },
+      "contact_email": {
+        "label": "Write us an email",
+        "email": "runa_post@mail.ru"
+      },
+      "contact_phone": {
+        "label": "Call us",
+        "phones": [
+          "+7 963-232-82-23",
+          "+7 920-253-21-36"
+        ]
+      },
+      "form": {
+        "fields": {
+          "fullName": {
+            "label": "Full Name",
+            "placeholder": "Dmitry Kucherov..."
+          },
+          "email": {
+            "label": "Email Address",
+            "placeholder": "example@mail.ru"
+          },
+          "phone": {
+            "label": "Phone Number",
+            "placeholder": "(123) 456 78-90"
+          },
+          "company": {
+            "label": "Company Name",
+            "placeholder": "Runa S"
+          },
+          "message": {
+            "label": "Message",
+            "placeholder": "Enter your message here..."
+          }
+        },
+        "consents": {
+          "consent1": "By clicking the “Send” button, I consent to the processing of personal data in accordance with the Federal Law dated 27.07.2006 No.152-FZ “On Personal Data”, under the terms and for the purposes defined in the Privacy Policy.",
+          "consent2": "By clicking the “Send” button, I consent to the processing of personal data."
+        },
+        "submit_button": "Send",
+        "validation_message": "Please confirm consents before sending."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "id": 1,
+          "title": "How to place an order on the website?",
+          "content": "To place an order, select the desired product, add it to the cart, and proceed to checkout by providing your contact details and payment method."
+        },
+        {
+          "id": 2,
+          "title": "What payment methods do you accept?",
+          "content": "We accept payments by bank cards, electronic wallets, and cash on delivery at the pickup point."
+        },
+        {
+          "id": 3,
+          "title": "How long does the delivery take?",
+          "content": "Delivery times depend on the region and chosen method. Usually, delivery takes from 2 to 7 business days."
+        },
+        {
+          "id": 4,
+          "title": "Can I return a product?",
+          "content": "Yes, you can return the product within 14 days, provided the product and packaging are in good condition. Contact our support service for returns."
+        }
+      ]
+    }
+  }
+}

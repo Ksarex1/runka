@@ -116,26 +116,24 @@ export default {
           </div>
         </div>
 
-        <div class="cards flex flex-wrap justify-between">
-          <h2 class="mt-[50px] text-[22px]" v-if="filterCards.length === 0">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+          <h2 class="col-span-full text-center text-xl sm:text-2xl py-10" v-if="filterCards.length === 0">
             Результатов нет :(
           </h2>
+
           <div
-              class="card bg-white hover:bg-[#FAFAFA] transition-[0.3s] cursor-pointer mt-[50px] w-[342px] h-[416px] border rounded-[8px] border-[#C3C3C3] drop-shadow-xl p-[30px] flex flex-col items-center justify-around"
               v-for="card in filterCards"
-              :key="card.id"
+              :key="card.img"
+              class="bg-white hover:bg-gray-50 transition-colors duration-300 cursor-pointer rounded-lg border border-gray-300 shadow-xl p-8 flex flex-col items-center justify-between h-[416px]"
           >
-            <router-link
-                :to="{ name: 'ProductDetail', params: { id: card.id } }"
-                class="flex flex-col items-center text-center"
-            >
-              <img :src="card.img" :alt="card.title" class="mb-4 max-h-[160px]" />
-              <p class="text-[15px] text-[#5F687A]">{{ card.title }}</p>
-              <div class="prices flex justify-between mt-[14px] items-center w-full px-4">
-                <h4 class="text-[24px] font-bold">от {{ card.price }} ₽</h4>
-                <img src="@/assets/img/cart-1.svg" class="cursor-pointer" />
+            <img :src="card.img" :alt="card.title" class="w-full h-auto object-contain">
+            <div class="w-full">
+              <p class="text-gray-600 text-sm">{{ card.title }}</p>
+              <div class="flex justify-between items-center mt-3.5">
+                <h4 class="text-2xl font-bold">от {{ card.price }} ₽</h4>
+                <img src="@/assets/img/cart-1.svg" class="cursor-pointer w-6 h-6">
               </div>
-            </router-link>
+            </div>
           </div>
         </div>
       </div>

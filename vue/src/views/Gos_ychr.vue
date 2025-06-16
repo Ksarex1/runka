@@ -116,7 +116,7 @@ export default {
           <input v-model="currentSearch" type="text" placeholder="Поиск по товарам..." class="pl-10 pr-4 py-2 border w-[247px] h-[29px] rounded-[12px]">
         </div>
 
-        <select class="w-[204px] h-[29px] border rounded-[12px] ml-[20px]" v-model="selectedSort">
+        <select class="sort w-[204px] h-[29px] border rounded-[12px] ml-[20px]" v-model="selectedSort">
           <option value=""> Сортировать по...</option>
           <option
               v-for="option in selectSort"
@@ -147,7 +147,8 @@ export default {
     </div>
 
     <div class="cards flex flex-wrap justify-between">
-      <div class="card bg-white mt-[50px] w-[342px] h-[416px] border rounded-[8px] border-[#C3C3C3] drop-shadow-xl p-[30px] flex flex-col items-center justify-around" v-for="card in filterCards" :key="card.img">
+      <h2 class="mt-[50px] text-[22px]" v-if="filterCards.length === 0">Результатов нет :(</h2>
+      <div class="card bg-white hover:bg-[#FAFAFA] hover:transition-[0.3s] transition-[0.3s] cursor-pointer mt-[50px] w-[342px] h-[416px] border rounded-[8px] border-[#C3C3C3] drop-shadow-xl p-[30px] flex flex-col items-center justify-around" v-for="card in filterCards" :key="card.img">
         <img :src="card.img" :alt="card.title">
         <div class="text">
           <p class="text-[15px] text-[#5F687A]">{{card.title}}</p>
@@ -196,6 +197,10 @@ select{
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.sort{
+  padding-left: 5px;
 }
 
 </style>

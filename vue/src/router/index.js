@@ -14,6 +14,7 @@ import Soglasie from "@/views/Soglasie.vue";
 import Cart from "@/views/Cart.vue";
 import News from "@/views/News.vue";
 import Calendar from "@/views/Calendar.vue";
+import Gos_ychr from "@/views/Gos_ychr.vue";
 
 import { isAuthenticated } from '../auth.js';
 
@@ -34,6 +35,7 @@ const routes = [
     { path: '/cart', component: Cart },
     { path: '/news', component: News },
     { path: '/calendar', component: Calendar },
+    { path: '/gos_ychr', component: Gos_ychr },
 ];
 
 const router = createRouter({

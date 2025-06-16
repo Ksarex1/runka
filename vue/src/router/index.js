@@ -36,7 +36,7 @@ const routes = [
     { path: '/calendar', component: Calendar },
     { path: '/1c-gos', component: Gos_ychr },
     {
-        path: '/gos_ychr/:id',
+        path: '/1c-gos/:id',
         name: 'ProductDetail',
         component: () => import('@/views/ProductDetail.vue')
     }

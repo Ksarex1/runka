@@ -17,7 +17,7 @@ const product = computed(() => cards.find(item => item.id === productId));
     <section >
       <div class="container mx-auto px-4 relative">
         <div>
-          <router-link to="/gos_ychr"><img src="../assets/img/arrow-left-circle.svg" alt="back" class="absolute top-20 cursor-pointer"></router-link>
+          <router-link to="/1c-gos"><img src="../assets/img/arrow-left-circle.svg" alt="back" class="absolute top-20 cursor-pointer"></router-link>
         </div>
         <h2 class="font-medium text-3xl mb-10">Программные продукты</h2>
 

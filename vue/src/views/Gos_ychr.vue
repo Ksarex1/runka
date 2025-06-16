@@ -7,8 +7,11 @@ import cardImg5 from '../assets/img/card-img-gos-5.png';
 import cardImg6 from '../assets/img/card-img-gos-6.png';
 import cardImg7 from '../assets/img/card-img-gos-7.png';
 import cardImg8 from '../assets/img/card-img-gos-8.png';
+import ContentRendererPrograms from "@/components/ContentRenderer-Programs.vue";
+import Footer from "@/components/Footer.vue";
 export default {
   name: "Gos_ychr",
+  components:{ContentRendererPrograms, Footer},
   data(){
     return {
       cards: [
@@ -106,62 +109,72 @@ export default {
 </script>
 
 <template>
-<section class="mt-[100px]">
-  <div class="container">
-    <div class="head flex justify-between items-center">
-      <h2 class="font-medium text-[30px]">Решения 1С для государственных учреждений</h2>
-      <div class="params flex justify-between">
-        <div class="relative input">
-          <span class="absolute left-3 top-1/2 -translate-y-1/2"><img src="@/assets/img/Search.svg"></span>
-          <input v-model="currentSearch" type="text" placeholder="Поиск по товарам..." class="pl-10 pr-4 py-2 border w-[247px] h-[29px] rounded-[12px]">
-        </div>
+  <ContentRendererPrograms>
+    <section class="mt-[50px]">
+      <div class="container">
+        <div class="head flex justify-between items-center">
+          <h2 class="font-medium text-[30px]">Решения 1С для государственных учреждений</h2>
+          <div class="params flex justify-between">
+            <div class="relative input">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2"><img src="@/assets/img/Search.svg"></span>
+              <input v-model="currentSearch" type="text" placeholder="Поиск по товарам..." class="pl-10 pr-4 py-2 border w-[247px] h-[29px] rounded-[12px]">
+            </div>
 
-        <select class="sort w-[204px] h-[29px] border rounded-[12px] ml-[20px]" v-model="selectedSort">
-          <option value=""> Сортировать по...</option>
-          <option
-              v-for="option in selectSort"
-              :key="option.value"
-              :value="option.value">
-            {{option.name}}
-          </option>
-        </select>
+            <select class="sort w-[204px] h-[29px] border rounded-[12px] ml-[20px]" v-model="selectedSort">
+              <option value=""> Сортировать по...</option>
+              <option
+                  v-for="option in selectSort"
+                  :key="option.value"
+                  :value="option.value">
+                {{option.name}}
+              </option>
+            </select>
 
-        <div class="filter-wrapper flex items-center flex-wrap">
-          <img src="@/assets/img/filter.svg" class="mr-2">
+            <div class="filter-wrapper flex items-center flex-wrap">
+              <img src="@/assets/img/filter.svg" class="mr-2">
 
-          <select
-              class="w-[114px] h-[27px] ml-[20px] pl-8"
-              v-model="selectedFilter"
-          >
-            <option value="">Фильтры</option>
-            <option
-                v-for="option in selectFilter"
-                :key="option.value"
-                :value="option.value"
-            >
-              {{ option.name }}
-            </option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <div class="cards flex flex-wrap justify-between">
-      <h2 class="mt-[50px] text-[22px]" v-if="filterCards.length === 0">Результатов нет :(</h2>
-      <div class="card bg-white hover:bg-[#FAFAFA] hover:transition-[0.3s] transition-[0.3s] cursor-pointer mt-[50px] w-[342px] h-[416px] border rounded-[8px] border-[#C3C3C3] drop-shadow-xl p-[30px] flex flex-col items-center justify-around" v-for="card in filterCards" :key="card.img">
-        <img :src="card.img" :alt="card.title">
-        <div class="text">
-          <p class="text-[15px] text-[#5F687A]">{{card.title}}</p>
-          <div class="prices flex justify-between mt-[14px] items-center">
-            <h4 class="text-[24px] font-bold">от {{card.price}} ₽</h4>
-            <img src="@/assets/img/cart-1.svg" class=" cursor-pointer">
+              <select
+                  class="w-[114px] h-[27px] ml-[20px] pl-8"
+                  v-model="selectedFilter"
+              >
+                <option value="">Фильтры</option>
+                <option
+                    v-for="option in selectFilter"
+                    :key="option.value"
+                    :value="option.value"
+                >
+                  {{ option.name }}
+                </option>
+              </select>
+            </div>
           </div>
+        </div>
 
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+          <h2 class="col-span-full text-center text-xl sm:text-2xl py-10" v-if="filterCards.length === 0">
+            Результатов нет :(
+          </h2>
+
+          <div
+              v-for="card in filterCards"
+              :key="card.img"
+              class="bg-white hover:bg-gray-50 transition-colors duration-300 cursor-pointer rounded-lg border border-gray-300 shadow-xl p-8 flex flex-col items-center justify-between h-[416px]"
+          >
+            <img :src="card.img" :alt="card.title" class="w-full h-auto object-contain">
+            <div class="w-full">
+              <p class="text-gray-600 text-sm">{{ card.title }}</p>
+              <div class="flex justify-between items-center mt-3.5">
+                <h4 class="text-2xl font-bold">от {{ card.price }} ₽</h4>
+                <img src="@/assets/img/cart-1.svg" class="cursor-pointer w-6 h-6">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+
+  </ContentRendererPrograms>
+
 </template>
 
 <style scoped>
@@ -193,7 +206,7 @@ select{
 .filter-wrapper select option{
   font-size: 14px;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Количество строк */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;

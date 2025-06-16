@@ -42,17 +42,17 @@
           <!-- Десктопное меню -->
           <div class="buttons hidden lg:flex justify-between mt-[21px] md:w-[100%]">
             <router-link to="/news">
-              <Button1 class="md:w-[90%] p-2" v-if="route.path === '/news'">Новости</Button1>
+              <Button1 class=" p-2" v-if="route.path === '/news'">Новости</Button1>
             </router-link>
             <router-link to="/news">
-              <Button2 class="md:w-[90%]" v-if="route.path !== '/news'">Новости</Button2>
+              <Button2 class="" v-if="route.path !== '/news'">Новости</Button2>
             </router-link>
 
             <router-link to="/calendar">
-              <Button1 class="md:w-[90%]" v-if="route.path === '/calendar'">Календарь мероприятий</Button1>
+              <Button1 class="p-2" v-if="route.path === '/calendar'">Календарь мероприятий</Button1>
             </router-link>
             <router-link to="/calendar">
-              <Button2 class="md:w-[90%]" v-if="route.path !== '/calendar'">Календарь мероприятий</Button2>
+              <Button2 class="" v-if="route.path !== '/calendar'">Календарь мероприятий</Button2>
             </router-link>
 
           </div>

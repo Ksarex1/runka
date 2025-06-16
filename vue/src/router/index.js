@@ -12,6 +12,8 @@ import Vakansii from "@/views/Vakansii.vue";
 import Politika from "@/views/Politika.vue";
 import Soglasie from "@/views/Soglasie.vue";
 import Cart from "@/views/Cart.vue";
+import News from "@/views/News.vue";
+import Calendar from "@/views/Calendar.vue";
 
 import { isAuthenticated } from '../auth.js';
 
@@ -30,6 +32,8 @@ const routes = [
     { path: '/soglasie', component: Soglasie },
     { path: '/1c-gos', component: Soglasie },
     { path: '/cart', component: Cart },
+    { path: '/news', component: News },
+    { path: '/calendar', component: Calendar },
 ];
 
 const router = createRouter({

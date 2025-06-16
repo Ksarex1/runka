@@ -1,8 +1,8 @@
 <script>
-import ContentRenderer from "@/components/ContentRenderer.vue";
+import ContentRendererAbout from "@/components/ContentRenderer-About.vue";
 export default {
   components:{
-    ContentRenderer
+    ContentRenderer: ContentRendererAbout
   },
   name: "Rabota_runa"
 }

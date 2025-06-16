@@ -1,13 +1,19 @@
 import './assets/main.css'
-
-import {createApp} from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-AOS.init({
-    duration: 800, // продолжительность анимации в мс
-    once: true,    // анимация один раз при появлении
-});
+import router from './router'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import i18n from './i18n'
 
-createApp(App).use(router).mount('#app')
+AOS.init({
+    duration: 800,
+    once: true,
+})
+
+const app = createApp(App)
+
+app.use(router)
+app.use(i18n)
+
+app.mount('#app')

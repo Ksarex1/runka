@@ -19,6 +19,7 @@ export default {
 
 <template>
   <Header />
+  <main>
   <div data-aos="fade-up">
   <section class="mt-17 relative max-md:mb-30">
     <div class="container">
@@ -84,6 +85,7 @@ export default {
     </div>
   </section>
   </div>
+  </main>
 </template>
 
 <style scoped>

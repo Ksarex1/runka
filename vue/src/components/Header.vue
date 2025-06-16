@@ -26,9 +26,6 @@ const searchTerm = ref('')
 const sections = [
   { name: 'О нас', link: '/about' },
   { name: 'События', link: '/contacts' },
-  { name: 'Программные продукты', link: '/contacts' },
-  { name: 'Услуги', link: '/contacts' },
-  { name: 'Контакты', link: '/contacts' },
   { name: 'Статусы и сертификаты компании', link: '/contacts' },
   { name: 'Благодарственные письма', link: '/contacts' },
   { name: 'Благодарности', link: '/contacts' },
@@ -36,6 +33,39 @@ const sections = [
   { name: 'Вакансии', link: '/contacts' },
   { name: 'Политика в отношении обработки ПДн', link: '/contacts' },
   { name: 'Согласие на обработку ПДн', link: '/contacts' },
+  { name: 'Новости', link: '/contacts' },
+  { name: 'Календарь мероприятий', link: '/contacts' },
+  { name: 'Программные продукты', link: '/contacts' },
+  { name: 'Решения 1С для государственных учреждений', link: '/contacts' },
+  { name: 'Решения 1С для здравоохранения', link: '/contacts' },
+  { name: 'Сервисы 1С', link: '/contacts' },
+  { name: 'Клиентские лицензии 1С', link: '/contacts' },
+  { name: 'Лицензии на сервер 1С', link: '/contacts' },
+  { name: 'Услуги', link: '/contacts' },
+  { name: 'Сопровождение 1С', link: '/contacts' },
+  { name: 'Информационно-технологическое сопровождение (1С:ИТС)', link: '/contacts' },
+  { name: 'Абонентское обслуживание', link: '/contacts' },
+  { name: 'Линия консультаций', link: '/contacts' },
+  { name: 'Дополнительные услуги', link: '/contacts' },
+  { name: 'Центр сертифицированного обучения 1С (ЦСО)', link: '/contacts' },
+  { name: 'Семинары', link: '/contacts' },
+  { name: 'Курсы и мини-семинары', link: '/contacts' },
+  { name: 'Вебинары', link: '/contacts' },
+  { name: 'Полезная информация', link: '/contacts' },
+  { name: 'Ответы 1С  на вопросы о переходе на работу через Интернет', link: '/contacts' },
+  { name: 'Тонкости учета', link: '/contacts' },
+  { name: 'Актуальные релизы', link: '/contacts' },
+  { name: 'Релизы БГУ 1.0', link: '/contacts' },
+  { name: 'Релизы БГУ 2.0', link: '/contacts' },
+  { name: 'Релизы ЗКГУ 3.1', link: '/contacts' },
+  { name: 'Релизы КАМИН', link: '/contacts' },
+  { name: 'Релизы Больничная аптека', link: '/contacts' },
+  { name: 'Релизы Диетическое питание', link: '/contacts' },
+  { name: 'Как узнать, работаете вы в типовой или измененной конфигурации', link: '/contacts' },
+  { name: 'Учебный центр КУБиК', link: '/contacts' },
+  { name: 'Курсы и практические занятия', link: '/contacts' },
+  { name: 'Отзывы клиентов', link: '/contacts' },
+  { name: 'Контакты', link: '/contacts' },
 ]
 
 const filteredSections = () => {
@@ -49,7 +79,7 @@ const filteredSections = () => {
 </script>
 
 <template>
-  <section class="flex flex-col">
+  <header class="flex flex-col fixed top-0 left-0 w-full z-200 bg-white ">
     <div v-if="isOpen || isTransitioning"
          class="max-[1400px]:flex flex-col bg-white p-4 absolute top-0 right-0 z-105 px-10 lg:w-2/6 items-end h-screen
             transition-transform duration-300 ease-in-out transform max-lg:w-4/6"
@@ -238,7 +268,7 @@ const filteredSections = () => {
          class="fixed inset-0 z-100 bg-[#030303]/55 backdrop-blur-[2px]"
          @click="isOpen = false">
     </div>
-  </section>
+  </header>
 
 
 </template>

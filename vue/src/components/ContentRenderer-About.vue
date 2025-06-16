@@ -1,6 +1,8 @@
 <template>
   <Header/>
   <div data-aos="">
+    <main>
+
   <section class="mt-[70px] mb-[70px]">
     <div class="container flex flex-col">
       <div class="head">
@@ -123,7 +125,9 @@
       </div>
     </div>
     </div>
+
   </section>
+    </main>
   </div>
 
   <Footer/>
@@ -179,6 +183,9 @@ export default {
 </script>
 
 <style scoped>
+main{
+  padding-top: 30px;
+}
 .group{
   list-style: none;
 }

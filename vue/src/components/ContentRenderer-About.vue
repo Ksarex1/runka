@@ -24,53 +24,53 @@
                 v-if="menuOpen"
                 class="absolute left-0 right-0 mt-2 bg-white shadow-lg rounded-lg p-4 flex flex-col gap-3 text-black"
             >
-              <router-link to="/statys"><Button1 id="butt" v-if="sections[0].name_razdel === 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button1></router-link>
-              <router-link to="/statys"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button2></router-link>
+              <router-link to="/about/statys"><Button1 id="butt" v-if="sections[0].name_razdel === 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button1></router-link>
+              <router-link to="/about/statys"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button2></router-link>
 
-              <router-link to="/blagodar_letter"><Button1 id="butt" v-if="sections[0].name_razdel === 'Благодарственные письма'">Благодарственные письма</Button1></router-link>
-              <router-link to="/blagodar_letter"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Благодарственные письма'">Благодарственные письма</Button2></router-link>
+              <router-link to="/about/blagodar_letter"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Благодарственные письма'">Благодарственные письма</Button2></router-link>
+              <router-link to="/about/blagodar_letter"><Button1 id="butt" v-if="sections[0].name_razdel === 'Благодарственные письма'">Благодарственные письма</Button1></router-link>
 
-              <router-link to="/blagodar"><Button1 id="butt" v-if="sections[0].name_razdel === 'Благодарности'">Благодарности</Button1></router-link>
-              <router-link to="/blagodar"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Благодарности'">Благодарности</Button2></router-link>
+              <router-link to="/about/blagodar_letter/blagodar"><Button1 id="butt" v-if="sections[0].name_razdel === 'Благодарности'">Благодарности</Button1></router-link>
+              <router-link to="/about/blagodar_letter/blagodar"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Благодарности'">Благодарности</Button2></router-link>
 
-              <router-link to="/rabota_runa"><Button1 id="butt" v-if="sections[0].name_razdel === 'Работа в Руна С'">Работа в Руна С</Button1></router-link>
-              <router-link to="/rabota_runa"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Работа в Руна С'">Работа в Руна С</Button2></router-link>
+              <router-link to="/about/rabota_runa"><Button1 id="butt" v-if="sections[0].name_razdel === 'Работа в Руна С'">Работа в Руна С</Button1></router-link>
+              <router-link to="/about/rabota_runa"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Работа в Руна С'">Работа в Руна С</Button2></router-link>
 
-              <router-link to="/vakansii"><Button1 id="butt" v-if="sections[0].name_razdel === 'Вакансии'">Вакансии</Button1></router-link>
-              <router-link to="/vakansii"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Вакансии'">Вакансии</Button2></router-link>
+              <router-link to="/about/rabota_runa/vakansii"><Button1 id="butt" v-if="sections[0].name_razdel === 'Вакансии'">Вакансии</Button1></router-link>
+              <router-link to="/about/rabota_runa/vakansii"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Вакансии'">Вакансии</Button2></router-link>
 
-              <router-link to="/politika"><Button1 id="butt" v-if="sections[0].name_razdel === 'Политика в отношении обработки ПДн'">Политика в отношении обработки ПДн</Button1></router-link>
-              <router-link to="/politika"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Политика в отношении обработки ПДн'">Политика в отношении обработки ПДн</Button2></router-link>
+              <router-link to="/about/politika"><Button1 id="butt" v-if="sections[0].name_razdel === 'Политика в отношении обработки ПДн'">Политика в отношении обработки ПДн</Button1></router-link>
+              <router-link to="/about/politika"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Политика в отношении обработки ПДн'">Политика в отношении обработки ПДн</Button2></router-link>
 
-              <router-link to="/soglasie"><Button1 id="butt" v-if="sections[0].name_razdel === 'Согласие на обработку ПДн'">Согласие на обработку ПДн</Button1></router-link>
-              <router-link to="/soglasie"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Согласие на обработку ПДн'">Согласие на обработку ПДн</Button2></router-link>
+              <router-link to="/about/soglasie"><Button1 id="butt" v-if="sections[0].name_razdel === 'Согласие на обработку ПДн'">Согласие на обработку ПДн</Button1></router-link>
+              <router-link to="/about/soglasie"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Согласие на обработку ПДн'">Согласие на обработку ПДн</Button2></router-link>
             </div>
           </transition>
         </div>
 
         <!-- Десктопное меню -->
         <div class="buttons hidden lg:flex justify-between mt-[21px] md:w-[100%]">
-          <router-link to="/statys"><Button1 class="md:w-[90%]" v-if="sections[0].name_razdel === 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button1></router-link>
-          <router-link to="/statys"><Button2 class="md:w-[90%]" v-if="sections[0].name_razdel !== 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button2></router-link>
+          <router-link to="/about/statys"><Button1 class="md:w-[90%]" v-if="sections[0].name_razdel === 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button1></router-link>
+          <router-link to="/about/statys"><Button2 class="md:w-[90%]" v-if="sections[0].name_razdel !== 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button2></router-link>
           <li class="group relative">
-            <router-link to="/blagodar_letter"><Button1 class="button md:w-[90%]" v-if="sections[0].name_razdel === 'Благодарственные письма' || sections[0].name_razdel === 'Благодарности'">Благодарственные письма ▼</Button1></router-link>
-            <router-link to="/blagodar_letter"><Button2 class="button md:w-[90%]" v-if="sections[0].name_razdel !== 'Благодарственные письма' && sections[0].name_razdel !== 'Благодарности'">Благодарственные письма ▼</Button2></router-link>
+            <router-link to="/about/blagodar_letter"><Button1 class="button md:w-[90%]" v-if="sections[0].name_razdel === 'Благодарственные письма' || sections[0].name_razdel === 'Благодарности'">Благодарственные письма ▼</Button1></router-link>
+            <router-link to="/about/blagodar_letter"><Button2 class="button md:w-[90%]" v-if="sections[0].name_razdel !== 'Благодарственные письма' && sections[0].name_razdel !== 'Благодарности'">Благодарственные письма ▼</Button2></router-link>
             <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-35 z-50">
-              <router-link to="/blagodar"><p class="mt-2">Благодарности</p></router-link>
+              <router-link to="/about/blagodar_letter/blagodar"><p class="mt-2">Благодарности</p></router-link>
             </ul>
           </li>
           <li class="group relative">
-            <router-link to="/rabota_runa"><Button1 class="button md:w-[90%]" v-if="sections[0].name_razdel === 'Работа в Руна С' || sections[0].name_razdel === 'Вакансии'">Работа в Руна С ▼</Button1></router-link>
-            <router-link to="/rabota_runa"><Button2 class="button md:w-[90%]" v-if="sections[0].name_razdel !== 'Работа в Руна С' && sections[0].name_razdel !== 'Вакансии'">Работа в Руна С ▼</Button2></router-link>
+            <router-link to="/about/rabota_runa"><Button1 class="button md:w-[90%]" v-if="sections[0].name_razdel === 'Работа в Руна С' || sections[0].name_razdel === 'Вакансии'">Работа в Руна С ▼</Button1></router-link>
+            <router-link to="/about/rabota_runa"><Button2 class="button md:w-[90%]" v-if="sections[0].name_razdel !== 'Работа в Руна С' && sections[0].name_razdel !== 'Вакансии'">Работа в Руна С ▼</Button2></router-link>
             <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-35 z-50">
-              <router-link to="/vakansii"><p class="mt-2">Вакансии</p></router-link>
+              <router-link to="/about/rabota_runa/vakansii"><p class="mt-2">Вакансии</p></router-link>
             </ul>
           </li>
-          <router-link to="/politika"><Button1 class="md:w-[90%]" v-if="sections[0].name_razdel === 'Политика в отношении обработки ПДн'">Политика в отношении обработки ПДн</Button1></router-link>
-          <router-link to="/politika"><Button2 class="md:w-[90%]" v-if="sections[0].name_razdel !== 'Политика в отношении обработки ПДн'">Политика в отношении обработки ПДн</Button2></router-link>
+          <router-link to="/about/politika"><Button1 class="md:w-[90%]" v-if="sections[0].name_razdel === 'Политика в отношении обработки ПДн'">Политика в отношении обработки ПДн</Button1></router-link>
+          <router-link to="/about/politika"><Button2 class="md:w-[90%]" v-if="sections[0].name_razdel !== 'Политика в отношении обработки ПДн'">Политика в отношении обработки ПДн</Button2></router-link>
 
-          <router-link to="/soglasie"><Button1 class="md:w-[90%]" v-if="sections[0].name_razdel === 'Согласие на обработку ПДн'">Согласие на обработку ПДн</Button1></router-link>
-          <router-link to="/soglasie"><Button2 class="md:w-[90%]" v-if="sections[0].name_razdel !== 'Согласие на обработку ПДн'">Согласие на обработку ПДн</Button2></router-link>
+          <router-link to="/about/soglasie"><Button1 class="md:w-[90%]" v-if="sections[0].name_razdel === 'Согласие на обработку ПДн'">Согласие на обработку ПДн</Button1></router-link>
+          <router-link to="/about/soglasie"><Button2 class="md:w-[90%]" v-if="sections[0].name_razdel !== 'Согласие на обработку ПДн'">Согласие на обработку ПДн</Button2></router-link>
         </div>
       </div>
 

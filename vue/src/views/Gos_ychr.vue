@@ -126,12 +126,12 @@ export default {
           </option>
         </select>
 
-        <div class="filter-wrapper flex items-center flex-wrap">
-          <img src="@/assets/img/filter.svg" class="mr-2">
+        <div class="filter-wrapper flex items-center flex-wrap relative">
+          <img src="@/assets/img/filter.svg" class="w-4 h-4 absolute -left-4 ml-0 pointer-events-none" />
 
           <select
-              class="w-[114px] h-[27px] ml-[20px] pl-8"
               v-model="selectedFilter"
+              class="w-[140px] h-[32px] pl-8 pr-2 text-sm border border-gray-300 rounded appearance-none bg-white"
           >
             <option value="">Фильтры</option>
             <option
@@ -143,6 +143,7 @@ export default {
             </option>
           </select>
         </div>
+
       </div>
     </div>
 

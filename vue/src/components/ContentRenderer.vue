@@ -1,6 +1,6 @@
 <template>
   <Header/>
-  <div data-aos="fade-up">
+
   <section class="mt-[70px] mb-[70px]">
     <div class="container flex flex-col">
       <div class="head">
@@ -100,9 +100,7 @@
               />
             </div>
           </div>
-
-          <!-- Модальное окно -->
-          <div v-if="selectedImage" class="fixed inset-0 bg-[#030303] bg-opacity-30 flex items-center justify-center z-50" @click.self="closeImage">
+          <div v-if="selectedImage" class="fixed inset-0 bg-[#030303] bg-opacity-30 flex items-center justify-center z-100" @click.self="closeImage">
             <div class="relative">
               <img :src="selectedImage" class="max-h-[90vh] max-w-[90vw] rounded shadow-xl" />
               <button @click="closeImage" class="absolute top-2 right-2 text-white text-3xl font-bold">&times;</button>
@@ -112,7 +110,6 @@
     </div>
     </div>
   </section>
-  </div>
 
   <Footer/>
 </template>

@@ -1,28 +1,20 @@
 <script>
-import cardImg1 from '../assets/img/card-img-gos-1.png';
-import cardImg2 from '../assets/img/card-img-gos-2.png';
-import cardImg3 from '../assets/img/card-img-gos-3.png';
-import cardImg4 from '../assets/img/card-img-gos-4.png';
-import cardImg5 from '../assets/img/card-img-gos-5.png';
-import cardImg6 from '../assets/img/card-img-gos-6.png';
-import cardImg7 from '../assets/img/card-img-gos-7.png';
-import cardImg8 from '../assets/img/card-img-gos-8.png';
-import ContentRendererPrograms from "@/components/ContentRenderer-Programs.vue";
-import cards from "@/assets/data/product-gos.js";
+import cards from "../assets/data/product-gos.js"
 
 export default {
   name: "Gos_ychr",
-  components: {ContentRendererPrograms},
   data() {
     return {
       cards,
       selectSort: [
-        {value: 'price', name: 'По цене (по возрастанию)'},
-        {value: 'price1', name: 'По цене (по убыванию)'}
+        { value: 'price', name: 'По цене (по возрастанию)' },
+        { value: 'price1', name: 'По цене (по убыванию)' },
+        { value: 'rating', name: 'По рейтингу (по возрастанию)' },
+        { value: 'rating1', name: 'По рейтингу (по убыванию)' }
       ],
       selectFilter: [
-        {value: 'do', name: 'До 20к'},
-        {value: 'posle', name: 'Дороже 20к'}
+        { value: 'do', name: 'До 20к' },
+        { value: 'posle', name: 'Дороже 20к' }
       ],
       selectedSort: "",
       currentSearch: '',
@@ -38,12 +30,9 @@ export default {
       const isDescending = this.selectedSort.endsWith('1');
 
       return [...this.cards].sort((a, b) => {
-        if (sortField === 'price') {
-          const priceA = parseInt(a.price);
-          const priceB = parseInt(b.price);
-          return isDescending ? priceB - priceA : priceA - priceB;
+        if (typeof a[sortField] === 'number') {
+          return isDescending ? b[sortField] - a[sortField] : a[sortField] - b[sortField];
         }
-
         return isDescending
             ? b[sortField].localeCompare(a[sortField])
             : a[sortField].localeCompare(b[sortField]);
@@ -51,129 +40,113 @@ export default {
     },
 
     searchCards() {
-      return this.sortedCards.filter(item => item.title.toLowerCase().includes(this.currentSearch.toLowerCase()) || item.price.toLowerCase().includes(this.currentSearch.toLowerCase()));
+      return this.sortedCards.filter(item =>
+          item.title.toLowerCase().includes(this.currentSearch.toLowerCase()) ||
+          item.price.toString().includes(this.currentSearch)
+      );
     },
 
     filterCards() {
       return this.searchCards.filter(item => {
-        const filter =
-            this.selectedFilter === '' ||
+        return this.selectedFilter === '' ||
             (this.selectedFilter === 'do' && item.price <= 20000) ||
-            (this.selectedFilter === 'posle' && item.price > 20000)
-
-        return filter;
-      })
-    },
+            (this.selectedFilter === 'posle' && item.price > 20000);
+      });
+    }
   }
 }
 </script>
 
 <template>
-  <ContentRendererPrograms>
-    <section class="mt-[50px]">
-      <div class="container">
-        <div class="head flex justify-between items-center">
-          <h2 class="font-medium text-[30px]">Решения 1С для государственных учреждений</h2>
-          <div class="params flex justify-between">
-            <div class="relative input">
-              <span class="absolute left-3 top-1/2 -translate-y-1/2"><img src="@/assets/img/Search.svg"></span>
-              <input v-model="currentSearch" type="text" placeholder="Поиск по товарам..."
-                     class="pl-10 pr-4 py-2 border w-[247px] h-[29px] rounded-[12px]">
-            </div>
+  <section class="mt-[100px]">
+    <div class="container">
+      <div class="head flex justify-between items-center flex-wrap gap-4">
+        <h2 class="font-medium text-[30px]">
+          Решения 1С для государственных учреждений
+        </h2>
+        <div class="params flex flex-wrap gap-4 items-center">
+          <div class="relative input">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2">
+              <img src="@/assets/img/Search.svg" />
+            </span>
+            <input
+                v-model="currentSearch"
+                type="text"
+                placeholder="Поиск по товарам..."
+                class="pl-10 pr-4 py-2 border w-[247px] h-[29px] rounded-[12px]"
+            />
+          </div>
 
-            <select class="sort w-[204px] h-[29px] border rounded-[12px] ml-[20px]" v-model="selectedSort">
-              <option value=""> Сортировать по...</option>
+          <select
+              class="sort w-[204px] h-[29px] border rounded-[12px]"
+              v-model="selectedSort"
+          >
+            <option value="">Сортировать по...</option>
+            <option
+                v-for="option in selectSort"
+                :key="option.value"
+                :value="option.value"
+            >
+              {{ option.name }}
+            </option>
+          </select>
+
+          <div class="filter-wrapper relative">
+            <img
+                src="@/assets/img/filter.svg"
+                class="w-4 h-4 absolute left-2 top-1/2 -translate-y-1/2 pointer-events-none"
+            />
+            <select
+                v-model="selectedFilter"
+                class="pl-8 pr-2 text-sm border border-gray-300 rounded appearance-none bg-white w-[140px] h-[32px]"
+            >
+              <option value="">Фильтры</option>
               <option
-                  v-for="option in selectSort"
+                  v-for="option in selectFilter"
                   :key="option.value"
-                  :value="option.value">
+                  :value="option.value"
+              >
                 {{ option.name }}
               </option>
             </select>
-
-            <div class="filter-wrapper flex items-center flex-wrap relative">
-              <img src="@/assets/img/filter.svg" class="w-4 h-4 absolute -left-4 ml-0 pointer-events-none"/>
-
-              <select
-                  v-model="selectedFilter"
-                  class="w-[140px] h-[32px] pl-8 pr-2 text-sm border border-gray-300 rounded appearance-none bg-white"
-              >
-                <option value="">Фильтры</option>
-                <option
-                    v-for="option in selectFilter"
-                    :key="option.value"
-                    :value="option.value"
-                >
-                  {{ option.name }}
-                </option>
-              </select>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-          <h2 class="col-span-full text-center text-xl sm:text-2xl py-10" v-if="filterCards.length === 0">
-            Результатов нет :(
-          </h2>
-
-          <div
-              v-for="card in filterCards"
-              :key="card.img"
-              class="bg-white hover:bg-gray-50 transition-colors duration-300 cursor-pointer rounded-lg border border-gray-300 shadow-xl p-8 flex flex-col items-center justify-between h-[416px]"
-          >
-            <img :src="card.img" :alt="card.title" class="w-full h-auto object-contain">
-            <div class="w-full">
-              <p class="text-gray-600 text-sm">{{ card.title }}</p>
-              <div class="flex justify-between items-center mt-3.5">
-                <h4 class="text-2xl font-bold">от {{ card.price }} ₽</h4>
-                <img src="@/assets/img/cart-1.svg" class="cursor-pointer w-6 h-6">
-              </div>
-            </div>
           </div>
         </div>
       </div>
-    </section>
-  </ContentRendererPrograms>
+
+      <div class="cards flex flex-wrap justify-between">
+        <h2 class="mt-[50px] text-[22px]" v-if="filterCards.length === 0">
+          Результатов нет :(
+        </h2>
+        <div
+            class="card bg-white hover:bg-[#FAFAFA] transition-[0.3s] cursor-pointer mt-[50px] w-[342px] h-[416px] border rounded-[8px] border-[#C3C3C3] drop-shadow-xl p-[30px] flex flex-col items-center justify-around"
+            v-for="card in filterCards"
+            :key="card.id"
+        >
+          <router-link
+              :to="{ name: 'ProductDetail', params: { id: card.id } }"
+              class="flex flex-col items-center text-center"
+          >
+            <img :src="card.img" :alt="card.title" class="mb-4 max-h-[160px]" />
+            <p class="text-[15px] text-[#5F687A]">{{ card.title }}</p>
+            <div class="prices flex justify-between mt-[14px] items-center w-full px-4">
+              <h4 class="text-[24px] font-bold">от {{ card.price }} ₽</h4>
+              <img src="@/assets/img/cart-1.svg" class="cursor-pointer" />
+            </div>
+          </router-link>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style scoped>
-.filter-wrapper {
-  position: relative;
-}
-
-select {
-  font-size: 14px;
-  color: #5F687A;
-}
-
-.filter-wrapper img {
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  pointer-events: none;
-}
-
 .filter-wrapper select {
   font-size: 16px;
   cursor: pointer;
   appearance: none;
-  border: none;
 }
 
-.filter-wrapper select option {
+.filter-wrapper option {
   font-size: 14px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* Количество строк */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
-
-.sort {
-  padding-left: 5px;
-}
-
 </style>

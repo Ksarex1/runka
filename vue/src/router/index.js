@@ -36,6 +36,12 @@ const routes = [
     { path: '/news', component: News },
     { path: '/calendar', component: Calendar },
     { path: '/gos_ychr', component: Gos_ychr },
+    {
+        path: '/gos_ychr/:id',
+        name: 'ProductDetail',
+        component: () => import('@/views/ProductDetail.vue')
+    }
+
 ];
 
 const router = createRouter({

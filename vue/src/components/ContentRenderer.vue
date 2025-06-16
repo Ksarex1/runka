@@ -1,6 +1,6 @@
 <template>
   <Header/>
-  <div data-aos="fade-up">
+  <div data-aos="">
   <section class="mt-[70px] mb-[70px]">
     <div class="container flex flex-col">
       <div class="head">
@@ -102,10 +102,22 @@
           </div>
 
           <!-- Модальное окно -->
-          <div v-if="selectedImage" class="fixed inset-0 bg-[#030303] bg-opacity-30 flex items-center justify-center z-50" @click.self="closeImage">
-            <div class="relative">
-              <img :src="selectedImage" class="max-h-[90vh] max-w-[90vw] rounded shadow-xl" />
-              <button @click="closeImage" class="absolute top-2 right-2 text-white text-3xl font-bold">&times;</button>
+          <div
+              v-if="selectedImage" :data-aos="null"
+              class="fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center"
+              @click.self="closeImage"
+          >
+            <div class="relative max-w-full max-h-full">
+              <img
+                  :src="selectedImage"
+                  class="object-contain max-h-[95vh] max-w-[95vw] rounded shadow-2xl border-4 border-white"
+              />
+              <button
+                  @click="closeImage"
+                  class="absolute -top-4 -right-4 bg-[#005DFF] text-white text-2xl w-10 h-10 rounded-full flex items-center justify-center shadow-lg hover:bg-red-700"
+              >
+                &times;
+              </button>
             </div>
           </div>
       </div>
@@ -120,6 +132,7 @@
 <script>
 import content from "@/assets/data/About-content.json";
 import { ref } from "vue";
+import { watch } from "vue";
 import Header from "@/components/Header.vue";
 import Button2 from "@/components/button-2.vue";
 import Footer from "@/components/Footer.vue";
@@ -134,6 +147,9 @@ export default {
       required: true
     }
   },
+
+
+
   setup(props) {
     const menuOpen = ref(false);
     const selectedImage = ref(null);
@@ -153,7 +169,12 @@ export default {
     }
 
     return { sections, selectedImage, openImage, closeImage, menuOpen };
-  }
+
+  },
+
+
+
+
 };
 </script>
 

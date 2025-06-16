@@ -14,7 +14,7 @@ const errorMessage = ref('')
 const onSubmit = async () => {
   try {
     errorMessage.value = ''
-    const { data } = await axios.post('http://localhost:4444/auth/login', {
+    const { data } = await axios.post('https://runka-1.onrender.com/auth/login', {
       email: email.value,
       password: password.value,
     })
@@ -22,7 +22,7 @@ const onSubmit = async () => {
     localStorage.setItem('token', data.token)
     axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`
 
-    const me = await axios.get('http://localhost:4444/auth/me')
+    const me = await axios.get('https://runka-1.onrender.com/auth/me')
     setUser(me.data)
 
     router.push('/')

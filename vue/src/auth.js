@@ -21,7 +21,7 @@ const token = localStorage.getItem('token')
 if (token) {
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
-    axios.get('http://localhost:4444/auth/me')
+    axios.get('https://runka-1.onrender.com/auth/me')
         .then(({ data }) => {
             setUser(data)
         })

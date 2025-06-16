@@ -1,24 +1,9 @@
 <script setup>
 import Header from "@/components/Header.vue";
 import CartItem from "@/components/CartItem.vue";
+import { inject } from 'vue'
 import {computed, ref} from "vue";
-
-const cartItems = ref([
-  {
-    id: 1,
-    title: '1С: Бухгалтерия',
-    price: 20000,
-    img: '/assets/img/cartTest.png',
-    count: 1,
-  },
-  {
-    id: 2,
-    title: '1С: Управление торговлей',
-    price: 25000,
-    img: '/assets/img/cartTest.png',
-    count: 2,
-  },
-])
+const cartItems = inject('cart')
 
 const clearCart = () => {
   cartItems.value = [];
@@ -49,7 +34,7 @@ const totalPrice = computed(() =>
   <Header/>
   <main>
   <div data-aos="fade-up">
-  <section class="bg-[#f0f6ff] flex mt-17 py-10">
+  <section class="bg-[#f0f6ff] flex mt-17 mb-30">
     <div class="container">
       <h2 class="text-[32px] md:text-[45px] font-bold mb-10">Корзина</h2>
 
@@ -95,5 +80,8 @@ const totalPrice = computed(() =>
 button:disabled {
   background-color: #9c9cf6;
   cursor: not-allowed;
+}
+main{
+  padding-top: 40px;
 }
 </style>

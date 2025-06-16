@@ -1,27 +1,65 @@
 <script>
 import cards from "../assets/data/product-gos.js"
 import ContentRendererPrograms from "@/components/ContentRenderer-Programs.vue";
+import {inject} from 'vue'
 
 export default {
   name: "Gos_ychr",
-  components: { ContentRendererPrograms },
+  inject: ['addToCart', 'cart', 'removeFromCart', 'updateCartItemQuantity'],
+  components: {ContentRendererPrograms},
+
   data() {
     return {
       cards,
       selectSort: [
-        { value: 'price', name: 'По цене (по возрастанию)' },
-        { value: 'price1', name: 'По цене (по убыванию)' },
-        { value: 'rating', name: 'По рейтингу (по возрастанию)' },
-        { value: 'rating1', name: 'По рейтингу (по убыванию)' }
+        {value: 'price', name: 'По цене (по возрастанию)'},
+        {value: 'price1', name: 'По цене (по убыванию)'},
+        {value: 'rating', name: 'По рейтингу (по возрастанию)'},
+        {value: 'rating1', name: 'По рейтингу (по убыванию)'}
       ],
       selectFilter: [
-        { value: 'do', name: 'До 20к' },
-        { value: 'posle', name: 'Дороже 20к' }
+        {value: 'do', name: 'До 20к'},
+        {value: 'posle', name: 'Дороже 20к'}
       ],
       selectedSort: "",
       currentSearch: '',
       selectedFilter: ''
     }
+  },
+
+  methods: {
+    isInCart(product) {
+      return this.cart.some(item => item.id === product.id)
+    },
+
+    getCartItem(product) {
+      return this.cart.find(item => item.id === product.id)
+    },
+
+    handleAddToCart(product) {
+      if (!this.isInCart(product)) {
+        this.addToCart({...product, count: 1});
+      }
+    },
+
+    incrementQuantity(product) {
+      const cartItem = this.getCartItem(product);
+      if (cartItem) {
+        this.updateCartItemQuantity(cartItem.id, cartItem.count + 1);
+      }
+    },
+
+    decrementQuantity(product) {
+      const cartItem = this.getCartItem(product);
+      if (cartItem) {
+        if (cartItem.count > 1) {
+          this.updateCartItemQuantity(cartItem.id, cartItem.count - 1);
+        } else {
+          this.removeFromCart(cartItem.id);
+        }
+      }
+    }
+
   },
 
   computed: {
@@ -59,6 +97,7 @@ export default {
 }
 </script>
 
+
 <template>
   <ContentRendererPrograms>
     <section class="">
@@ -70,7 +109,7 @@ export default {
           <div class="params flex flex-wrap gap-4 items-center">
             <div class="relative input">
               <span class="absolute left-3 top-1/2 -translate-y-1/2">
-                <img src="@/assets/img/Search.svg" />
+                <img src="@/assets/img/Search.svg"/>
               </span>
               <input
                   v-model="currentSearch"
@@ -126,14 +165,41 @@ export default {
               :key="card.img"
               class="bg-white hover:bg-gray-50 transition-colors duration-300 cursor-pointer rounded-lg border border-gray-300 shadow-xl p-8 flex flex-col items-center justify-between h-[416px]"
           >
-            <img :src="card.img" :alt="card.title" class="w-full h-auto object-contain">
-            <div class="w-full">
-              <p class="text-gray-600 text-sm">{{ card.title }}</p>
-              <div class="flex justify-between items-center mt-3.5">
-                <h4 class="text-2xl font-bold">от {{ card.price }} ₽</h4>
-                <img src="@/assets/img/cart-1.svg" class="cursor-pointer w-6 h-6">
+            <router-link
+                :to="{ name: 'ProductDetail', params: { id: card.id } }"
+                class="flex flex-col items-center justify-between h-full"
+            >
+              <img :src="card.img" :alt="card.title" class="w-full h-auto object-contain"/>
+              <div class="w-full">
+                <p class="text-gray-600 text-sm">{{ card.title }}</p>
+              </div>
+            </router-link>
+            <div class="flex justify-between items-center w-full mt-3.5">
+              <h4 class="text-xl font-bold">от {{ card.price }} ₽</h4>
+
+              <div v-if="!isInCart(card)">
+                <img @click="handleAddToCart(card)" src="../assets/img/cart-1.svg" alt="">
+              </div>
+
+              <div v-else class="flex items-center gap-3">
+                <button
+                    @click="decrementQuantity(card)"
+                    class="w-10 h-10 bg-gray-200 rounded hover:bg-gray-300 text-xl font-bold"
+                    type="button"
+                >
+                  −
+                </button>
+                <span>{{ getCartItem(card).count }}</span>
+                <button
+                    @click="incrementQuantity(card)"
+                    class="w-10 h-10 bg-gray-200 rounded hover:bg-gray-300 text-xl font-bold"
+                    type="button"
+                >
+                  +
+                </button>
               </div>
             </div>
+
           </div>
         </div>
       </div>

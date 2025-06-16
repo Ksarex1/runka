@@ -1,23 +1,60 @@
 <script setup>
-import { useRoute } from 'vue-router';
-import { computed } from 'vue';
+import {useRoute} from 'vue-router';
+import {computed, inject} from 'vue';
 import cards from '../assets/data/product-gos.js';
 import Header from '../components/Header.vue';
 
 const route = useRoute();
 const productId = Number(route.params.id);
-
-// Находим нужный товар
 const product = computed(() => cards.find(item => item.id === productId));
+
+const cart = inject('cart')
+const addToCart = inject('addToCart');
+const updateCartItemQuantity = inject('updateCartItemQuantity');
+const removeFromCart = inject('removeFromCart');
+
+const isInCart = (product) => {
+  return cart.value.some(item => item.id === product.id);
+}
+
+const getCartItem = (product) => {
+  return cart.value.find(item => item.id === product.id);
+}
+
+const handleAddToCart = (product) => {
+  if (!isInCart(product)) {
+    addToCart({...product, count: 1});
+  }
+}
+
+const incrementQuantity = (product) => {
+  const cartItem = getCartItem(product);
+  if (cartItem) {
+    updateCartItemQuantity(cartItem.id, cartItem.count + 1);
+  }
+}
+
+const decrementQuantity = (product) => {
+  const cartItem = getCartItem(product);
+  if (cartItem) {
+    if (cartItem.count > 1) {
+      updateCartItemQuantity(cartItem.id, cartItem.count - 1);
+    } else {
+      removeFromCart(cartItem.id);
+    }
+  }
+}
 </script>
 
 <template>
-  <Header />
+  <Header/>
   <main>
-    <section >
+    <section>
       <div class="container mx-auto px-4 relative">
         <div>
-          <router-link to="/1c-gos"><img src="../assets/img/arrow-left-circle.svg" alt="back" class="absolute top-20 cursor-pointer"></router-link>
+          <router-link to="/1c-gos">
+            <img src="../assets/img/arrow-left-circle.svg" alt="back" class="absolute top-20 cursor-pointer"/>
+          </router-link>
         </div>
         <h2 class="font-medium text-3xl mb-10">Программные продукты</h2>
 
@@ -33,7 +70,7 @@ const product = computed(() => cards.find(item => item.id === productId));
           <div>
             <div class="flex gap-1 mb-2">
               <div v-for="n in product.rating" :key="n">
-                <img class="w-6 h-6" src="../assets/img/Star.svg" alt="rating" />
+                <img class="w-6 h-6" src="../assets/img/Star.svg" alt="rating"/>
               </div>
             </div>
             <h3 class="text-2xl md:text-3xl font-semibold mb-4">{{ product.title }}</h3>
@@ -41,8 +78,30 @@ const product = computed(() => cards.find(item => item.id === productId));
             <p class="text-lg md:text-xl mb-2">
               Цена: от <strong class="text-2xl md:text-3xl">{{ product.price }} ₽</strong>
             </p>
-            <div>
-              <button class="text-[18px] py-3 px-8 bg-primary2 text-white rounded-2xl font-bold mt-9 cursor-pointer hover:bg-blue-700 transition">Добавить в корзину</button>
+            <div class="flex justify-between items-center w-full mt-3.5">
+              <div v-if="!isInCart(product)">
+                <button class="bg-primary2 py-2 px-8 cursor-pointer text-white font-medium rounded-lg text-[18px] mt-9"
+                        @click="handleAddToCart(product)">Добавить в корзину
+                </button>
+              </div>
+
+              <div v-else class="flex items-center gap-3 mt-9">
+                <button
+                    @click="decrementQuantity(product)"
+                    class="w-10 h-10 bg-gray-200 rounded hover:bg-gray-300 text-xl font-bold"
+                    type="button"
+                >
+                  −
+                </button>
+                <span>{{ getCartItem(product).count }}</span>
+                <button
+                    @click="incrementQuantity(product)"
+                    class="w-10 h-10 bg-gray-200 rounded hover:bg-gray-300 text-xl font-bold"
+                    type="button"
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
         </div>

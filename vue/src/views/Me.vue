@@ -89,4 +89,7 @@ export default {
 </template>
 
 <style scoped>
+main{
+  padding-top: 40px;
+}
 </style>

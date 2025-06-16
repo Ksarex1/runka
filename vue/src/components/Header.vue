@@ -1,9 +1,10 @@
 <script setup>
-import {ref, watch,computed} from 'vue'
-import { user, isAuthenticated, logout } from '../auth.js'
+import {ref, watch, computed, inject} from 'vue'
+import {user, isAuthenticated, logout} from '../auth.js'
 
 const isOpen = ref(false)
 const isTransitioning = ref(false)
+const cart = inject('cart')
 
 watch(isOpen, (newVal) => {
   if (newVal) {
@@ -17,6 +18,9 @@ watch(isOpen, (newVal) => {
   }
 })
 
+const summProducts = () => {
+  return cart.value.reduce((acc, item) => acc + item.count, 0)
+}
 const handleLogout = () => {
   logout()
 }
@@ -24,48 +28,48 @@ const handleLogout = () => {
 const searchTerm = ref('')
 
 const sections = [
-  { name: 'О нас', link: '/about' },
-  { name: 'События', link: '/contacts' },
-  { name: 'Статусы и сертификаты компании', link: '/about/statys' },
-  { name: 'Благодарственные письма', link: '/about/blagodar_letter' },
-  { name: 'Благодарности', link: '/about/blagodar_letter/blagodar' },
-  { name: 'Работа в Руна С', link: '/about/rabota_runa' },
-  { name: 'Вакансии', link: '/about/rabota_runa/vakansii' },
-  { name: 'Политика в отношении обработки ПДн', link: '/about/politika' },
-  { name: 'Согласие на обработку ПДн', link: '/about/soglasie' },
-  { name: 'Новости', link: '/contacts' },
-  { name: 'Календарь мероприятий', link: '/contacts' },
-  { name: 'Программные продукты', link: '/contacts' },
-  { name: 'Решения 1С для государственных учреждений', link: '/1c-gos' },
-  { name: 'Решения 1С для здравоохранения', link: '/contacts' },
-  { name: 'Сервисы 1С', link: '/contacts' },
-  { name: 'Клиентские лицензии 1С', link: '/contacts' },
-  { name: 'Лицензии на сервер 1С', link: '/contacts' },
-  { name: 'Услуги', link: '/contacts' },
-  { name: 'Сопровождение 1С', link: '/contacts' },
-  { name: 'Информационно-технологическое сопровождение (1С:ИТС)', link: '/contacts' },
-  { name: 'Абонентское обслуживание', link: '/contacts' },
-  { name: 'Линия консультаций', link: '/contacts' },
-  { name: 'Дополнительные услуги', link: '/contacts' },
-  { name: 'Центр сертифицированного обучения 1С (ЦСО)', link: '/contacts' },
-  { name: 'Семинары', link: '/contacts' },
-  { name: 'Курсы и мини-семинары', link: '/contacts' },
-  { name: 'Вебинары', link: '/contacts' },
-  { name: 'Полезная информация', link: '/contacts' },
-  { name: 'Ответы 1С  на вопросы о переходе на работу через Интернет', link: '/contacts' },
-  { name: 'Тонкости учета', link: '/contacts' },
-  { name: 'Актуальные релизы', link: '/contacts' },
-  { name: 'Релизы БГУ 1.0', link: '/contacts' },
-  { name: 'Релизы БГУ 2.0', link: '/contacts' },
-  { name: 'Релизы ЗКГУ 3.1', link: '/contacts' },
-  { name: 'Релизы КАМИН', link: '/contacts' },
-  { name: 'Релизы Больничная аптека', link: '/contacts' },
-  { name: 'Релизы Диетическое питание', link: '/contacts' },
-  { name: 'Как узнать, работаете вы в типовой или измененной конфигурации', link: '/contacts' },
-  { name: 'Учебный центр КУБиК', link: '/contacts' },
-  { name: 'Курсы и практические занятия', link: '/contacts' },
-  { name: 'Отзывы клиентов', link: '/contacts' },
-  { name: 'Контакты', link: '/contacts' },
+  {name: 'О нас', link: '/about'},
+  {name: 'События', link: '/contacts'},
+  {name: 'Статусы и сертификаты компании', link: '/about/statys'},
+  {name: 'Благодарственные письма', link: '/about/blagodar_letter'},
+  {name: 'Благодарности', link: '/about/blagodar_letter/blagodar'},
+  {name: 'Работа в Руна С', link: '/about/rabota_runa'},
+  {name: 'Вакансии', link: '/about/rabota_runa/vakansii'},
+  {name: 'Политика в отношении обработки ПДн', link: '/about/politika'},
+  {name: 'Согласие на обработку ПДн', link: '/about/soglasie'},
+  {name: 'Новости', link: '/contacts'},
+  {name: 'Календарь мероприятий', link: '/contacts'},
+  {name: 'Программные продукты', link: '/contacts'},
+  {name: 'Решения 1С для государственных учреждений', link: '/1c-gos'},
+  {name: 'Решения 1С для здравоохранения', link: '/contacts'},
+  {name: 'Сервисы 1С', link: '/contacts'},
+  {name: 'Клиентские лицензии 1С', link: '/contacts'},
+  {name: 'Лицензии на сервер 1С', link: '/contacts'},
+  {name: 'Услуги', link: '/contacts'},
+  {name: 'Сопровождение 1С', link: '/contacts'},
+  {name: 'Информационно-технологическое сопровождение (1С:ИТС)', link: '/contacts'},
+  {name: 'Абонентское обслуживание', link: '/contacts'},
+  {name: 'Линия консультаций', link: '/contacts'},
+  {name: 'Дополнительные услуги', link: '/contacts'},
+  {name: 'Центр сертифицированного обучения 1С (ЦСО)', link: '/contacts'},
+  {name: 'Семинары', link: '/contacts'},
+  {name: 'Курсы и мини-семинары', link: '/contacts'},
+  {name: 'Вебинары', link: '/contacts'},
+  {name: 'Полезная информация', link: '/contacts'},
+  {name: 'Ответы 1С  на вопросы о переходе на работу через Интернет', link: '/contacts'},
+  {name: 'Тонкости учета', link: '/contacts'},
+  {name: 'Актуальные релизы', link: '/contacts'},
+  {name: 'Релизы БГУ 1.0', link: '/contacts'},
+  {name: 'Релизы БГУ 2.0', link: '/contacts'},
+  {name: 'Релизы ЗКГУ 3.1', link: '/contacts'},
+  {name: 'Релизы КАМИН', link: '/contacts'},
+  {name: 'Релизы Больничная аптека', link: '/contacts'},
+  {name: 'Релизы Диетическое питание', link: '/contacts'},
+  {name: 'Как узнать, работаете вы в типовой или измененной конфигурации', link: '/contacts'},
+  {name: 'Учебный центр КУБиК', link: '/contacts'},
+  {name: 'Курсы и практические занятия', link: '/contacts'},
+  {name: 'Отзывы клиентов', link: '/contacts'},
+  {name: 'Контакты', link: '/contacts'},
 ]
 
 const filteredSections = () => {
@@ -93,11 +97,13 @@ const filteredSections = () => {
         <path stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M6 18L18 6M6 6l12 12" />
+              d="M6 18L18 6M6 6l12 12"/>
       </svg>
 
       <ul class="flex flex-col gap-4 text-end border-t border-gray-400 w-full pt-5">
-        <router-link to="/about"><li class="text-[#030303]">О нас</li></router-link>
+        <router-link to="/about">
+          <li class="text-[#030303]">О нас</li>
+        </router-link>
         <li class="text-[#030303]">События</li>
         <li class="text-[#030303]">Продукты</li>
         <li class="text-[#030303]">Услуги</li>
@@ -142,16 +148,32 @@ const filteredSections = () => {
           <div class="flex items-center gap-4">
             <template v-if="isAuthenticated">
               <router-link to="/me">
-                <img src="@/assets/img/profileImg.jpg" class="w-8 h-8 rounded-full" alt="avatar" />
+                <img src="@/assets/img/profileImg.jpg" class="w-8 h-8 rounded-full" alt="avatar"/>
               </router-link>
-              <router-link to="/cart">
-                <img src="@/assets/img/Cart.svg" class="w-6 h-6" alt="cart" />
+              <router-link to="/cart" class="relative">
+                <div
+                    class="absolute bg-white w-5 h-5 text-center flex items-center justify-center rounded-2xl -right-4 -bottom-2"
+                    v-if="cart.length > 0">
+                  <h5 class=" text-primary2  text-[12px] m-0 p-0 font-medium">
+                    {{ summProducts() }}
+                  </h5>
+                </div>
+                <img src="@/assets/img/Cart.svg" class="w-6 h-6" alt="cart"/>
               </router-link>
-              <button @click="logout" class="cursor-pointer text-sm text-white bg-red-500 py-1.25 px-4 rounded-lg hover:bg-red-900 ml-3">Выйти</button>
+              <button @click="logout"
+                      class="cursor-pointer text-sm text-white bg-red-500 py-1.25 px-4 rounded-lg hover:bg-red-900 ml-3">
+                Выйти
+              </button>
             </template>
             <template v-else>
-              <router-link to="/login" class="text-sm bg-white text-black font-medium px-5 py-1 rounded-lg shadow-2xl hover:bg-gray-300 transition">Войти</router-link>
-              <router-link to="/register" class="text-sm  text-white border border-white font-medium px-5 py-1 rounded-lg shadow-2xl hover:bg-blue-900 hover:text-white transition">Регистрация</router-link>
+              <router-link to="/login"
+                           class="text-sm bg-white text-black font-medium px-5 py-1 rounded-lg shadow-2xl hover:bg-gray-300 transition">
+                Войти
+              </router-link>
+              <router-link to="/register"
+                           class="text-sm  text-white border border-white font-medium px-5 py-1 rounded-lg shadow-2xl hover:bg-blue-900 hover:text-white transition">
+                Регистрация
+              </router-link>
             </template>
           </div>
 
@@ -162,7 +184,6 @@ const filteredSections = () => {
 
     <div class=" w-full flex justify-center shadow-xl/20">
       <div class="container py-1.5 flex justify-between py-4">
-
 
 
         <div>
@@ -211,7 +232,7 @@ const filteredSections = () => {
             <li class="group relative">
               <p>Полезная информация</p>
               <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
-                <p>Ответы 1С  на вопросы о переходе на работу через Интернет</p>
+                <p>Ответы 1С на вопросы о переходе на работу через Интернет</p>
                 <p>Тонкости учета</p>
                 <p>Актуальные релизы</p>
                 <p>Как узнать, работаете вы в типовой или измененной конфигурации</p>
@@ -274,15 +295,18 @@ const filteredSections = () => {
 </template>
 
 <style>
-.list p{
+.list p {
   color: #717171;
 }
-.list p:hover{
+
+.list p:hover {
   color: #333333;
 }
-body{
+
+body {
   position: relative;
 }
+
 .custom-select::after {
   content: '';
   position: absolute;
@@ -377,9 +401,11 @@ li {
   background-position: center;
   pointer-events: none;
 }
+
 .main li:last-child::after {
   content: none;
 }
+
 ul p {
   cursor: pointer;
 }

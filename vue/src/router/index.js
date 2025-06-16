@@ -31,11 +31,10 @@ const routes = [
     { path: '/about/rabota_runa/vakansii', component: Vakansii },
     { path: '/about/politika', component: Politika },
     { path: '/about/soglasie', component: Soglasie },
-    { path: '/1c-gos', component: Soglasie },
     { path: '/cart', component: Cart },
     { path: '/news', component: News },
     { path: '/calendar', component: Calendar },
-    { path: '/gos_ychr', component: Gos_ychr },
+    { path: '/1c-gos', component: Gos_ychr },
     {
         path: '/gos_ychr/:id',
         name: 'ProductDetail',

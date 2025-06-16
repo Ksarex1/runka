@@ -14,7 +14,7 @@ const router = useRouter()
 const onSubmit = async () => {
   try {
     errorMessage.value = ''
-    const { data } = await axios.post('http://localhost:4444/auth/register', {
+    const { data } = await axios.post('https://runka-1.onrender.com/auth/register', {
       fullName: fullName.value,
       email: email.value,
       password: password.value,

@@ -23,7 +23,9 @@ const { t } = useI18n()
           </p>
           <div class="buttons flex flex-row gap-4">
             <button1 id="button-1">{{ t('about.button_consult') }}</button1>
+            <router-link to="/about">
             <button2 id="button-2" class="ml-6">{{ t('about.button_more') }}</button2>
+            </router-link>
           </div>
         </div>
       </div>

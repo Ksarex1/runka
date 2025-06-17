@@ -17,17 +17,19 @@ export default {
           </div>
           <div class="text w-full h-[155px] px-4 py-5 border border-[#5F687A] rounded-b-[10px] bg-white">
             <div class="flex justify-between h-full">
-              <div class="w-[65%]">
-                <h4 class="font-bold text-[18px] xl:text-[18px] text-[#030303]">Сопровождение 1С</h4>
+              <div class="w-[85%]">
+                <h4 class="font-bold text-[18px] xl:text-[18px] text-[#030303]">Решения 1С для госучреждений</h4>
                 <p class="font-normal text-[13px] xl:text-[13px] text-[#5F687A] mt-2">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting...
+                  Решения 1С для госучреждений — это специализированные продукты для учета...
                 </p>
               </div>
-              <button class="cursor-pointer self-center">
-                <img src="../assets/img/arrow-right.png"
-                     class="w-6 h-6"
-                     alt="Подробнее">
-              </button>
+              <router-link to="/1c-gos">
+                <button class="cursor-pointer self-center">
+                  <img src="../assets/img/arrow-right.png"
+                       class="w-6 h-6"
+                       alt="Подробнее">
+                </button>
+              </router-link>
             </div>
           </div>
         </div>
@@ -40,17 +42,19 @@ export default {
           </div>
           <div class="text w-full h-[155px] px-4 py-5 border border-[#5F687A] rounded-b-[10px] bg-white">
             <div class="flex justify-between h-full">
-              <div class="w-[65%]">
-                <h4 class="font-bold text-[18px] xl:text-[18px] text-[#030303]">Сопровождение 1С</h4>
+              <div class="w-[85%]">
+                <h4 class="font-bold text-[18px] xl:text-[18px] text-[#030303]">Решения 1С для здравоохранения</h4>
                 <p class="font-normal text-[13px] xl:text-[13px] text-[#5F687A] mt-2">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting...
+                  Решения 1С для здравоохранения — это программные продукты для автоматизации медицинских...
                 </p>
               </div>
-              <button class="cursor-pointer self-center">
-                <img src="../assets/img/arrow-right.png"
-                     class="w-6 h-6"
-                     alt="Подробнее">
-              </button>
+              <router-link to="/1c-zdravoohrana">
+                <button class="cursor-pointer self-center">
+                  <img src="../assets/img/arrow-right.png"
+                       class="w-6 h-6"
+                       alt="Подробнее">
+                </button>
+              </router-link>
             </div>
           </div>
         </div>
@@ -63,17 +67,20 @@ export default {
           </div>
           <div class="text w-full h-[155px] px-4 py-5 border border-[#5F687A] rounded-b-[10px] bg-white">
             <div class="flex justify-between h-full">
-              <div class="w-[65%]">
-                <h4 class="font-bold text-[18px] xl:text-[18px] text-[#030303]">Сопровождение 1С</h4>
+              <div class="w-[85%]">
+                <h4 class="font-bold text-[18px] xl:text-[18px] text-[#030303]">Cервисы 1С</h4>
                 <p class="font-normal text-[13px] xl:text-[13px] text-[#5F687A] mt-2">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting...
+                  Сервисы 1С — это дополнительные онлайн-инструменты и сервисы, расширяющие...
                 </p>
               </div>
+
+              <router-link to="/1c-services">
               <button class="cursor-pointer self-center">
                 <img src="../assets/img/arrow-right.png"
                      class="w-6 h-6"
                      alt="Подробнее">
               </button>
+              </router-link>
             </div>
           </div>
         </div>
@@ -86,17 +93,20 @@ export default {
           </div>
           <div class="text w-full h-[155px] px-4 py-5 border border-[#5F687A] rounded-b-[10px] bg-white">
             <div class="flex justify-between h-full">
-              <div class="w-[65%]">
-                <h4 class="font-bold text-[18px] xl:text-[18px] text-[#030303]">Сопровождение 1С</h4>
+              <div class="w-[85%]">
+                <h4 class="font-bold text-[18px] xl:text-[18px] text-[#030303]">Учебный центр КУБиК</h4>
                 <p class="font-normal text-[13px] xl:text-[13px] text-[#5F687A] mt-2">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting...
+                  Учебный центр КУБиК — это центр профессионального обучения, специализирующийся на...
                 </p>
               </div>
-              <button class="cursor-pointer self-center">
-                <img src="../assets/img/arrow-right.png"
-                     class="w-6 h-6"
-                     alt="Подробнее">
-              </button>
+              <router-link to="/news">
+                <button class="cursor-pointer self-center">
+                  <img src="../assets/img/arrow-right.png"
+                       class="w-6 h-6"
+                       alt="Подробнее">
+                </button>
+              </router-link>
+
             </div>
           </div>
         </div>
@@ -107,18 +117,19 @@ export default {
 
 <style scoped>
 @media (max-width: 640px) {
-  h2{
+  h2 {
     font-size: 30px;
   }
-  p{
+
+  p {
     font-size: 10px;
   }
 
-  h4{
+  h4 {
     font-size: 14px;
   }
 
-  .text{
+  .text {
     height: 135px;
   }
 }

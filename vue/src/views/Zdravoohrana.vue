@@ -171,6 +171,15 @@ export default {
             >
               <img :src="card.img" :alt="card.title" class="w-full h-auto object-contain"/>
               <div class="w-full">
+                <div class="flex gap-1 mb-2">
+                  <img
+                      v-for="m in card.rating"
+                      :key="m"
+                      src="../assets/img/Star.svg"
+                      alt="rate"
+                      class="w-4 h-4"
+                  >
+                </div>
                 <p class="text-gray-600 text-sm">{{ card.title }}</p>
               </div>
             </router-link>

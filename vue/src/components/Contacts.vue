@@ -58,9 +58,9 @@ export default {
         <h2 class="text-[36px] font-medium text-white">Связаться с нами</h2>
         <p class="p-ostavte text-[20px] mt-[21px] mb-[35px] text-white">Оставьте заявку и мы свяжемся с вами в короткие сроки</p>
         <div class="icons flex sm:justify-between w-[30%]">
-          <img class="w-[41px] h-[41px]" src="../assets/img/vk.svg">
-          <img class="w-[41px] h-[41px]" src="../assets/img/tg.svg">
-          <img class="w-[41px] h-[41px]" src="../assets/img/ok.svg">
+          <img class="w-[41px] h-[41px] cursor-pointer" src="../assets/img/vk.svg">
+          <img class="w-[41px] h-[41px] cursor-pointer" src="../assets/img/tg.svg">
+          <img class="w-[41px] h-[41px] cursor-pointer" src="../assets/img/ok.svg">
 
         </div>
       </div>

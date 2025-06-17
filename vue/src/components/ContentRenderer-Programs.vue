@@ -144,7 +144,8 @@ export default {
     const route = useRoute();
     const menuOpen = ref(false);
     return {menuOpen, route};
-  },}
+  },
+}
 </script>
 
 <style scoped>

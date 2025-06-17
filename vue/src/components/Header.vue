@@ -99,16 +99,47 @@ const filteredSections = () => {
               stroke-width="2"
               d="M6 18L18 6M6 6l12 12"/>
       </svg>
+      <div class="border-t border-gray-400 pt-5">
+        <div class="relative w-90%">
+          <input
+              v-model="searchTerm"
+              type="text"
+              placeholder="Поиск..."
+              class="w-full py-2 px-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
 
-      <ul class="flex flex-col gap-4 text-end border-t border-gray-400 w-full pt-5">
-        <router-link to="/about">
-          <li class="text-[#030303]">О нас</li>
-        </router-link>
-        <li class="text-[#030303]">События</li>
-        <li class="text-[#030303]">Продукты</li>
-        <li class="text-[#030303]">Услуги</li>
-        <li class="text-[#030303]">Контакты</li>
-      </ul>
+          />
+          <ul
+              v-if="filteredSections().length > 0"
+              class="absolute z-50 bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-y-auto w-full shadow-lg"
+          >
+            <li
+                v-for="section in filteredSections()"
+                :key="section.link"
+                class="px-4 py-2 hover:bg-blue-100 cursor-pointer"
+            >
+              <router-link :to="section.link">{{ section.name }}</router-link>
+            </li>
+          </ul>
+        </div>
+        <ul class="flex flex-col gap-4 text-end w-full pt-5">
+          <router-link to="/about">
+            <li class="text-[#030303]">О нас</li>
+          </router-link>
+          <router-link to="/">
+          <li class="text-[#030303]">События</li>
+          </router-link>
+          <router-link to="/1c-gos">
+          <li class="text-[#030303]">Продукты</li>
+          </router-link>
+          <router-link to="/">
+          <li class="text-[#030303]">Услуги</li>
+          </router-link>
+          <router-link to="/contacts">
+          <li class="text-[#030303]">Контакты</li>
+          </router-link>
+        </ul>
+      </div>
+
     </div>
     <div class="bg-primary w-full flex justify-center">
       <div class="container py-1.5">
@@ -171,7 +202,7 @@ const filteredSections = () => {
                 Войти
               </router-link>
               <router-link to="/register"
-                           class="text-sm  text-white border border-white font-medium px-5 py-1 rounded-lg shadow-2xl hover:bg-blue-900 hover:text-white transition">
+                           class="max-sm:hidden text-sm  text-white border border-white font-medium px-5 py-1 rounded-lg shadow-2xl hover:bg-blue-900 hover:text-white transition">
                 Регистрация
               </router-link>
             </template>
@@ -209,7 +240,7 @@ const filteredSections = () => {
               <router-link to="/news"><p>События</p></router-link>
               <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
                 <router-link to="/news"><p>Новости</p></router-link>
-                  <router-link to="/calendar"><p>Календарь мероприятий</p></router-link>
+                <router-link to="/calendar"><p>Календарь мероприятий</p></router-link>
               </ul>
             </li>
             <li class="group relative">
@@ -253,7 +284,7 @@ const filteredSections = () => {
         </div>
 
         <div class="flex gap-10">
-          <div class="relative w-64">
+          <div class="relative w-64 max-sm:hidden">
             <input
                 v-model="searchTerm"
                 type="text"

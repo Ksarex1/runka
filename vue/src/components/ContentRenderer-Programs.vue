@@ -65,7 +65,7 @@
             </div>
 
             <!-- Десктопное меню -->
-            <div class="buttons hidden lg:flex justify-between mt-[21px] md:w-[100%]">
+            <div class="buttons hidden lg:flex  mt-[21px] md:w-[100%]">
               <router-link to="/1c-gos">
                 <Button1 id="butt" v-if="route.path === '/1c-gos'">Решения 1С для гос. учреждений</Button1>
               </router-link>
@@ -74,32 +74,32 @@
               </router-link>
 
               <router-link to="/1c-zdravoohrana">
-                <Button1 id="butt" v-if="route.path === '/1c-zdravoohrana'">Решения 1С для здравоохранения</Button1>
+                <Button1 class="ml-[20px]" id="butt" v-if="route.path === '/1c-zdravoohrana'">Решения 1С для здравоохранения</Button1>
               </router-link>
               <router-link to="/1c-zdravoohrana">
-                <Button2 id="butt" v-if="route.path !== '/1c-zdravoohrana'">Решения 1С для здравоохранения</Button2>
+                <Button2 class="ml-[20px]" id="butt" v-if="route.path !== '/1c-zdravoohrana'">Решения 1С для здравоохранения</Button2>
               </router-link>
 
               <router-link to="/1c-services">
-                <Button1 id="butt" v-if="route.path === '/1c-services'">Сервисы 1С</Button1>
+                <Button1 class="ml-[20px]" id="butt" v-if="route.path === '/1c-services'">Сервисы 1С</Button1>
               </router-link>
               <router-link to="/1c-services">
-                <Button2 id="butt" v-if="route.path !== '/1c-services'">Сервисы 1С</Button2>
+                <Button2 class="ml-[20px]" id="butt" v-if="route.path !== '/1c-services'">Сервисы 1С</Button2>
               </router-link>
 
               <router-link to="/1c-client-license">
-                <Button1 id="butt" v-if="route.path === '/1c-client-license'">Клиентские лицензии 1С</Button1>
+                <Button1 class="ml-[20px]" id="butt" v-if="route.path === '/1c-client-license'">Клиентские лицензии 1С</Button1>
               </router-link>
               <router-link to="/1c-client-license">
-                <Button2 id="butt" v-if="route.path !== '/1c-client-license'">Клиентские лицензии 1С</Button2>
+                <Button2 class="ml-[20px]" id="butt" v-if="route.path !== '/1c-client-license'">Клиентские лицензии 1С</Button2>
               </router-link>
 
 
               <router-link to="/1c-server-license">
-                <Button1 id="butt" v-if="route.path === '/1c-server-license'">Лицензии на сервер 1С</Button1>
+                <Button1 class="ml-[20px]" id="butt" v-if="route.path === '/1c-server-license'">Лицензии на сервер 1С</Button1>
               </router-link>
               <router-link to="/1c-server-license">
-                <Button2 id="butt" v-if="route.path !== '/1c-server-license'">Лицензии на сервер 1С</Button2>
+                <Button2 class="ml-[20px]" id="butt" v-if="route.path !== '/1c-server-license'">Лицензии на сервер 1С</Button2>
               </router-link>
             </div>
           </div>

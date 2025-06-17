@@ -1,7 +1,5 @@
 <template>
 <ContentRendererEvents>
-  <section>
-    <div class="container">
       <h2 class="font-medium text-[30px]">Новости</h2>
         <div class="cards mt-[30px] flex flex-col gap-[30px]">
           <div v-for="card in cards" :key="card.img" class="card flex gap-[40px]">
@@ -15,8 +13,6 @@
           </div>
 
         </div>
-    </div>
-  </section>
 </ContentRendererEvents>
 </template>
 

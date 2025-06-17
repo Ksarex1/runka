@@ -6,7 +6,7 @@
   <section class="mt-[70px] mb-[70px]">
     <div class="container flex flex-col">
       <div class="head">
-        <h2 class="text-[45px] font-bold border-b border-b-[#324962] border-b-[1px]">О нас</h2>
+        <h2 class="text-[45px] font-bold border-b border-b-[#324962] border-b-[1px]">Услуги</h2>
         <div class="lg:hidden mt-[21px] relative z-50">
           <button @click="menuOpen = !menuOpen" class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded shadow transition">
             <svg
@@ -49,35 +49,34 @@
         </div>
 
         <!-- Десктопное меню -->
-        <div class="buttons hidden lg:flex justify-between mt-[21px] md:w-[100%]">
-          <router-link to="/about/statys"><Button1 class="md:w-[90%]" v-if="sections[0].name_razdel === 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button1></router-link>
-          <router-link to="/about/statys"><Button2 class="md:w-[90%]" v-if="sections[0].name_razdel !== 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button2></router-link>
+        <div class="buttons hidden lg:flex mt-[21px] md:w-[100%]">
 
           <li class="group relative">
-            <router-link to="/about/blagodar_letter"><Button1 class="button md:w-[90%]" v-if="sections[0].name_razdel === 'Благодарственные письма' || sections[0].name_razdel === 'Благодарности'">Благодарственные письма ▼</Button1></router-link>
-            <router-link to="/about/blagodar_letter"><Button2 class="button md:w-[90%]" v-if="sections[0].name_razdel !== 'Благодарственные письма' && sections[0].name_razdel !== 'Благодарности'">Благодарственные письма ▼</Button2></router-link>
-            <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-35 z-50">
-              <router-link to="/about/blagodar_letter/blagodar"><p class="mt-2">Благодарности</p></router-link>
+            <router-link to="/1c-sopr/ITS"><Button1 class="button md:w-[90%]" v-if="route.path === '/1c-sopr/ITS' || route.path === '/1c-sopr/consult' || route.path === '/1c-sopr/dop-yslygi'">Сопровождение 1С ▼</Button1></router-link>
+            <router-link to="/1c-sopr/ITS"><Button2 class="button md:w-[90%]" v-if="route.path !== '/1c-sopr/ITS' && route.path !== '/1c-sopr/consult' && route.path !== '/1c-sopr/dop-yslygi'">Сопровождение 1С ▼</Button2></router-link>
+            <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-40 z-50">
+              <router-link to="/1c-sopr/ITS"><p class="mt-2">Информационно-технологическое сопровождение (1С:ИТС)</p></router-link>
+              <router-link to="/1c-sopr/consult"><p class="mt-2">Линия консультаций</p></router-link>
+              <router-link to="/1c-sopr/dop-yslygi"><p class="mt-2">Дополнительные услуги</p></router-link>
             </ul>
           </li>
 
           <li class="group relative">
-            <router-link to="/about/rabota_runa"><Button1 class="button md:w-[90%]" v-if="sections[0].name_razdel === 'Работа в Руна С' || sections[0].name_razdel === 'Вакансии'">Работа в Руна С ▼</Button1></router-link>
-            <router-link to="/about/rabota_runa"><Button2 class="button md:w-[90%]" v-if="sections[0].name_razdel !== 'Работа в Руна С' && sections[0].name_razdel !== 'Вакансии'">Работа в Руна С ▼</Button2></router-link>
+            <router-link to="/cso"><Button1 class="button md:w-[90%]" v-if="route.path === '/cso' || route.path === '/cso/seminar' || route.path === '/cso/kyrsi' || route.path === '/cso/vebinar'">Центр сертифицированного обучения 1С (ЦСО) ▼</Button1></router-link>
+            <router-link to="/cso"><Button2 class="button md:w-[90%]" v-if="route.path !== '/cso' && route.path !== '/cso/seminar' && route.path !== '/cso/kyrsi' && route.path !== '/cso/vebinar'">Центр сертифицированного обучения 1С (ЦСО) ▼</Button2></router-link>
             <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-35 z-50">
-              <router-link to="/about/rabota_runa/vakansii"><p class="mt-2">Вакансии</p></router-link>
+              <router-link to="/cso/seminar"><p class="mt-2">Семинары</p></router-link>
+              <router-link to="/cso/kyrsi"><p class="mt-2">Курсы и мини-семинары</p></router-link>
+              <router-link to="/cso/vebinar"><p class="mt-2">Вебинары</p></router-link>
             </ul>
           </li>
 
-          <router-link to="/about/politika"><Button1 class="md:w-[90%]" v-if="sections[0].name_razdel === 'Политика в отношении обработки ПДн'">Политика в отношении обработки ПДн</Button1></router-link>
-          <router-link to="/about/politika"><Button2 class="md:w-[90%]" v-if="sections[0].name_razdel !== 'Политика в отношении обработки ПДн'">Политика в отношении обработки ПДн</Button2></router-link>
-
-          <router-link to="/about/soglasie"><Button1 class="md:w-[90%]" v-if="sections[0].name_razdel === 'Согласие на обработку ПДн'">Согласие на обработку ПДн</Button1></router-link>
-          <router-link to="/about/soglasie"><Button2 class="md:w-[90%]" v-if="sections[0].name_razdel !== 'Согласие на обработку ПДн'">Согласие на обработку ПДн</Button2></router-link>
-        </div>
+          </div>
       </div>
 
       <div class="osnova mt-[40px] pt-[43px] border-t border-t-[#E9E9E9] border-t-[1px] flex flex-col">
+        <slot></slot>
+        <div v-if="pageKey">
         <h2 class="h2-razdel md:text-[30px] sm:text-[26px] font-bold mb-[4px]">{{sections[0].name_razdel}}</h2>
         <div class="sections-container flex flex-col gap-4">
           <div v-for="section in sections" :key="section.title" class="section">
@@ -125,6 +124,7 @@
               </button>
             </div>
           </div>
+        </div>
       </div>
     </div>
     </div>
@@ -137,7 +137,8 @@
 </template>
 
 <script>
-import content from "@/assets/data/About-content.json";
+import { useRoute } from "vue-router";
+import content from "@/assets/data/Yslygi-content.json";
 import { ref } from "vue";
 import { watch } from "vue";
 import Header from "@/components/Header.vue";
@@ -158,6 +159,7 @@ export default {
 
 
   setup(props) {
+    const route = useRoute();
     const menuOpen = ref(false);
     const selectedImage = ref(null);
     const openImage = (img) => selectedImage.value = img;
@@ -175,7 +177,8 @@ export default {
     }));
     }
 
-    return { sections, selectedImage, openImage, closeImage, menuOpen };
+
+    return { sections, selectedImage, openImage, closeImage, menuOpen, route };
 
   },
 

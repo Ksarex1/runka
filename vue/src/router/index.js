@@ -20,6 +20,13 @@ import Client_Licences from "@/views/1C_Client_Licenses.vue"
 import Server_Licences from "@/views/1C_Server_Licenses.vue"
 import Services from "@/views/1C_Services.vue"
 import Contacts from "@/views/Contacts.vue"
+import ITS from "@/views/ITS.vue"
+import CSO from "@/views/CSO.vue";
+import Seminar from "@/views/Seminar.vue";
+import Consult from "@/views/Consult.vue";
+import DopYslygi from "@/views/Dop-Yslygi.vue";
+import Kyrsi from "@/views/Kyrsi.vue";
+import Vebinar from "@/views/Vebinar.vue";
 
 import { isAuthenticated } from '../auth.js';
 
@@ -45,6 +52,13 @@ const routes = [
     { path: '/1c-client-license', component: Client_Licences },
     { path: '/1c-services', component: Services },
     { path: '/contacts', component: Contacts },
+    { path: '/1c-sopr/ITS', component: ITS },
+    { path: '/1c-sopr/consult', component: Consult },
+    { path: '/1c-sopr/dop-yslygi', component: DopYslygi },
+    { path: '/cso', component: CSO },
+    { path: '/cso/seminar', component: Seminar },
+    { path: '/cso/kyrsi', component: Kyrsi },
+    { path: '/cso/vebinar', component: Vebinar },
     {
         path: '/1c-gos/:id',
         name: 'ProductDetail',

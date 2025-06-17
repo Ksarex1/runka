@@ -21,7 +21,7 @@ export default {
         <img :src="card.img" class="">
         <div class="text flex flex-col justify-center">
           <h3 class="font-bold text-[22px]">{{card.title}}</h3>
-          <Button1 class="w-[220px] h-[43px] mt-[30px]">Подробнее</Button1>
+          <Button1 class="but w-[220px] h-[43px] mt-[30px]">Подробнее</Button1>
         </div>
       </div>
 
@@ -30,5 +30,38 @@ export default {
 </template>
 
 <style scoped>
+@media (max-width: 640px) {
+  h3{
+    font-size: 18px;
+  }
+}
 
+@media (max-width: 510px) {
+  h3{
+    font-size: 3vw;
+  }
+
+  .but{
+    width: 50%;
+    height: 30px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img{
+    width: 30%;
+  }
+}
+
+@media (max-width: 400px) {
+  .card{
+    gap: 20px;
+  }
+
+  .but{
+    font-size: 12px;
+  }
+}
 </style>

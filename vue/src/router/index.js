@@ -20,31 +20,45 @@ import Client_Licences from "@/views/1C_Client_Licenses.vue"
 import Server_Licences from "@/views/1C_Server_Licenses.vue"
 import Services from "@/views/1C_Services.vue"
 import Contacts from "@/views/Contacts.vue"
+import ITS from "@/views/ITS.vue";
+import Consult from "@/views/Consult.vue";
+import DopYslygi from "@/views/Dop-Yslygi.vue";
+import CSO from "@/views/CSO.vue";
+import Seminar from "@/views/Seminar.vue";
+import Kyrsi from "@/views/Kyrsi.vue";
+import Vebinar from "@/views/Vebinar.vue";
 
 import {isAuthenticated} from '../auth.js';
 
 const routes = [
-    {path: '/', component: HomePage},
-    {path: '/login', component: LoginPage},
-    {path: '/register', component: RegisterPage},
-    {path: '/me', component: MePage, meta: {requiresAuth: true}},
-    {path: '/about/statys', component: StatysSertificate},
-    {path: '/about', component: About},
-    {path: '/about/blagodar_letter', component: Blagodar_letter},
-    {path: '/about/blagodar_letter/blagodar', component: Blagodar},
-    {path: '/about/rabota_runa', component: Rabota_runa},
-    {path: '/about/rabota_runa/vakansii', component: Vakansii},
-    {path: '/about/politika', component: Politika},
-    {path: '/about/soglasie', component: Soglasie},
-    {path: '/cart', component: Cart},
-    {path: '/news', component: News},
-    {path: '/calendar', component: Calendar},
-    {path: '/1c-gos', component: Gos_ychr},
-    {path: '/1c-zdravoohrana', component: Zdravoohrana},
-    {path: '/1c-server-license', component: Server_Licences},
-    {path: '/1c-client-license', component: Client_Licences},
-    {path: '/1c-services', component: Services},
-    {path: '/contacts', component: Contacts},
+    { path: '/', component: HomePage },
+    { path: '/login', component: LoginPage },
+    { path: '/register', component: RegisterPage },
+    { path: '/me', component: MePage, meta: { requiresAuth: true } },
+    { path: '/about/statys', component: StatysSertificate },
+    { path: '/about', component: About },
+    { path: '/about/blagodar_letter', component: Blagodar_letter },
+    { path: '/about/blagodar_letter/blagodar', component: Blagodar },
+    { path: '/about/rabota_runa', component: Rabota_runa },
+    { path: '/about/rabota_runa/vakansii', component: Vakansii },
+    { path: '/about/politika', component: Politika },
+    { path: '/about/soglasie', component: Soglasie },
+    { path: '/cart', component: Cart },
+    { path: '/news', component: News },
+    { path: '/calendar', component: Calendar },
+    { path: '/1c-gos', component: Gos_ychr },
+    { path: '/1c-zdravoohrana', component: Zdravoohrana },
+    { path: '/1c-server-license', component: Server_Licences },
+    { path: '/1c-client-license', component: Client_Licences },
+    { path: '/1c-services', component: Services },
+    { path: '/contacts', component: Contacts },
+    { path: '/1c-sopr/ITS', component: ITS },
+    { path: '/1c-sopr/consult', component: Consult },
+    { path: '/1c-sopr/dop-yslygi', component: DopYslygi },
+    { path: '/cso', component: CSO },
+    { path: '/cso/seminar', component: Seminar },
+    { path: '/cso/kyrsi', component: Kyrsi },
+    { path: '/cso/vebinar', component: Vebinar },
     {
         path: '/1c-gos/:id',
         name: 'ProductDetailGos',

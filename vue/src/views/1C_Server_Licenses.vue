@@ -38,7 +38,7 @@ export default {
             машин.
           </p>
           <div class="my-6 flex justify-center">
-            <img src="../assets/img/usb2.jpg" alt="usb" class="w-64 rounded shadow"/>
+            <img src="../assets/img/usb-1.jpg" alt="usb" class="w-64 rounded shadow"/>
           </div>
           <p>
             64-разрядный сервер "1С:Предприятия 8" предназначен для работы под управлением операционных систем Windows и

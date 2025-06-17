@@ -34,7 +34,7 @@ export default {
           </p>
 
           <div class="my-6 flex justify-center">
-            <img src="../assets/img/usb.png" alt="usb" class="w-64 rounded shadow" />
+            <img src="../assets/img/usb.jpg" alt="usb" class="w-64 rounded shadow" />
           </div>
 
           <h5 class="text-xl font-semibold text-gray-800 mt-10">

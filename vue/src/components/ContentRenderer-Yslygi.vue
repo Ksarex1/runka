@@ -24,26 +24,26 @@
                 v-if="menuOpen"
                 class="absolute left-0 right-0 mt-2 bg-white shadow-lg rounded-lg p-4 flex flex-col gap-3 text-black"
             >
-              <router-link to="/about/statys"><Button1 id="butt" v-if="sections[0].name_razdel === 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button1></router-link>
-              <router-link to="/about/statys"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button2></router-link>
+              <router-link to="/1c-sopr/ITS"><Button1 id="butt" v-if="route.path === '/1c-sopr/ITS'">Информационно-технологическое сопровождение (1С:ИТС)</Button1></router-link>
+              <router-link to="/1c-sopr/ITS"><Button2 id="butt" v-if="route.path !== '/1c-sopr/ITS'">Информационно-технологическое сопровождение (1С:ИТС)</Button2></router-link>
 
-              <router-link to="/about/blagodar_letter"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Благодарственные письма'">Благодарственные письма</Button2></router-link>
-              <router-link to="/about/blagodar_letter"><Button1 id="butt" v-if="sections[0].name_razdel === 'Благодарственные письма'">Благодарственные письма</Button1></router-link>
+              <router-link to="/1c-sopr/consult"><Button1 id="butt" v-if="route.path === '/1c-sopr/consult'">Линия консультаций</Button1></router-link>
+              <router-link to="/1c-sopr/consult"><Button2 id="butt" v-if="route.path !== '/1c-sopr/consult'">Линия консультаций</Button2></router-link>
 
-              <router-link to="/about/blagodar_letter/blagodar"><Button1 id="butt" v-if="sections[0].name_razdel === 'Благодарности'">Благодарности</Button1></router-link>
-              <router-link to="/about/blagodar_letter/blagodar"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Благодарности'">Благодарности</Button2></router-link>
+              <router-link to="/1c-sopr/dop-yslygi"><Button1 id="butt" v-if="route.path === '/1c-sopr/dop-yslygi'">Дополнительные услуги</Button1></router-link>
+              <router-link to="/1c-sopr/dop-yslygi"><Button2 id="butt" v-if="route.path !== '/1c-sopr/dop-yslygi'">Дополнительные услуги</Button2></router-link>
 
-              <router-link to="/about/rabota_runa"><Button1 id="butt" v-if="sections[0].name_razdel === 'Работа в Руна С'">Работа в Руна С</Button1></router-link>
-              <router-link to="/about/rabota_runa"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Работа в Руна С'">Работа в Руна С</Button2></router-link>
+              <router-link to="/cso"><Button1 id="butt" v-if="route.path === '/cso'">Центр сертифицированного обучения 1С (ЦСО)</Button1></router-link>
+              <router-link to="/cso"><Button2 id="butt" v-if="route.path !== '/cso'">Центр сертифицированного обучения 1С (ЦСО)</Button2></router-link>
 
-              <router-link to="/about/rabota_runa/vakansii"><Button1 id="butt" v-if="sections[0].name_razdel === 'Вакансии'">Вакансии</Button1></router-link>
-              <router-link to="/about/rabota_runa/vakansii"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Вакансии'">Вакансии</Button2></router-link>
+              <router-link to="/cso/seminar"><Button1 id="butt" v-if="route.path === '/cso/seminar'">Семинары</Button1></router-link>
+              <router-link to="/cso/seminar"><Button2 id="butt" v-if="route.path !== '/cso/seminar'">Семинары</Button2></router-link>
 
-              <router-link to="/about/politika"><Button1 id="butt" v-if="sections[0].name_razdel === 'Политика в отношении обработки ПДн'">Политика в отношении обработки ПДн</Button1></router-link>
-              <router-link to="/about/politika"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Политика в отношении обработки ПДн'">Политика в отношении обработки ПДн</Button2></router-link>
+              <router-link to="/cso/kyrsi"><Button1 id="butt" v-if="route.path === '/cso/kyrsi'">Курсы и мини-семинары</Button1></router-link>
+              <router-link to="/cso/kyrsi"><Button2 id="butt" v-if="route.path !== '/cso/kyrsi'">Курсы и мини-семинары</Button2></router-link>
 
-              <router-link to="/about/soglasie"><Button1 id="butt" v-if="sections[0].name_razdel === 'Согласие на обработку ПДн'">Согласие на обработку ПДн</Button1></router-link>
-              <router-link to="/about/soglasie"><Button2 id="butt" v-if="sections[0].name_razdel !== 'Согласие на обработку ПДн'">Согласие на обработку ПДн</Button2></router-link>
+              <router-link to="/cso/vebinar"><Button1 id="butt" v-if="route.path === '/cso/vebinar'">Вебинары</Button1></router-link>
+              <router-link to="/cso/vebinar"><Button2 id="butt" v-if="route.path === '/cso/vebinar'">Вебинары</Button2></router-link>
             </div>
           </transition>
         </div>
@@ -52,8 +52,8 @@
         <div class="buttons hidden lg:flex mt-[21px] md:w-[100%]">
 
           <li class="group relative">
-            <router-link to="/1c-sopr/ITS"><Button1 class="button md:w-[90%]" v-if="route.path === '/1c-sopr/ITS' || route.path === '/1c-sopr/consult' || route.path === '/1c-sopr/dop-yslygi'">Сопровождение 1С ▼</Button1></router-link>
-            <router-link to="/1c-sopr/ITS"><Button2 class="button md:w-[90%]" v-if="route.path !== '/1c-sopr/ITS' && route.path !== '/1c-sopr/consult' && route.path !== '/1c-sopr/dop-yslygi'">Сопровождение 1С ▼</Button2></router-link>
+            <router-link to="/1c-sopr/ITS"><Button1 class="button md:w-[100%]" v-if="route.path === '/1c-sopr/ITS' || route.path === '/1c-sopr/consult' || route.path === '/1c-sopr/dop-yslygi'">Сопровождение 1С ▼</Button1></router-link>
+            <router-link to="/1c-sopr/ITS"><Button2 class="button md:w-[100%]" v-if="route.path !== '/1c-sopr/ITS' && route.path !== '/1c-sopr/consult' && route.path !== '/1c-sopr/dop-yslygi'">Сопровождение 1С ▼</Button2></router-link>
             <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-40 z-50">
               <router-link to="/1c-sopr/ITS"><p class="mt-2">Информационно-технологическое сопровождение (1С:ИТС)</p></router-link>
               <router-link to="/1c-sopr/consult"><p class="mt-2">Линия консультаций</p></router-link>
@@ -62,8 +62,8 @@
           </li>
 
           <li class="group relative">
-            <router-link to="/cso"><Button1 class="button md:w-[90%]" v-if="route.path === '/cso' || route.path === '/cso/seminar' || route.path === '/cso/kyrsi' || route.path === '/cso/vebinar'">Центр сертифицированного обучения 1С (ЦСО) ▼</Button1></router-link>
-            <router-link to="/cso"><Button2 class="button md:w-[90%]" v-if="route.path !== '/cso' && route.path !== '/cso/seminar' && route.path !== '/cso/kyrsi' && route.path !== '/cso/vebinar'">Центр сертифицированного обучения 1С (ЦСО) ▼</Button2></router-link>
+            <router-link to="/cso"><Button1 class="button md:w-[100%] ml-[20px]" v-if="route.path === '/cso' || route.path === '/cso/seminar' || route.path === '/cso/kyrsi' || route.path === '/cso/vebinar'">Центр сертифицированного обучения 1С (ЦСО) ▼</Button1></router-link>
+            <router-link to="/cso"><Button2 class="button md:w-[100%] ml-[20px]" v-if="route.path !== '/cso' && route.path !== '/cso/seminar' && route.path !== '/cso/kyrsi' && route.path !== '/cso/vebinar'">Центр сертифицированного обучения 1С (ЦСО) ▼</Button2></router-link>
             <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-35 z-50">
               <router-link to="/cso/seminar"><p class="mt-2">Семинары</p></router-link>
               <router-link to="/cso/kyrsi"><p class="mt-2">Курсы и мини-семинары</p></router-link>

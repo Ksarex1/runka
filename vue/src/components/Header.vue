@@ -206,10 +206,10 @@ const filteredSections = () => {
               </ul>
             </li>
             <li class="group relative">
-              <p>События</p>
+              <router-link to="/news"><p>События</p></router-link>
               <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
-                <p>Новости</p>
-                <p>Календарь мероприятий</p>
+                <router-link to="/news"><p>Новости</p></router-link>
+                  <router-link to="/calendar"><p>Календарь мероприятий</p></router-link>
               </ul>
             </li>
             <li class="group relative">

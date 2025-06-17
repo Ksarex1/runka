@@ -24,11 +24,11 @@
                 v-if="menuOpen"
                 class="absolute left-0 right-0 mt-2 bg-white shadow-lg rounded-lg p-4 flex flex-col gap-3 text-black"
             >
-              <router-link to="/statys"><Button1 id="butt" v-if="route.path === '/news'">Новости</Button1></router-link>
-              <router-link to="/statys"><Button2 id="butt" v-if="route.path !== '/news'">Новости</Button2></router-link>
+              <router-link to="/news"><Button1 id="butt" v-if="route.path === '/news'">Новости</Button1></router-link>
+              <router-link to="/news"><Button2 id="butt" v-if="route.path !== '/news'">Новости</Button2></router-link>
 
-              <router-link to="/blagodar_letter"><Button1 id="butt">Календарь мероприятий</Button1></router-link>
-              <router-link to="/blagodar_letter"><Button2 id="butt">Календарь мероприятий</Button2></router-link>
+              <router-link to="/calendar"><Button1 id="butt" v-if="route.path === '/calendar'">Календарь мероприятий</Button1></router-link>
+              <router-link to="/calendar"><Button2 id="butt" v-if="route.path !== '/calendar'">Календарь мероприятий</Button2></router-link>
 
             </div>
           </transition>
@@ -36,11 +36,11 @@
 
         <!-- Десктопное меню -->
         <div class="buttons hidden lg:flex gap-[20px] mt-[21px] md:w-[100%]">
-          <router-link to="/gos_ychr"><Button1 id="butt" v-if="route.path === '/news'">Новости</Button1></router-link>
-          <router-link to="/gos_ychr"><Button2 id="butt" v-if="route.path !== '/news'">Новости</Button2></router-link>
+          <router-link to="/news"><Button1 id="butt" v-if="route.path === '/news'">Новости</Button1></router-link>
+          <router-link to="/news"><Button2 id="butt" v-if="route.path !== '/news'">Новости</Button2></router-link>
 
-          <router-link to="/blagodar_letter"><Button1 id="butt" v-if="route.path !== '/news'">Календарь мероприятий</Button1></router-link>
-          <router-link to="/blagodar_letter"><Button2 id="butt">Календарь мероприятий</Button2></router-link>
+          <router-link to="/calendar"><Button1 id="butt" v-if="route.path === '/calendar'">Календарь мероприятий</Button1></router-link>
+          <router-link to="/calendar"><Button2 id="butt" v-if="route.path !== '/calendar'">Календарь мероприятий</Button2></router-link>
         </div>
       </div>
 

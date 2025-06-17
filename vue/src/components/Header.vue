@@ -216,10 +216,10 @@ const filteredSections = () => {
               <p>Программные продукты</p>
               <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
                 <router-link to="/1c-gos"><p>Решения 1С для государственных учреждений</p></router-link>
-                <p>Решения 1С для здравоохранения</p>
-                <p>Сервисы 1С</p>
-                <p>Клиентские лицензии 1С</p>
-                <p>Лицензии на сервер 1С</p>
+                <router-link to="/1c-zdravoohrana"><p>Решения 1С для здравоохранения</p></router-link>
+                <router-link to="/1c-services"><p>Сервисы 1С</p></router-link>
+                <router-link to="/1c-client-license"><p>Клиентские лицензии 1С</p></router-link>
+                <router-link to="/1c-server-license"><p>Лицензии на сервер 1С</p></router-link>
               </ul>
             </li>
             <li class="group relative">

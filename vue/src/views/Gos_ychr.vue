@@ -2,6 +2,7 @@
 import cards from "../assets/data/product-gos.js"
 import ContentRendererPrograms from "@/components/ContentRenderer-Programs.vue";
 import {inject} from 'vue'
+import {isAuthenticated} from '../auth.js'
 
 export default {
   name: "Gos_ychr",
@@ -10,7 +11,8 @@ export default {
 
   data() {
     return {
-      cards,
+      isAuthenticated,
+      cards: cards,
       selectSort: [
         {value: 'price', name: 'По цене (по возрастанию)'},
         {value: 'price1', name: 'По цене (по убыванию)'},
@@ -78,7 +80,6 @@ export default {
             : a[sortField].localeCompare(b[sortField]);
       });
     },
-
     searchCards() {
       return this.sortedCards.filter(item =>
           item.title.toLowerCase().includes(this.currentSearch.toLowerCase()) ||
@@ -97,10 +98,9 @@ export default {
 }
 </script>
 
-
 <template>
   <ContentRendererPrograms>
-    <section class="">
+    <section>
       <div class="container">
         <div class="head flex justify-between items-center flex-wrap gap-4">
           <h2 class="font-medium text-[30px]">
@@ -166,7 +166,7 @@ export default {
               class="bg-white hover:bg-gray-50 transition-colors duration-300 cursor-pointer rounded-lg border border-gray-300 shadow-xl p-8 flex flex-col items-center justify-between h-[416px]"
           >
             <router-link
-                :to="{ name: 'ProductDetail', params: { id: card.id } }"
+                :to="{ name: 'ProductDetailGos', params: { id: card.id } }"
                 class="flex flex-col items-center justify-between h-full"
             >
               <img :src="card.img" :alt="card.title" class="w-full h-auto object-contain"/>
@@ -177,26 +177,33 @@ export default {
             <div class="flex justify-between items-center w-full mt-3.5">
               <h4 class="text-xl font-bold">от {{ card.price }} ₽</h4>
 
-              <div v-if="!isInCart(card)">
-                <img @click="handleAddToCart(card)" src="../assets/img/cart-1.svg" alt="">
-              </div>
+              <div v-if="isAuthenticated">
+                <div v-if="!isInCart(card)">
+                  <img
+                      @click="handleAddToCart(card)"
+                      src="../assets/img/cart-1.svg"
+                      alt="add to cart"
+                      class="cursor-pointer"
+                  />
+                </div>
 
-              <div v-else class="flex items-center gap-3">
-                <button
-                    @click="decrementQuantity(card)"
-                    class="w-10 h-10 bg-gray-200 rounded hover:bg-gray-300 text-xl font-bold"
-                    type="button"
-                >
-                  −
-                </button>
-                <span>{{ getCartItem(card).count }}</span>
-                <button
-                    @click="incrementQuantity(card)"
-                    class="w-10 h-10 bg-gray-200 rounded hover:bg-gray-300 text-xl font-bold"
-                    type="button"
-                >
-                  +
-                </button>
+                <div v-else class="flex items-center gap-3">
+                  <button
+                      @click="decrementQuantity(card)"
+                      class="w-10 h-10 bg-gray-200 rounded hover:bg-gray-300 text-xl font-bold"
+                      type="button"
+                  >
+                    −
+                  </button>
+                  <span>{{ getCartItem(card).count }}</span>
+                  <button
+                      @click="incrementQuantity(card)"
+                      class="w-10 h-10 bg-gray-200 rounded hover:bg-gray-300 text-xl font-bold"
+                      type="button"
+                  >
+                    +
+                  </button>
+                </div>
               </div>
             </div>
 

@@ -1,39 +1,57 @@
 <script setup>
-import {useRoute} from 'vue-router';
-import {computed, inject} from 'vue';
-import cards from '../assets/data/product-gos.js';
-import {isAuthenticated} from '../auth.js'
+import { useRoute } from 'vue-router';
+import { computed, inject } from 'vue';
+import cards1 from '../assets/data/product-gos.js';
+import cards2 from '../assets/data/product-zdravoohrana.js';
+import cards3 from '../assets/data/product-services.js';
+import { isAuthenticated } from '../auth.js';
 import Header from '../components/Header.vue';
+
+defineProps({
+  id: {
+    type: [String, Number],
+    required: false
+  }
+});
 
 const route = useRoute();
 const productId = Number(route.params.id);
-const product = computed(() => cards.find(item => item.id === productId));
 
-const cart = inject('cart')
+const cards = computed(() => {
+  const firstSegment = route.path.split('/').filter(Boolean)[0];
+  if (firstSegment === '1c-gos') return cards1;
+  if (firstSegment === '1c-zdravoohrana') return cards2;
+  if (firstSegment === '1c-services') return cards3;
+  return [];
+});
+
+const product = computed(() => cards.value.find(item => item.id === productId) || null);
+
+const cart = inject('cart');
 const addToCart = inject('addToCart');
 const updateCartItemQuantity = inject('updateCartItemQuantity');
 const removeFromCart = inject('removeFromCart');
 
 const isInCart = (product) => {
   return cart.value.some(item => item.id === product.id);
-}
+};
 
 const getCartItem = (product) => {
   return cart.value.find(item => item.id === product.id);
-}
+};
 
 const handleAddToCart = (product) => {
   if (!isInCart(product)) {
-    addToCart({...product, count: 1});
+    addToCart({ ...product, count: 1 });
   }
-}
+};
 
 const incrementQuantity = (product) => {
   const cartItem = getCartItem(product);
   if (cartItem) {
     updateCartItemQuantity(cartItem.id, cartItem.count + 1);
   }
-}
+};
 
 const decrementQuantity = (product) => {
   const cartItem = getCartItem(product);
@@ -44,20 +62,26 @@ const decrementQuantity = (product) => {
       removeFromCart(cartItem.id);
     }
   }
-}
+};
+
+// Родительский маршрут для кнопки назад
+const parentRoute = computed(() => {
+  const segments = route.path.split('/').filter(Boolean);
+  return segments.length > 0 ? `/${segments[0]}` : '/';
+});
 </script>
 
 <template>
-  <Header/>
+  <Header />
   <main>
     <section>
       <div class="container mx-auto px-4 relative">
         <div>
-          <router-link to="/1c-gos">
-            <img src="../assets/img/arrow-left-circle.svg" alt="back" class="absolute top-20 cursor-pointer"/>
+          <router-link :to="parentRoute">
+            <img src="../assets/img/arrow-left-circle.svg" alt="back" class="absolute top-20 cursor-pointer" />
           </router-link>
         </div>
-        <h2 class="font-medium text-3xl mb-10">Программные продукты</h2>
+        <h2 class="font-bold text-4xl mb-10">Программные продукты</h2>
 
         <div v-if="product" class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           <div>
@@ -71,7 +95,7 @@ const decrementQuantity = (product) => {
           <div>
             <div class="flex gap-1 mb-2">
               <div v-for="n in product.rating" :key="n">
-                <img class="w-6 h-6" src="../assets/img/Star.svg" alt="rating"/>
+                <img class="w-6 h-6" src="../assets/img/Star.svg" alt="rating" />
               </div>
             </div>
             <h3 class="text-2xl md:text-3xl font-semibold mb-4">{{ product.title }}</h3>
@@ -79,10 +103,14 @@ const decrementQuantity = (product) => {
             <p class="text-lg md:text-xl mb-2">
               Цена: от <strong class="text-2xl md:text-3xl">{{ product.price }} ₽</strong>
             </p>
+
             <div class="flex justify-between items-center w-full mt-3.5" v-if="isAuthenticated">
               <div v-if="!isInCart(product)">
-                <button class="bg-primary2 py-2 px-8 cursor-pointer text-white font-medium rounded-lg text-[18px] mt-9 hover:bg-blue-700 transition"
-                        @click="handleAddToCart(product)">Добавить в корзину
+                <button
+                    class="bg-primary2 py-2 px-8 cursor-pointer text-white font-medium rounded-lg text-[18px] mt-9 hover:bg-blue-700 transition"
+                    @click="handleAddToCart(product)"
+                >
+                  Добавить в корзину
                 </button>
               </div>
 

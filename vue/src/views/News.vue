@@ -1,74 +1,56 @@
 <template>
-  <Header/>
-  <div data-aos="">
-    <section class="mt-[70px] mb-[70px]">
-      <div class="container flex flex-col">
-        <div class="head">
-          <h2 class="text-[45px] font-bold border-b border-b-[#324962] border-b-[1px]">О нас</h2>
-          <div class="lg:hidden mt-[21px] relative z-50">
-            <button @click="menuOpen = !menuOpen" class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded shadow transition">
-              <svg
-                  class="w-6 h-6 transform transition-transform duration-300"
-                  :class="{ 'rotate-90': menuOpen }"
-                  fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M4 6h16M4 12h16M4 18h16"/>
-              </svg>
-              <p>{{ menuOpen ? 'Закрыть меню' : 'Открыть меню' }}</p>
-            </button>
-
-            <transition name="slide-fade">
-              <div
-                  v-if="menuOpen"
-                  class="absolute left-0 right-0 mt-2 bg-white shadow-lg rounded-lg p-4 flex flex-col gap-3 text-black"
-              >
-                <router-link to="/news">
-                  <Button1 class="md:w-[90%]" v-if="route.path === '/news'">Новости</Button1>
-                </router-link>
-                <router-link to="/news">
-                  <Button2 class="button md:w-[90%]" v-if="route.path !== '/news'">Новости</Button2>
-                </router-link>
-
-                <router-link to="/calendar">
-                  <Button1 class="md:w-[90%]" v-if="route.path === '/calendar'">Календарь мероприятий</Button1>
-                </router-link>
-                <router-link to="/calendar">
-                  <Button2 class="button md:w-[90%]" v-if="route.path !== '/calendar'">Календарь мероприятий</Button2>
-                </router-link>
-              </div>
-            </transition>
+<ContentRendererEvents>
+  <section>
+    <div class="container">
+      <h2 class="font-medium text-[30px]">Новости</h2>
+        <div class="cards mt-[30px] flex flex-col gap-[30px]">
+          <div class="card flex gap-[40px]">
+            <img src="@/assets/img/news-img-1.png">
+            <div class="text flex flex-col justify-center">
+              <h3 class="font-bold text-[22px]">Предложение на 2025 год от Клуба Уникальных Бухгалтеров и Консультантов «Будь в курсе»</h3>
+              <p class="text-[16px] text-[#5F687A] mt-[10px] mb-[20px]">В 2025г году мы поменяли формат обучения. Из квартальных семинаров перевели занятия в регулярные 2 раза в месяц.</p>
+              <h4 class="font-medium text-[18px]">Июнь 27, 2023</h4>
+              <Button1 class="w-[220px] h-[43px] mt-[30px]">Подробнее</Button1>
+            </div>
           </div>
 
-          <!-- Десктопное меню -->
-          <div class="buttons hidden lg:flex justify-between mt-[21px] md:w-[100%]">
-            <router-link to="/news">
-              <Button1 class=" p-2" v-if="route.path === '/news'">Новости</Button1>
-            </router-link>
-            <router-link to="/news">
-              <Button2 class="" v-if="route.path !== '/news'">Новости</Button2>
-            </router-link>
+          <div class="card flex gap-[40px]">
+            <img src="@/assets/img/news-img-1.png">
+            <div class="text flex flex-col justify-center">
+              <h3 class="font-bold text-[22px]">Предложение на 2025 год от Клуба Уникальных Бухгалтеров и Консультантов «Будь в курсе»</h3>
+              <p class="text-[16px] text-[#5F687A] mt-[10px] mb-[20px]">В 2025г году мы поменяли формат обучения. Из квартальных семинаров перевели занятия в регулярные 2 раза в месяц.</p>
+              <h4 class="font-medium text-[18px]">Июнь 27, 2023</h4>
+              <Button1 class="w-[220px] h-[43px] mt-[30px]">Подробнее</Button1>
+            </div>
+          </div>
 
-            <router-link to="/calendar">
-              <Button1 class="p-2" v-if="route.path === '/calendar'">Календарь мероприятий</Button1>
-            </router-link>
-            <router-link to="/calendar">
-              <Button2 class="" v-if="route.path !== '/calendar'">Календарь мероприятий</Button2>
-            </router-link>
+          <div class="card flex gap-[40px]">
+            <img src="@/assets/img/news-img-1.png">
+            <div class="text flex flex-col justify-center">
+              <h3 class="font-bold text-[22px]">Предложение на 2025 год от Клуба Уникальных Бухгалтеров и Консультантов «Будь в курсе»</h3>
+              <p class="text-[16px] text-[#5F687A] mt-[10px] mb-[20px]">В 2025г году мы поменяли формат обучения. Из квартальных семинаров перевели занятия в регулярные 2 раза в месяц.</p>
+              <h4 class="font-medium text-[18px]">Июнь 27, 2023</h4>
+              <Button1 class="w-[220px] h-[43px] mt-[30px]">Подробнее</Button1>
+            </div>
+          </div>
 
+          <div class="card flex gap-[40px]">
+            <img src="@/assets/img/news-img-1.png">
+            <div class="text flex flex-col justify-center">
+              <h3 class="font-bold text-[22px]">Предложение на 2025 год от Клуба Уникальных Бухгалтеров и Консультантов «Будь в курсе»</h3>
+              <p class="text-[16px] text-[#5F687A] mt-[10px] mb-[20px]">В 2025г году мы поменяли формат обучения. Из квартальных семинаров перевели занятия в регулярные 2 раза в месяц.</p>
+              <h4 class="font-medium text-[18px]">Июнь 27, 2023</h4>
+              <Button1 class="w-[220px] h-[43px] mt-[30px]">Подробнее</Button1>
+            </div>
           </div>
         </div>
-
-        <div class="osnova mt-[40px] pt-[43px] border-t border-t-[#E9E9E9] border-t-[1px] flex flex-col">
-          <!--     Тут код         -->
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <Footer/>
+    </div>
+  </section>
+</ContentRendererEvents>
 </template>
 
 <script>
+import ContentRendererEvents from "@/components/ContentRenderer-Events.vue";
 import Button2 from "@/components/button-2.vue";
 import Button1 from "@/components/button-1.vue";
 import Header from "@/components/Header.vue";
@@ -78,7 +60,7 @@ import { useRoute } from "vue-router";
 
 export default {
   name: "News",
-  components: { Footer, Header, Button1, Button2 },
+  components: { Footer, Header, Button1, Button2, ContentRendererEvents },
 
   setup() {
     const menuOpen = ref(false);

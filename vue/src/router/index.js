@@ -15,6 +15,10 @@ import Cart from "@/views/Cart.vue";
 import News from "@/views/News.vue";
 import Calendar from "@/views/Calendar.vue";
 import Gos_ychr from "@/views/Gos_ychr.vue";
+import Zdravoohrana from "@/views/Zdravoohrana.vue";
+import Client_Licences from "@/views/1C_Client_Licenses.vue"
+import Server_Licences from "@/views/1C_Server_Licenses.vue"
+import Services from "@/views/1C_Services.vue"
 
 import { isAuthenticated } from '../auth.js';
 
@@ -35,7 +39,10 @@ const routes = [
     { path: '/news', component: News },
     { path: '/calendar', component: Calendar },
     { path: '/1c-gos', component: Gos_ychr },
-    { path: '/1c-zdravoohrana', component: Gos_ychr },
+    { path: '/1c-zdravoohrana', component: Zdravoohrana },
+    { path: '/1c-server-license', component: Server_Licences },
+    { path: '/1c-client-license', component: Client_Licences },
+    { path: '/1c-services', component: Services },
     {
         path: '/1c-gos/:id',
         name: 'ProductDetail',

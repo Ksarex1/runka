@@ -247,7 +247,7 @@ const filteredSections = () => {
               </ul>
             </li>
             <li class="group relative">
-              <p>Контакты</p>
+              <router-link to="/contacts"><p>Контакты</p></router-link>
             </li>
           </ul>
         </div>

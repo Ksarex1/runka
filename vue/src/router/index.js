@@ -19,6 +19,7 @@ import Zdravoohrana from "@/views/Zdravoohrana.vue";
 import Client_Licences from "@/views/1C_Client_Licenses.vue"
 import Server_Licences from "@/views/1C_Server_Licenses.vue"
 import Services from "@/views/1C_Services.vue"
+import Contacts from "@/views/Contacts.vue"
 
 import { isAuthenticated } from '../auth.js';
 
@@ -43,6 +44,7 @@ const routes = [
     { path: '/1c-server-license', component: Server_Licences },
     { path: '/1c-client-license', component: Client_Licences },
     { path: '/1c-services', component: Services },
+    { path: '/contacts', component: Contacts },
     {
         path: '/1c-gos/:id',
         name: 'ProductDetail',

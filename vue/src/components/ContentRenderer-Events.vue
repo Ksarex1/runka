@@ -35,12 +35,12 @@
         </div>
 
         <!-- Десктопное меню -->
-        <div class="buttons hidden lg:flex gap-[20px] mt-[21px] md:w-[100%]">
+        <div class="buttons hidden lg:flex mt-[21px] md:w-[100%]">
           <router-link to="/news"><Button1 id="butt" v-if="route.path === '/news'">Новости</Button1></router-link>
           <router-link to="/news"><Button2 id="butt" v-if="route.path !== '/news'">Новости</Button2></router-link>
 
-          <router-link to="/calendar"><Button1 id="butt" v-if="route.path === '/calendar'">Календарь мероприятий</Button1></router-link>
-          <router-link to="/calendar"><Button2 id="butt" v-if="route.path !== '/calendar'">Календарь мероприятий</Button2></router-link>
+          <router-link to="/calendar"><Button1 class="ml-[20px]" id="butt" v-if="route.path === '/calendar'">Календарь мероприятий</Button1></router-link>
+          <router-link to="/calendar"><Button2 class="ml-[20px]" id="butt" v-if="route.path !== '/calendar'">Календарь мероприятий</Button2></router-link>
         </div>
       </div>
 

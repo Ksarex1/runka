@@ -35,6 +35,7 @@ const routes = [
     { path: '/news', component: News },
     { path: '/calendar', component: Calendar },
     { path: '/1c-gos', component: Gos_ychr },
+    { path: '/1c-zdravoohrana', component: Gos_ychr },
     {
         path: '/1c-gos/:id',
         name: 'ProductDetail',

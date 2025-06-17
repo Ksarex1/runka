@@ -2,6 +2,7 @@
 import {useRoute} from 'vue-router';
 import {computed, inject} from 'vue';
 import cards from '../assets/data/product-gos.js';
+import {isAuthenticated} from '../auth.js'
 import Header from '../components/Header.vue';
 
 const route = useRoute();
@@ -78,9 +79,9 @@ const decrementQuantity = (product) => {
             <p class="text-lg md:text-xl mb-2">
               Цена: от <strong class="text-2xl md:text-3xl">{{ product.price }} ₽</strong>
             </p>
-            <div class="flex justify-between items-center w-full mt-3.5">
+            <div class="flex justify-between items-center w-full mt-3.5" v-if="isAuthenticated">
               <div v-if="!isInCart(product)">
-                <button class="bg-primary2 py-2 px-8 cursor-pointer text-white font-medium rounded-lg text-[18px] mt-9"
+                <button class="bg-primary2 py-2 px-8 cursor-pointer text-white font-medium rounded-lg text-[18px] mt-9 hover:bg-blue-700 transition"
                         @click="handleAddToCart(product)">Добавить в корзину
                 </button>
               </div>

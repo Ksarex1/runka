@@ -1,33 +1,23 @@
 <script>
+import cards from "../assets/data/product-zdravoohrana.js"
 import ContentRendererPrograms from "@/components/ContentRenderer-Programs.vue";
-import cards from "../assets/data/product-gos.js"
 export default {
   components:{
     ContentRenderer: ContentRendererPrograms
   },
-  name: "gos_ychr",
+  name: "Zdravoohrana",
   data() {
     return {
       cards: cards
     }
   }
 }
-
 </script>
-
 
 <template>
   <ContentRenderer :cards="cards"/>
 </template>
 
 <style scoped>
-.filter-wrapper select {
-  font-size: 16px;
-  cursor: pointer;
-  appearance: none;
-}
 
-.filter-wrapper option {
-  font-size: 14px;
-}
 </style>

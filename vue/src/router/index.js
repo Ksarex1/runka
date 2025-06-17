@@ -27,6 +27,16 @@ import CSO from "@/views/CSO.vue";
 import Seminar from "@/views/Seminar.vue";
 import Kyrsi from "@/views/Kyrsi.vue";
 import Vebinar from "@/views/Vebinar.vue";
+import Otveti1C from "@/views/Otveti-1C.vue";
+import Tonkosti from "@/views/Tonkosti.vue";
+import ActReliz from "@/views/Act-reliz.vue";
+import Configure from "@/views/Configure.vue";
+import BGY1 from "@/views/BGY-1.vue";
+import BGY2 from "@/views/BGY-2.vue";
+import ZKGY3 from "@/views/ZKGY-3.vue";
+import CAMIN from "@/views/CAMIN.vue";
+import Apteka from "@/views/Apteka.vue";
+import Diet from "@/views/Diet.vue";
 
 import {isAuthenticated} from '../auth.js';
 
@@ -59,6 +69,16 @@ const routes = [
     { path: '/cso/seminar', component: Seminar },
     { path: '/cso/kyrsi', component: Kyrsi },
     { path: '/cso/vebinar', component: Vebinar },
+    { path: '/otveti-1c', component: Otveti1C },
+    { path: '/tonkosti', component: Tonkosti },
+    { path: '/act-reliz', component: ActReliz },
+    { path: '/configure', component: Configure },
+    { path: '/act-reliz/bgy1', component: BGY1 },
+    { path: '/act-reliz/bgy2', component: BGY2 },
+    { path: '/act-reliz/zkgy3', component: ZKGY3 },
+    { path: '/act-reliz/camin', component: CAMIN },
+    { path: '/act-reliz/apteka', component: Apteka },
+    { path: '/act-reliz/diet', component: Diet },
     {
         path: '/1c-gos/:id',
         name: 'ProductDetailGos',

@@ -261,12 +261,12 @@ const filteredSections = () => {
               </ul>
             </li>
             <li class="group relative">
-              <p>Полезная информация</p>
+              <router-link to="/otveti-1c"><p>Полезная информация</p></router-link>
               <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
-                <p>Ответы 1С на вопросы о переходе на работу через Интернет</p>
-                <p>Тонкости учета</p>
-                <p>Актуальные релизы</p>
-                <p>Как узнать, работаете вы в типовой или измененной конфигурации</p>
+                <router-link to="/otveti-1c"><p>Ответы 1С на вопросы о переходе на работу через Интернет</p></router-link>
+                <router-link to="/tonkosti"><p>Тонкости учета</p></router-link>
+                <router-link to="/act-reliz"><p>Актуальные релизы</p></router-link>
+                <router-link to="/configure"><p>Как узнать, работаете вы в типовой или измененной конфигурации</p></router-link>
               </ul>
             </li>
             <li class="group relative">

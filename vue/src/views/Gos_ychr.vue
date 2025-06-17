@@ -120,10 +120,10 @@ export default {
             </div>
 
             <select
-                class="sort w-[204px] h-[29px] border rounded-[12px]"
+                class="sort w-[204px] h-[29px] rounded-[12px]"
                 v-model="selectedSort"
             >
-              <option value="">Сортировать по...</option>
+              <option value="" class="">Сортировать по...</option>
               <option
                   v-for="option in selectSort"
                   :key="option.value"
@@ -140,7 +140,7 @@ export default {
               />
               <select
                   v-model="selectedFilter"
-                  class="pl-8 pr-2 text-sm border border-gray-300 rounded appearance-none bg-white w-[140px] h-[32px]"
+                  class="pl-8 pr-2 text-sm border  rounded appearance-none bg-white w-[140px] h-[32px]"
               >
                 <option value="">Фильтры</option>
                 <option

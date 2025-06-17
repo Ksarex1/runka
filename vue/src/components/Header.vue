@@ -126,16 +126,16 @@ const filteredSections = () => {
             <li class="text-[#030303]">О нас</li>
           </router-link>
           <router-link to="/">
-          <li class="text-[#030303]">События</li>
+            <li class="text-[#030303]">События</li>
           </router-link>
           <router-link to="/1c-gos">
-          <li class="text-[#030303]">Продукты</li>
+            <li class="text-[#030303]">Продукты</li>
           </router-link>
           <router-link to="/">
-          <li class="text-[#030303]">Услуги</li>
+            <li class="text-[#030303]">Услуги</li>
           </router-link>
           <router-link to="/contacts">
-          <li class="text-[#030303]">Контакты</li>
+            <li class="text-[#030303]">Контакты</li>
           </router-link>
         </ul>
       </div>
@@ -263,18 +263,19 @@ const filteredSections = () => {
             <li class="group relative">
               <router-link to="/otveti-1c"><p>Полезная информация</p></router-link>
               <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
-                <router-link to="/otveti-1c"><p>Ответы 1С на вопросы о переходе на работу через Интернет</p></router-link>
+                <router-link to="/otveti-1c"><p>Ответы 1С на вопросы о переходе на работу через Интернет</p>
+                </router-link>
                 <router-link to="/tonkosti"><p>Тонкости учета</p></router-link>
                 <router-link to="/act-reliz"><p>Актуальные релизы</p></router-link>
-                <router-link to="/configure"><p>Как узнать, работаете вы в типовой или измененной конфигурации</p></router-link>
+                <router-link to="/configure"><p>Как узнать, работаете вы в типовой или измененной конфигурации</p>
+                </router-link>
               </ul>
             </li>
             <li class="group relative">
-              <p>Учебный центр КУБиК</p>
+              <router-link to="/kubik"><p>Учебный центр КУБиК</p></router-link>
               <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
-                <p>Вебинары</p>
-                <p>Курсы и практические занятия</p>
-                <p>Отзывы клиентов</p>
+                <router-link to="/kubik/vebinar"><p>Вебинары</p></router-link>
+                <router-link to="/kubik/kyrsi"><p>Курсы и практические занятия</p></router-link>
               </ul>
             </li>
             <li class="group relative">

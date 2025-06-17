@@ -37,6 +37,9 @@ import ZKGY3 from "@/views/ZKGY-3.vue";
 import CAMIN from "@/views/CAMIN.vue";
 import Apteka from "@/views/Apteka.vue";
 import Diet from "@/views/Diet.vue";
+import Kubik from "@/views/Kubik.vue";
+import VebinarKubik from "@/views/Vebinar-Kubik.vue";
+import KyrsiKubik from "@/views/Kyrsi-Kubik.vue";
 
 import {isAuthenticated} from '../auth.js';
 
@@ -79,6 +82,9 @@ const routes = [
     { path: '/act-reliz/camin', component: CAMIN },
     { path: '/act-reliz/apteka', component: Apteka },
     { path: '/act-reliz/diet', component: Diet },
+    { path: '/kubik', component: Kubik },
+    { path: '/kubik/vebinar', component: VebinarKubik },
+    { path: '/kubik/kyrsi', component: KyrsiKubik },
     {
         path: '/1c-gos/:id',
         name: 'ProductDetailGos',

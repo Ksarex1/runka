@@ -62,9 +62,11 @@ const getRoute = (pageName) => {
             <button class="bg-white text-primary-dull border border-white rounded-2xl px-4 py-1 text-sm font-medium cursor-pointer">
               Заказать консультацию
             </button>
+            <router-link to="/about">
             <button class="bg-transparent text-white border border-gray-500 rounded-2xl px-4 py-1 text-sm font-medium cursor-pointer">
               Подробнее
             </button>
+            </router-link>
           </div>
         </div>
 

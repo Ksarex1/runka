@@ -244,7 +244,7 @@ const filteredSections = () => {
               </ul>
             </li>
             <li class="group relative">
-              <p>Программные продукты</p>
+              <router-link to="/1c-gos"><p>Программные продукты</p></router-link>
               <ul class="absolute hidden group-hover:flex flex-col gap-2 bg-white text-black p-2 rounded shadow-lg mt-2 w-48 z-50 list">
                 <router-link to="/1c-gos"><p>Решения 1С для государственных учреждений</p></router-link>
                 <router-link to="/1c-zdravoohrana"><p>Решения 1С для здравоохранения</p></router-link>

@@ -26,7 +26,7 @@ export default {
             </div>
             <div class="bottom flex justify-between">
               <h5 class="font-medium text-[#030303] text-[16px] md:text-[15px] sm:text-[14px]">Jan 30, 2025</h5>
-              <button class="text-[#005DFF] font-bold text-[16px] md:text-[15px] sm:text-[14px]">
+              <button class="text-[#005DFF] font-bold text-[16px] md:text-[15px] sm:text-[14px] cursor-pointer">
                 Подробнее ->
               </button>
             </div>
@@ -49,7 +49,7 @@ export default {
             </div>
             <div class="bottom flex justify-between">
               <h5 class="font-medium text-[#030303] text-[16px] md:text-[15px] sm:text-[14px] font-medium">Jan 30, 2025</h5>
-              <button class="text-[#005DFF] font-bold text-[16px] md:text-[15px] sm:text-[14px]">
+              <button class="text-[#005DFF] font-bold text-[16px] md:text-[15px] sm:text-[14px] cursor-pointer">
                 Подробнее ->
               </button>
             </div>
@@ -75,7 +75,7 @@ export default {
             </div>
             <div class="bottom flex justify-between">
               <h5 class="font-medium text-[#030303] text-[16px] md:text-[15px] sm:text-[14px]">Jan 30, 2025</h5>
-              <button class="text-[#005DFF] font-bold text-[16px] md:text-[15px] sm:text-[14px]">
+              <button class="text-[#005DFF] font-bold text-[16px] md:text-[15px] sm:text-[14px] cursor-pointer">
                 Подробнее ->
               </button>
             </div>
@@ -101,7 +101,7 @@ export default {
             </div>
             <div class="bottom flex justify-between">
               <h5 class="font-medium text-[#030303] text-[16px] md:text-[15px] sm:text-[14px]">Jan 30, 2025</h5>
-              <button class="text-[#005DFF] font-bold text-[16px] md:text-[15px] sm:text-[14px]">
+              <button class="text-[#005DFF] font-bold text-[16px] md:text-[15px] sm:text-[14px] cursor-pointer">
                 Подробнее ->
               </button>
             </div>

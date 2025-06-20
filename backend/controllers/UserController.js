@@ -93,6 +93,50 @@ export const UserController = {
             res.status(500).json({ message: "Нет доступа" });
         }
     },
+    updateMe: async (req, res) => {
+        try {
+            const userId = req.userId;
+
+            // Данные, которые можно обновить
+            const {
+                fullName,
+                email,
+                phone,
+                birthdate,
+                company,
+                firstName,
+                middleName,
+                avatarUrl,
+            } = req.body;
+
+            // Найти пользователя и обновить поля
+            const updatedUser = await UserModel.findByIdAndUpdate(
+                userId,
+                {
+                    fullName,
+                    email,
+                    phone,
+                    birthdate,
+                    company,
+                    firstName,
+                    middleName,
+                    avatarUrl,
+                },
+                { new: true }
+            );
+
+            if (!updatedUser) {
+                return res.status(404).json({ message: "Пользователь не найден" });
+            }
+
+            const { passwordHash, ...userData } = updatedUser._doc;
+
+            res.json(userData);
+        } catch (err) {
+            console.error(err);
+            res.status(500).json({ message: "Ошибка при обновлении данных" });
+        }
+    },
 
 };
 

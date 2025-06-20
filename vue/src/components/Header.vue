@@ -1,6 +1,7 @@
 <script setup>
 import {ref, watch, computed, inject} from 'vue'
 import {user, isAuthenticated, logout} from '../auth.js'
+import defaultAvatar from '../assets/img/profileImg.jpg'
 
 const isOpen = ref(false)
 const isTransitioning = ref(false)
@@ -179,7 +180,7 @@ const filteredSections = () => {
           <div class="flex items-center gap-4">
             <template v-if="isAuthenticated">
               <router-link to="/me">
-                <img src="@/assets/img/profileImg.jpg" class="w-8 h-8 rounded-full" alt="avatar"/>
+                <p>Личный кабинет</p>
               </router-link>
               <router-link to="/cart" class="relative">
                 <div

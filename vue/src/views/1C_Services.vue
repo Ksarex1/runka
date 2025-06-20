@@ -225,6 +225,9 @@ export default {
 </template>
 
 <style scoped>
+select{
+  border: #717171 1px solid;
+}
 .filter-wrapper select {
   font-size: 16px;
   cursor: pointer;

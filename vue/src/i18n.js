@@ -131,7 +131,7 @@ const messages = {
                 },
                 "consents": {
                     "consent1": "By clicking \"Submit\", I consent to the processing of personal data in accordance with Federal Law No. 152-FZ of July 27, 2006 \"On Personal Data\", under the terms and for the purposes specified in the PRIVACY POLICY.",
-                    "consent2": "By clicking \"Submit\", I give myCONSENT TO THE PROCESSING OF PERSONAL DATA."
+                    "consent2": "By clicking \"Submit\", I give my CONSENT TO THE PROCESSING OF PERSONAL DATA."
                 },
                 "submit_button": "Submit",
                 "validation_message": "Please confirm the consents before submitting."
@@ -152,6 +152,45 @@ const messages = {
                 { "title": "Repeat 2" },
                 { "title": "Repeat 3" }
             ]
+        },
+
+        "news": {
+            "title": "Latest News",
+            "card1": {
+                "title": "Happy Spring Holiday!",
+                "subtitle": "Dear, lovely, tender, most beautiful, kind, smart...",
+                "but": "Read more"
+            },
+            "card2": {
+                "title": "2025 Offer from the Club of Unique Accountants and Consultants 'Stay Informed'",
+                "but": "Read more"
+            },
+            "card3": {
+                "title": "Happy New Year 2025 and Merry Christmas!",
+                "subtitle": "Dear colleagues, partners and employees! We congratulate you on...",
+                "but": "Read more"
+            },
+            "card4": {
+                "title": "Information Base Check",
+                "subtitle": "In November and December, we offer all clients to check...",
+                "but": "Read more"
+            }
+        },
+
+        "footer": {
+            "title": "Precision solutions for efficient accounting",
+            "but": "Request a consultation",
+            "podrobnee": "Learn more",
+            "copyr": "© 2025 Runa S LLC | All rights reserved"
+        },
+
+        rating: {
+            title: "What our customers say about us",
+        },
+
+        faq: {
+            title: "Frequently Asked Questions",
+            subtitle: "Short answers to popular questions"
         },
 
 
@@ -311,6 +350,49 @@ const messages = {
                 { "title": "Повтор 3" }
             ]
         },
+
+        news: {
+            title: "Последние новости",
+            card1: {
+                title: "С Праздником Весны!",
+                subtitle: "Дорогие, милые, трепетные, самые прекрасные, добрые, умные...",
+                but: "Подробнее"
+            },
+
+            card2: {
+                title: "Предложение на 2025 год от Клуба Уникальных Бухгалтеров и Консультантов «Будь в курсе»",
+                but: "Подробнее"
+            },
+
+            card3: {
+                title: "С Новым 2025 годом и Рождеством!",
+                subtitle: "Дорогие коллеги, партнёры и сотрудники! Поздравляем с...",
+                but: "Подробнее"
+            },
+
+            card4: {
+                title: "Проверка информационной базы",
+                subtitle: "В ноябре и декабре всем клиентам мы предлагаем проверку...",
+                but: "Подробнее"
+            },
+        },
+
+        footer: {
+            title: "Точные решения для эффективной бухгалтерии",
+            but: "Заказать консультацию",
+            podrobnee: "Подробнее",
+            copyr: "© 2025 г. ООО “Руна С” | Все права защищены"
+        },
+
+        rating: {
+            title: "Что о нас говорят наши клиенты",
+        },
+
+        faq: {
+            title: "Часто Задаваемые Вопросы",
+            subtitle: "Краткие ответы на популярные вопросы"
+        },
+
     }
 }
 

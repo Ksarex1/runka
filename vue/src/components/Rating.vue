@@ -107,7 +107,7 @@ import 'swiper/css/navigation';
 
 import slide1 from "@/assets/img/card-img-1.png";
 import image1 from "@/assets/img/comment.png";
-import star from "@/assets/img/star.svg";
+import star from "@/assets/img/Star.svg";
 
 const prevEl = ref(null);
 const nextEl = ref(null);

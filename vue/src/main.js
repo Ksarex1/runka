@@ -6,9 +6,15 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import i18n from './i18n'
 
+if (!localStorage.getItem('lang')) {
+  localStorage.setItem('lang', 'ru') // или 'en', если хочешь по-другому
+}
+
+i18n.global.locale = localStorage.getItem('lang')
+
 AOS.init({
-    duration: 800,
-    once: true,
+  duration: 800,
+  once: true,
 })
 
 const app = createApp(App)

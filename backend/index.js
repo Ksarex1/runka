@@ -19,13 +19,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Создаём папку для аватарок, если нет
 const uploadDir = 'uploads/avatars';
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true });
 }
 
-// Раздаём статику из uploads
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
 mongoose

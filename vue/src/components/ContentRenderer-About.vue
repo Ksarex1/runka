@@ -48,7 +48,6 @@
           </transition>
         </div>
 
-        <!-- Десктопное меню -->
         <div class="buttons hidden lg:flex justify-between mt-[21px] md:w-[100%]">
           <router-link to="/about/statys"><Button1 class="md:w-[90%]" v-if="sections[0].name_razdel === 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button1></router-link>
           <router-link to="/about/statys"><Button2 class="md:w-[90%]" v-if="sections[0].name_razdel !== 'Статусы и сертификаты компании'">Статусы и сертификаты компании</Button2></router-link>
@@ -86,14 +85,12 @@
 
 
 
-            <!-- Списки -->
             <ul v-if="section.list && section.list.length" class="list-disc pl-5 mb-4">
               <li class="li-spisok" v-for="(item, idx) in section.list" :key="idx">{{ item }}</li>
             </ul>
 
             <p v-html="section.text2" class="text2 text-[#5F687A] xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[15px]"></p>
 
-            <!-- Картинки -->
             <div v-if="section.images.length" class="flex flex-wrap gap-4 mt-[40px]">
               <img
                   v-for="(img, index) in section.images"
@@ -106,7 +103,6 @@
             </div>
           </div>
 
-          <!-- Модальное окно -->
           <div
               v-if="selectedImage" :data-aos="null"
               class="fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center"

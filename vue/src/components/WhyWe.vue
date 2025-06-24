@@ -75,9 +75,9 @@ function groupSlides(chunkSize) {
 function updateGroupsBasedOnWidth() {
   const width = window.innerWidth;
   if (width <= 400) {
-    groupSlides(2); // по 2 элемента
+    groupSlides(2);
   } else {
-    groupSlides(3); // по 3 элемента
+    groupSlides(3);
   }
 }
 

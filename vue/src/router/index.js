@@ -56,7 +56,7 @@ const routes = [
     { path: '/about/rabota_runa/vakansii', component: Vakansii },
     { path: '/about/politika', component: Politika },
     { path: '/about/soglasie', component: Soglasie },
-    { path: '/cart', component: Cart },
+    { path: '/cart', component: Cart, meta: { requiresAuth: true } },
     { path: '/news', component: News },
     { path: '/calendar', component: Calendar },
     { path: '/1c-gos', component: Gos_ychr },

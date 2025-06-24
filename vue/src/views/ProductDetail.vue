@@ -64,7 +64,6 @@ const decrementQuantity = (product) => {
   }
 };
 
-// Родительский маршрут для кнопки назад
 const parentRoute = computed(() => {
   const segments = route.path.split('/').filter(Boolean);
   return segments.length > 0 ? `/${segments[0]}` : '/';

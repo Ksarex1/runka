@@ -34,7 +34,6 @@
           </transition>
         </div>
 
-        <!-- Десктопное меню -->
         <div class="buttons hidden lg:flex mt-[21px] md:w-[100%]">
           <router-link to="/news"><Button1 id="butt" v-if="route.path === '/news'">Новости</Button1></router-link>
           <router-link to="/news"><Button2 id="butt" v-if="route.path !== '/news'">Новости</Button2></router-link>

@@ -3,7 +3,7 @@ import {ref} from 'vue'
 import {useRouter} from 'vue-router'
 import axios from 'axios'
 import Header from '../components/Header.vue'
-import {setUser} from '../auth.js' // 👈 если используешь глобального пользователя
+import {setUser} from '../auth.js'
 
 const router = useRouter()
 

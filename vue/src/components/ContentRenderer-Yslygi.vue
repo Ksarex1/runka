@@ -48,7 +48,6 @@
           </transition>
         </div>
 
-        <!-- Десктопное меню -->
         <div class="buttons hidden lg:flex mt-[21px] md:w-[100%]">
 
           <li class="group relative">
@@ -85,14 +84,12 @@
 
 
 
-            <!-- Списки -->
             <ul v-if="section.list && section.list.length" class="list-disc pl-5 mb-4">
               <li class="li-spisok" v-for="(item, idx) in section.list" :key="idx">{{ item }}</li>
             </ul>
 
             <p v-html="section.text2" class="text2 text-[#5F687A] xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[15px]"></p>
 
-            <!-- Картинки -->
             <div v-if="section.images.length" class="flex flex-wrap gap-4 mt-[40px]">
               <img
                   v-for="(img, index) in section.images"
@@ -105,7 +102,6 @@
             </div>
           </div>
 
-          <!-- Модальное окно -->
           <div
               v-if="selectedImage" :data-aos="null"
               class="fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center"

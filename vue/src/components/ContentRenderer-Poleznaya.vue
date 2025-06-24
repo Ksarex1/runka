@@ -58,7 +58,6 @@
           </transition>
         </div>
 
-        <!-- Десктопное меню -->
         <div class="buttons hidden lg:flex justify-between mt-[21px] md:w-[100%]">
           <router-link to="/otveti-1c"><Button1 id="butt" class="w-[90%]" v-if="route.path === '/otveti-1c'">Ответы 1С  на вопросы о переходе на работу через Интернет</Button1></router-link>
           <router-link to="/otveti-1c"><Button2 id="butt" class="w-[90%]" v-if="route.path !== '/otveti-1c'">Ответы 1С  на вопросы о переходе на работу через Интернет</Button2></router-link>

@@ -29,7 +29,6 @@
             />
           </button>
 
-          <!-- Анимация развёртывания -->
           <transition
               @before-enter="beforeEnter"
               @enter="enter"

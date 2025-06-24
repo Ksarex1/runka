@@ -64,7 +64,6 @@
               </transition>
             </div>
 
-            <!-- Десктопное меню -->
             <div class="buttons hidden lg:flex mt-[21px] md:w-[100%]">
               <router-link to="/1c-gos">
                 <Button1 id="butt" v-if="route.path === '/1c-gos'">Решения 1С для гос. учреждений</Button1>

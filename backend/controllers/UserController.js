@@ -97,7 +97,6 @@ export const UserController = {
         try {
             const userId = req.userId;
 
-            // Данные, которые можно обновить
             const {
                 fullName,
                 email,
@@ -109,7 +108,6 @@ export const UserController = {
                 avatarUrl,
             } = req.body;
 
-            // Найти пользователя и обновить поля
             const updatedUser = await UserModel.findByIdAndUpdate(
                 userId,
                 {

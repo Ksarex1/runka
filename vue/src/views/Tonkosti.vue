@@ -84,7 +84,7 @@ export default {
 <style scoped>
 .ellipsis-2-lines {
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Ограничение на 2 строки */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;

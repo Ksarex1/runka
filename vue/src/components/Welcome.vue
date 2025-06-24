@@ -1,5 +1,7 @@
-<script>
+<script setup>
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 </script>
 
 <template>
@@ -9,14 +11,14 @@
 
         <div class="md:col-span-5 flex flex-col items-center text-center md:items-start md:text-left mt-8 md:mt-0">
           <h1 class="mb-4 text-[32px] sm:text-[40px] md:text-[50px] leading-tight max-md:leading-10 text-[#030303]">
-            Точные решения<br> для эффективной бухгалтерии
+            {{ t('welcome.title') }}
           </h1>
           <p class="text-[16px] md:text-[18px] text-primary3 mb-6 md:mb-15">
-            Мы решаем самые трудные задачи автоматизации в государственных учреждениях самыми простыми способами. Мы готовы взять на себя решение любых задач от самых простых и до самых сложных
+            {{ t('welcome.paragraph') }}
           </p>
           <div class="flex flex-col sm:flex-row gap-4 md:gap-5">
-            <button class="px-10 bg-primary2 text-white rounded-xl py-2 cursor-pointer hover:bg-primary transition">Подробнее</button>
-            <button class="px-10 bg-white text-primary3 rounded-xl py-2 cursor-pointer border hover:bg-gray-200 transition block max-md:hidden">Подробнее</button>
+            <button class="px-10 bg-primary2 text-white rounded-xl py-2 cursor-pointer hover:bg-primary transition">{{ t('welcome.button1') }}</button>
+            <button class="px-10 bg-white text-primary3 rounded-xl py-2 cursor-pointer border hover:bg-gray-200 transition block max-md:hidden">{{ t('welcome.button2') }}</button>
           </div>
         </div>
 

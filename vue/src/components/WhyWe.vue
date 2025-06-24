@@ -3,8 +3,8 @@
     <div class="container">
 
       <div class="text-center">
-        <h2 class="text-4xl font-bold mb-2.5">Почему выбирают Руна С</h2>
-        <p class="mb-10 text-gray-500">Мы помогаем расти бизнесу с 2002 года</p>
+        <h2 class="text-4xl font-bold mb-2.5">{{ t('why_choose.title') }}</h2>
+        <p class="mb-10 text-gray-500">{{ t('why_choose.subtitle') }}</p>
       </div>
 
       <div class="slider-container">
@@ -49,6 +49,9 @@ SwiperCore.use([Autoplay, Pagination]);
 import slide1 from '../assets/img/slide1.png';
 import slide2 from '../assets/img/slide2.png';
 import slide3 from '../assets/img/slide3.png';
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const slides = [
   { image: slide1, title: 'Опыт 10+ лет' },

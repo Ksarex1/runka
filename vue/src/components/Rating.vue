@@ -4,7 +4,7 @@
 
       <div class="mb-13 flex justify-between items-center flex-wrap gap-4">
         <h2 class="text-3xl md:text-4xl font-bold text-left">
-          Что о нас говорят наши клиенты
+          {{ t('rating.title') }}
         </h2>
         <div class="md:flex gap-2 hidden ">
           <button
@@ -93,6 +93,11 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
+
 import {ref, onMounted} from 'vue';
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import {Autoplay, Navigation} from 'swiper/modules';

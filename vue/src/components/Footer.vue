@@ -1,4 +1,8 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
 const pages = [
   {
     title: "Главная",
@@ -57,14 +61,14 @@ const getRoute = (pageName) => {
           <div>
             <img src="../assets/img/logo.png" alt="logo" class="mb-2" />
           </div>
-          <p class="text-[14px]">Точные решения для эффективной бухгалтерии</p>
+          <p class="text-[14px]">{{ t('footer.title') }}</p>
           <div class="mt-5 flex flex-wrap gap-3 max-md:flex-col max-md:items-center max-md:text-center">
             <button class="bg-white text-primary-dull border border-white rounded-2xl px-4 py-1 text-sm font-medium cursor-pointer">
-              Заказать консультацию
+              {{ t('footer.but') }}
             </button>
             <router-link to="/about">
             <button class="bg-transparent text-white border border-gray-500 rounded-2xl px-4 py-1 text-sm font-medium cursor-pointer">
-              Подробнее
+              {{ t('footer.podrobnee') }}
             </button>
             </router-link>
           </div>
@@ -95,7 +99,7 @@ const getRoute = (pageName) => {
 
     <div class="container max-w-[1440px] mx-auto px-5 py-8 flex flex-col lg:flex-row justify-between items-center gap-5">
       <p class="text-white text-[14px] font-medium text-center lg:text-left">
-        © 2025 г. ООО “Руна С” | Все права защищены
+        {{ t('footer.copyr') }}
       </p>
       <div class="flex gap-2.5">
         <img src="../assets/img/vk.svg" alt="vk" class="w-6 h-6 cursor-pointer">

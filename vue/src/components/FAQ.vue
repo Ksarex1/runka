@@ -2,9 +2,9 @@
   <section class="2xl:mt-[200px] xl:mt-[250px] lg:mt-[650px] md:mt-[700px] sm:mt-[600px] p-[50px] bg-[#EFF3FA] mb-[100px]">
     <div class="container flex flex-col justify-center items-center">
       <div class="text w-full md:w-[60%] text-center">
-        <h2 class="font-bold text-[#030303] text-3xl md:text-[36px]">Часто Задаваемые Вопросы</h2>
+        <h2 class="font-bold text-[#030303] text-3xl md:text-[36px]">{{ t('faq.title') }}</h2>
         <p class="text-[#5F687A] text-base md:text-[18px] mt-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
+          {{ t('faq.subtitle') }}
         </p>
       </div>
 
@@ -49,11 +49,16 @@
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n'
 import openIcon from '@/assets/img/open-but.png';
 import closeIcon from '@/assets/img/close-but.png';
 
 export default {
   name: "FAQ",
+  setup(){
+    const { t } = useI18n()
+    return {t}
+  },
   data() {
     return {
       openIcon,

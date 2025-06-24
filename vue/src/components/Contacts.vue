@@ -1,13 +1,17 @@
-<script>
+<script >
 import checkboxActive from '@/assets/img/checkbox-active.svg'
 import checkboxInactive from '@/assets/img/checkbox-inactive.svg'
-
+import { useI18n } from 'vue-i18n'
 import Button1 from "@/components/button-1.vue";
 
 export default {
   name: 'Contacts',
   components:{
     Button1
+  },
+  setup(){
+    const { t } = useI18n()
+    return {t}
   },
   data() {
     return {
@@ -55,8 +59,8 @@ export default {
   <div class="container h-[617px] flex justify-between 2xl:items-start xl:items-start 2xl:flex-row xl:flex-row  p-[50px] sm:items-center sm:flex-col">
     <div class="text-left  sm:w-[464px] flex flex-col sm:items-center xl:items-start">
       <div class="text-top1 flex flex-col pb-10 border-b border-b-[#D9D9D9] sm:items-center xl:items-start">
-        <h2 class="text-[36px] font-medium text-white">Связаться с нами</h2>
-        <p class="p-ostavte text-[20px] mt-[21px] mb-[35px] text-white">Оставьте заявку и мы свяжемся с вами в короткие сроки</p>
+        <h2 class="text-[36px] font-medium text-white">{{ t('contacts.title') }}</h2>
+        <p class="p-ostavte text-[20px] mt-[21px] mb-[35px] text-white">{{ t('contacts.subtitle') }}</p>
         <div class="icons flex sm:justify-between w-[30%]">
           <img class="w-[41px] h-[41px] cursor-pointer" src="../assets/img/vk.svg">
           <img class="w-[41px] h-[41px] cursor-pointer" src="../assets/img/tg.svg">
@@ -69,7 +73,7 @@ export default {
         <div class="txt flex-row flex">
           <img class="img-email" src="../assets/img/email-1.svg">
           <div class="flex flex-col ml-5">
-            <p class="email-p1 text-[#BACAEA] sm:text-[14px]">Напишите нам на почту</p>
+            <p class="email-p1 text-[#BACAEA] sm:text-[14px]">{{ t('contacts.contact_email.label') }}</p>
             <p class="email-p2 font-bold text-white xl:text-[14px]">runa_post@mail.ru</p>
           </div>
         </div>
@@ -77,7 +81,7 @@ export default {
         <div class="txt flex-row flex mt-[21px]">
           <img class="img-tel" src="../assets/img/call.svg">
           <div class="flex flex-col ml-5">
-            <p class="tel-p1 text-[#BACAEA] sm:text-[14px]">Позвоните нам</p>
+            <p class="tel-p1 text-[#BACAEA] sm:text-[14px]">{{ t('contacts.contact_phone.label') }}</p>
             <p class="tel-p2 font-bold text-white xl:text-[14px]">+7 963-232-82-23, +7 920-253-21-36</p>
           </div>
         </div>
@@ -91,25 +95,25 @@ export default {
         <input type="hidden" name="subject" value="Новая заявка с сайта" />
         <input type="hidden" name="from_name" value="Runa Contact Form" />
         <div class="inp sm:w-[45%]">
-          <p class="2xl:text-[20px] xl:text-[18px] sm:text-[16px] font-bold">Полное имя</p>
-          <input v-model="fullName" name="name" class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[14px]" placeholder="Дмитрий Кучеров...">
+          <p class="2xl:text-[20px] xl:text-[18px] sm:text-[16px] font-bold">{{ t('contacts.form.fields.fullName.label') }}</p>
+          <input v-model="fullName" name="name" class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[14px]" :placeholder="t('contacts.form.fields.fullName.placeholder')">
         </div>
         <div class="inp sm:w-[45%]">
-          <p class="2xl:text-[20px] xl:text-[18px] sm:text-[16px] font-bold">Адрес эл. почты</p>
-          <input v-model="email" name="email" class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[14px]" placeholder="example@mail.ru">
+          <p class="2xl:text-[20px] xl:text-[18px] sm:text-[16px] font-bold">{{ t('contacts.form.fields.email.label') }}</p>
+          <input v-model="email" name="email" class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[14px]" :placeholder="t('contacts.form.fields.email.placeholder')">
         </div>
         <div class="inp mt-[40px] sm:w-[45%]">
-          <p class="2xl:text-[20px] xl:text-[18px] sm:text-[16px] font-bold">Номер телефона</p>
-          <input v-model="phone" name="phone" class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[14px]" placeholder="(123) 456 78-90">
+          <p class="2xl:text-[20px] xl:text-[18px] sm:text-[16px] font-bold">{{ t('contacts.form.fields.phone.label') }}</p>
+          <input v-model="phone" name="phone" class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[14px]" :placeholder="t('contacts.form.fields.phone.placeholder')">
         </div>
         <div class="inp mt-[40px] sm:w-[45%]">
-          <p class="2xl:text-[20px] xl:text-[18px] sm:text-[16px] font-bold">Название компании</p>
-          <input v-model="company" name="company" class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[14px]" placeholder="Руна С">
+          <p class="2xl:text-[20px] xl:text-[18px] sm:text-[16px] font-bold">{{ t('contacts.form.fields.company.label') }}</p>
+          <input v-model="company" name="company" class="2xl:w-[268px] xl:w-[220px] lg:w-[330px] sm:w-[100%] h-[30px] rounded-[13px] border border-[#5F687A] pl-[20px] mt-[15px] text-[#5F687A] text-[14px]" :placeholder="t('contacts.form.fields.company.placeholder')">
         </div>
 
         <div class="inp mt-[40px] w-[100%]">
-          <p class="2xl:text-[20px] xl:text-[18px] font-bold">Сообщение</p>
-          <textarea v-model="message" name="message" class="inp-sms 2xl:w-[634px] xl:w-[100%] sm:w-[100%] md:h-[190px] sm:h-[150px] rounded-[13px] border border-[#5F687A] pl-[20px] pr-[20px] pt-[10px] mt-[15px] text-[#5F687A] text-[14px]" placeholder="Введите ваше сообщение здесь..."></textarea>
+          <p class="2xl:text-[20px] xl:text-[18px] font-bold">{{ t('contacts.form.fields.message.label') }}</p>
+          <textarea v-model="message" name="message" class="inp-sms 2xl:w-[634px] xl:w-[100%] sm:w-[100%] md:h-[190px] sm:h-[150px] rounded-[13px] border border-[#5F687A] pl-[20px] pr-[20px] pt-[10px] mt-[15px] text-[#5F687A] text-[14px]" :placeholder="t('contacts.form.fields.message.placeholder')"></textarea>
         </div>
 
         <div class="checkboxes">
@@ -123,7 +127,7 @@ export default {
                 alt="checkbox"
                 class="checkbox-icon"
             />
-            <span class="checkbox-label 2xl:text-[10px] xl:text-[9px] md:text-[10px] sm:text-[9px] font-medium text-[#5F687A] ml-[10px]">Нажимая кнопку "Отправить", я даю свое согласие на обработку персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ "О персональных данных", на условиях и для целей, определенных <span class="underline">ПОЛИТИКОЙ В ОТНОШЕНИИ ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ.</span></span>
+            <span class="checkbox-label 2xl:text-[10px] xl:text-[9px] md:text-[10px] sm:text-[9px] font-medium text-[#5F687A] ml-[10px]">{{ t('contacts.form.consents.consent1') }}</span>
           </div>
 
           <div
@@ -136,11 +140,11 @@ export default {
                 alt="checkbox"
                 class="checkbox-icon"
             />
-            <span class="checkbox-label 2xl:text-[10px] xl:text-[9px] md:text-[10px] sm:text-[9px] font-medium text-[#5F687A] ml-[10px]">Нажимая кнопку "Отправить", я даю свое <span class="underline">СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ.</span></span>
+            <span class="checkbox-label 2xl:text-[10px] xl:text-[9px] md:text-[10px] sm:text-[9px] font-medium text-[#5F687A] ml-[10px]">{{ t('contacts.form.consents.consent2') }}</span>
           </div>
         </div>
 
-        <Button1 :disabled="!isFormValid" class="btn-form md:w-[201px] md:h-[56px] mt-[27px] md:text-[20px] sm:w-[180px] sm:h-[40px] sm:text-[16px] font-bold" type="submit">Отправить</Button1>
+        <Button1 :disabled="!isFormValid" class="btn-form md:w-[201px] md:h-[56px] mt-[27px] md:text-[20px] sm:w-[180px] sm:h-[40px] sm:text-[16px] font-bold" type="submit">{{ t('contacts.form.submit_button') }}</Button1>
 
       </form>
     </div>

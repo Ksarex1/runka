@@ -11,6 +11,11 @@ export default defineConfig({
     vueDevTools(),
     tailwindcss(),
   ],
+  test: {
+    environment: 'happy-dom', // ✅ Поддержка DOM (window, localStorage, document и т.д.)
+    globals: true,            // ✅ Чтобы не писать `import { describe } ...` каждый раз
+    setupFiles: ['./tests/setup.js'] // ⬅️ необязательно, но удобно
+  },
   base: '/runka/',
   resolve: {
     alias: {
